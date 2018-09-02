@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42274304-1', 'u-tokyo.ac.jp');
+  ga('send', 'pageview');
+
+</script>
+<meta charset="UTF8">
+<link rel="stylesheet" href="https://www.mi.t.u-tokyo.ac.jp/assets/style.css">
+<link rel="stylesheet" href="ushiku.css">
+<link rel="shortcut icon" href="/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
+<link rel="icon" href="/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
+<title>Yoshitaka Ushiku's homepage</title>
+</head>
+<body>
+
+<h1>参考文献の書き方</h1>
+
+<p>
+世の中には卒論や修論の書き方指南をwebで公開してくださっている先生が多くいらっしゃって、私も利用させていただきたいなどと思っていたところ。そういえば、かつて博士課程の学生だった時に書いた小ネタがあったと思ったので公開します。
+</p>
+
+<p>
+たかが参考文献と侮るなかれ、<span class="emphasize">論文審査時でも査読時でも印象を左右する</span>ことがあります。
+</p>
+
+<p class="wo_indent" style="margin-top: 1rem;">
+注意：筆者は計算機科学まわりに生息しています。分野が異なる場合はちょっとよくわからない。「フォーマットが統一されているのが重要」というのはユニバーサルルールだと思いますが。
+</p>
+
+<h2>ルール</h2>
+
+<ul>
+
+<li>学会論文の場合は</li>
+<div class="example">「著者、タイトル、会議名、ページ、開催年」</div>
+<li>論文誌論文の場合は</li>
+<div class="example">「著者、タイトル、論文誌名、巻号、ページ、発行年」</div>
+</ul>
+
+<p class="wo_indent">
+ほかに bibtex でいうところの url や techreport、phdthesis などのフォーマットもあります。
+とにかく重要なのは、<span class="emphasize">「同一のエントリ種別でフォーマットが統一されていること」</span>です。
+</p>
+
+<h3>ついでに著者名の書き方</h3>
+
+<p>
+参考文献を書くということは本文中から引用するわけですが、その時にもルールがあります。例えば「知能花子」先生による研究を本文で引用したいとして、「○○する研究 \cite{Chinou2112} では、」などと論文の内容で引用する場合はあまり気にする必要はないのですが、<span style="font-weight: bold;">著者名を書く場合</span>。
+</p>
+
+<ol>
+<li>著者が知能花子1人の場合は</li>
+<div class="example">「知能 \cite{Chinou2112} によれば、」 "Chinou \cite{Chinou2112} reports xxx"</div>
+<li>著者が知能花子と画像太郎の2人の場合は</li>
+<div class="example">「知能・画像 \cite{Chinou2112} によれば、」 "Chinou &amp; Gazou \cite{Chinou2112} report xxx"</div>
+<li>著者が知能花子を筆頭に3人以上の場合は</li>
+<div class="example">「知能ら \cite{Chinou2112} によれば、」 "Chinou et al. \cite{Chinou2112} reports xxx"</div>
+</ol>
+
+<p class="wo_indent">
+このように、著者の人数によって英語でも日本語でも書き方が異なります。ごちゃ混ぜになりがちなので注意。
+</p>
+
+<h2>学会論文の例</h2>
+
+<div class="example">
+F. Perronnin, J. S anchez, and T. Mensink. Improving the Fisher Kernel for Large-Scale Image Classi cation. In ECCV, 2010.
+</div>
+
+<p class="wo_indent">
+ECCV という国際会議で出た論文の引用です。このように、アブストや通常の論文など、スペースに限りがある場合は
+「著者、タイトル、『会議の略称』、開催年」（ページ情報不要）
+でも問題ありません。スペースに問題のない卒論修論では
+</p>
+
+<div class="example">
+F. Perronnin, J. S anchez, and T. Mensink. Improving the Fisher Kernel for Large-Scale Image Classi cation. In Proceedings of the 11th European Conference on Computer Vision, pp.143--156 , 2010.
+</div>
+
+<p class="wo_indent">
+とちゃんと書いてもよいです。<span style="font-weight: bold;">ワークショップの場合もこちらに含まれます</span>。
+</p>
+
+<h2>論文誌論文の例</h2>
+
+<div class="example">
+A. Torralba, R. Fergus, and W. T. Freeman. 80 million tiny images: a large dataset for non-parametric object and scene recognition. IEEE TPAMI, 30(11):1958-70, 2008.
+</div>
+
+<p class="wo_indent">
+如何なる時も巻、号、ページ数を書かなければなりません。アブストでも卒論修論本体でもです。論文誌名に関しては、上記のように略称を用いるか、
+</p>
+
+<div class="example">
+A. Torralba, R. Fergus, and W. T. Freeman. 80 million tiny images: a large dataset for non-parametric object and scene recognition. IEEE Transactions on Pattern Analysis and Machine Intelligence, 30(11):1958-70, 2008.
+</div>
+
+<p class="wo_indent">
+とちゃんと書いてもよいです。
+</p>
+
+<h2>よくある間違い</h2>
+
+<p>
+最後によくある間違いとして今までに観察されたものを列挙していきます。
+</p>
+
+<ul>
+
+<li style="font-weight: bold;">著者や会議/論文誌名が略してあったり略さなかったりがバラバラ</li>
+<div class="example">例： International ⇔ Int. や、 Y. Singer ⇔ Yoram Singer、 International Conference on Computer Vision ⇔ ICCV の混在</div>
+
+<li style="font-weight: bold;">Proceedings 名の書き方がバラバラ</li>
+<div class="example">例： In Proceedings of the 8th (会議名) ⇔ Proceedings of the 8th (会議名) ⇔ (会議名のみ) などの混在</div>
+
+<li style="font-weight: bold;">bibtexのスタイルファイルの挙動を把握していないためのミス</li>
+<div class="example">例： In In ICCV</div>
+<p class="wo_indent">など、@inproceedingsでデフォルトでInが自動追加されるスタイルファイルなのに、エントリのbooktitleにもIn ICCVと書いているとこうなります。</p>
+
+<li style="font-weight: bold;">文献情報のフォーマットがバラバラ</li>
+<div class="example">例： 一部のみに学会開催地や学会開催国、発行者(ACM や IEEE、Springer)が書いてある。</div>
+<p class="wo_indent">特にページ番号が書いてあるのと書いてないのが混在しているパターン多いです。ちゃんとページ番号調べましょう。著者のページがあるならもちろん、会議や論文誌の主催団体 (ACM や IEEE) のページ、DBLP (※ただし CS に限る) などをあたるとよいでしょう。</p>
+
+<li style="font-weight: bold;">同じ情報が2箇所にある</li>
+<div class="example">例： In Computer Vision and Pattern Recognition, 2006 IEEE Computer Society Conference on, Vol. 2, pp. 1978 – 1983, 2006. </div>
+<p class="wo_indent">2006という年号情報が被ってます。</p>
+
+<li style="font-weight: bold;">引用しているのがarXiv</li>
+<div class="example">例： O. Vinyals, A Toshev, S. Bengio and D. Erhan. Show and Tell: A Neural Image Caption Generator. CoRR, 2014.</div>
+<p class="wo_indent">CoRR（つまりarXiv）の論文は、引用したくなるようなクオリティの場合は何らかの会議に採録されているものが多いです。上の例だとCVPR 2015で発表されています。ちゃんと調べて、見つかったらそちらを引用しましょう。</p>
+
+<li style="font-weight: bold;">引用しているのがWikipediaだったりSlideShareだったり謎のwebサイトだったり</li>
+<div class="example">例： 牛久祥孝. 画像キャプションの自動生成. http://www.slideshare.net/YoshitakaUshiku/ss-57148161.</div>
+<p class="wo_indent"><span style="font-weight: bold;">まずあなたのサーベイはそれで良いのかというツッコミがあります</span>が、書籍や論文を正しく引用しましょう。基本的に各手法の引用は原著を調べましょう。国際会議や論文誌の論文を引用することになります。時々、手法のバリエーションや証明などを書籍から引用することもあると思います。WikipediaやSlideShareなど、Webページは原則やめましょう。例外はデータセットやサービスとしてのwebサイトの引用くらいです。ただデータセットだと、最近は「○○を引用してくれ」と公式webサイトやreadmeなどに書いてあるものも多いです。</p>
+
+<li>（ここまで読んだけど）<span style="font-weight: bold;">何も考えずにググって出てきたbibtexをコピペした</span></li>
+<p class="wo_indent" style="font-weight: bold;">かえれー！</p>
+
+</ul>
+
+<h2>更新履歴</h2>
+
+<ul>
+<li>2013/01/30:初版</li>
+<li>2017/01/13:「ついでに著者名の書き方」を追加</li>
+<li>2017/01/17:「よくある間違い」に追加</li>
+</ul>
+
+</body>
+</html>
