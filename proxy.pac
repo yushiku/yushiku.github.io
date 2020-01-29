@@ -36,9 +36,7 @@ if( shExpMatch(host, "*c.microsoft.com") ||
     shExpMatch(host, "*.digitalartscloud.com") ||
     shExpMatch(host, "*outlook.office.com") ||
     shExpMatch(host, "*skype.com") ||
-    shExpMatch(host, "*.googlevideo.com") ||
-    shExpMatch(host, "*google.com") ||
-    true){
+    shExpMatch(host, "*.googlevideo.com")){
   return "DIRECT";
 }
 
