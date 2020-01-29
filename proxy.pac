@@ -17,6 +17,8 @@ if( isInNet(myIpAddress(),"10.3.160.0","255.255.255.0")||
 
 function FindProxyForURL(url, host){
 
+alert("url: " + url + ", host: " + host);
+
 if( shExpMatch(host, "*c.microsoft.com") ||
     shExpMatch(host, "*download.windowsupdate.com") ||
     shExpMatch(host, "*fe3.delivery.mp.microsoft.com") ||
@@ -40,7 +42,7 @@ if( shExpMatch(host, "*c.microsoft.com") ||
     shExpMatch(host, "*gitlab.com")){
   return "DIRECT";
 }else{
-  alert("url: " + url + ", host: " + host);
+  alert("else");
 }
 
 return user_proxy(url, host)
