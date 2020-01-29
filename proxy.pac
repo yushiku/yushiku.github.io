@@ -36,8 +36,11 @@ if( shExpMatch(host, "*c.microsoft.com") ||
     shExpMatch(host, "*.digitalartscloud.com") ||
     shExpMatch(host, "*outlook.office.com") ||
     shExpMatch(host, "*skype.com") ||
-    shExpMatch(host, "*.googlevideo.com")){
+    shExpMatch(host, "*.googlevideo.com") ||
+    shExpMatch(host, "*gitlab.com")){
   return "DIRECT";
+}else{
+  alert("url: " + url + ", host: " + host);
 }
 
 return user_proxy(url, host)
