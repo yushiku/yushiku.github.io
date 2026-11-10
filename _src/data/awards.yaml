@@ -1,0 +1,38 @@
+section_title:
+  en: Awards and Competitions
+  ja: 受賞およびコンペティション
+en_pointer: Go to <a href="index_ja.html">japanese page</a> for domestic awards.
+items:
+- lang: both
+  text_en: 2023. <span class="award">Nice Step Researcher</span>. National Institute of Science and Technology Policy.
+  text_ja: 2023. <span class="award">ナイスステップな研究者</span>. 文部科学省 科学技術・学術政策研究所.
+- lang: ja
+  text_ja: 2022. <span class="award">教育功労賞</span>. 2021年度 電子情報通信学会.
+- lang: ja
+  text_ja: 2021. <span class="award">優秀発表賞</span>. 2020年度 電子情報通信学会センサネットワークとモバイルインテリジェンス研究会 (SeMI). ※当該研究により主著者の中原睦貴氏は同 若手研究奨励賞およびIEEE VTS Tokyo/Japan Chapter 2021 Young Researcher's Encouragement Awardを受賞.
+- lang: ja
+  text_ja: 2021. <span class="award">第8回ヤマト科学賞</span>.
+- lang: ja
+  text_ja: 2019. <span class="award">インタラクティブセッション賞</span>. 画像の認識理解シンポジウム (MIRU2019).
+- lang: ja
+  text_ja: 2018. <span class="award">ベストオーサー</span>. 《特集A1》画像・動画キャプション生成. 映像情報メディア学会誌.
+- lang: both
+  text: 2018. <span class="award">NVIDIA Pioneering Research Awards</span> for Neural 3D Mesh Renderer.
+- lang: both
+  text: 2017. <span class="award">NVIDIA Pioneering Research Awards</span> for Asymmetric Tri-training for unsupervised domain adoptation.
+- lang: both
+  text: 2017. <span class="award">Honorable Mention</span>. ACM Multimedia Open Source Software Competition.
+- lang: both
+  text: 2016. <span class="award">First place</span> in the abstract image task. Visual Question Answering Challenge 2016.
+- lang: both
+  text: 2012. <span class="award">First place</span> in the fine-grained classification task, <span class="award">second place</span> in the classification task. Large Scale Visual Recognition Challenge 2012 (ILSVRC2012).
+- lang: both
+  text: 2011. <span class="award">Special Prize on the Best Application of a Theoretical Framework</span>. ACM Multimedia Grand Challenge.
+- lang: both
+  text: 2011. <span class="award">Third place</span> in the classification task, <span class="award">second place</span> in the detection task. Large Scale Visual Recognition Challenge 2011 (ILSVRC2011).
+- lang: ja
+  text_ja: 2011. <span class="award">インタラクティブセッション賞</span>. 画像の認識理解シンポジウム (MIRU2011).
+- lang: ja
+  text_ja: 2010. <span class="award">研究奨励賞</span>. 2009年度 電子情報通信学会パターン認識・マルチメディア理解研究会 (PRMU).
+- lang: both
+  text: 2010. <span class="award">Third place</span>. Large Scale Visual Recognition Challenge 2010 (ILSVRC2010).

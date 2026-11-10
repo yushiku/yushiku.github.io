@@ -1,0 +1,73 @@
+section_title:
+  en: Books
+  ja: 解説記事・書籍
+en_pointer: Go to <a href="index_ja.html">japanese page</a> for domestic books.
+items:
+- lang: ja
+  year: 2026
+  tag: 解説記事
+  text: 牛久祥孝. AIロボット駆動科学時代の研究室とは？. 日本ロボット学会誌, Vol.44, No.4, pp.355-359, 2026.
+- lang: ja
+  year: 2025
+  tag: 解説記事
+  text: 牛久祥孝. Vision &amp; LanguageとAIロボット駆動科学. AI・データサイエンス論文集, Vol.6, No.1, pp.26-40, 2025.
+- lang: ja
+  year: 2022
+  tag: 解説記事
+  text: 【ビジョンと自然言語処理】「AlexNet から10 年――深層学習によるビジョン＆ランゲージ分野への展開――」. 電子情報通信学会誌, Vol.105, No.5, pp.418-423, 2022.
+- lang: ja
+  year: 2022
+  tag: 解説記事
+  text: 牛久祥孝, 濱屋政志, 米谷竜. スマートファクトリーR&amp;D ―オムロンサイニックエックスにおける研究事例―. 人工知能, Vol.37, No.3, pp.299-305, 2022.
+- lang: ja
+  year: 2022
+  tag: 特集ゲストエディタ
+  text: 山本泰生, 牛久祥孝, 西岡靖之. 特集「スマートファクトリーとAI」にあたって. 人工知能, Vol.37, No.3, p.252, 2022.
+- lang: ja
+  year: 2021
+  tag: 書籍
+  text: イマドキノCV 限られたデータからの深層学習. CV最前線, Winter号, 共立出版, 2021.
+- lang: both
+  year: 2020
+  tag: 書籍
+  text: 'Yoshitaka Ushiku. Long Short-Term Memory. In: Ikeuchi K. (eds) Computer Vision. Springer, 2020.'
+- lang: both
+  year: 2020
+  tag: 書籍
+  text: 'Kuniaki Saito, Shohei Yamamoto, Yoshitaka Ushiku, and Tatsuya Harada. Adversarial Learning Approach for Open Set Domain Adaptation. In: Venkateswara H., Panchanathan S. (eds) Domain Adaptation in Computer Vision with Deep Learning. Springer, pp.175-193, 2020.'
+- lang: ja
+  year: 2019
+  tag: 解説記事
+  text: 牛久祥孝. 画像に関連した言語生成の取組み. 人工知能学会誌，Vol.34，No.4, pp.483-490，2019.
+- lang: ja
+  year: 2019
+  tag: 解説記事
+  text: 牛久祥孝. 画像キャプション生成とその派生タスク. 画像ラボ, Vol.30，No.4, pp.28-31，2019.
+- lang: ja
+  year: 2019
+  tag: 書籍
+  text: 編著：中島秀之，浅田稔，橋田浩一，松原仁，山川宏，栗原聡，松尾豊. AI事典 第3版 「言語と画像や音声の相互変換」. 近代科学社, 2019.
+- lang: ja
+  year: 2018
+  tag: 解説記事
+  text: 牛久祥孝. 画像/動画の高精度キャプション生成技術. 光学. Vol.47, No.12, pp.502-508, 2018.
+- lang: ja
+  year: 2018
+  tag: 解説記事ゲストエディタ
+  text: 牛久祥孝. 視覚・言語融合の最前線. 映像情報メディア学会誌. Vol.72, No.9, pp.650-675, 2018.
+- lang: ja
+  year: 2018
+  tag: 解説記事
+  text: 牛久祥孝. 画像・動画キャプション生成. 映像情報メディア学会誌. Vol.72, No.5, pp.650-654, 2018. (<a href="https://www.ite.or.jp/content/journal/message/">ベストオーサー</a>)
+- lang: ja
+  year: 2018
+  tag: 書籍
+  text: 米谷竜, 斎藤英雄編著, 池畑諭, 牛久祥孝, 内山英昭, 内海ゆづ子, 小野峻佑, 片岡裕雄, 金崎朝子, 川西康友, 齋藤真樹, 櫻田健, 高橋康輔, 松井勇佑. コンピュータビジョン―広がる要素技術と応用. 未来へつなぐデジタルシリーズ, 37巻, 共立出版, 2018.
+- lang: ja
+  year: 2016
+  tag: 解説記事
+  text: 牛久祥孝. 私のブックマーク 視覚と自然言語の融合研究. 人工知能:人工知能学会誌. Vol.32, No.1, pp.136-143, 2016.
+- lang: ja
+  year: 2015
+  tag: 解説記事
+  text: 牛久祥孝. ACM Multimedia 参加報告. 情報処理. Vol.56, No.3, p.286, 2015.

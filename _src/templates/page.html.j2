@@ -1,0 +1,258 @@
+{% set L = {
+  "en": {
+    "contact": "Contact", "bio": "Biography", "education": "Education", "profession": "Profession",
+    "roles": "Current Roles in Academic and Public Organizations", "activity": "Activity",
+    "society": "Society", "reviewer": "Reviewer", "conf": "Conference", "journal": "Journal",
+    "mail": "E-mail address (image)", "skip": "Skip to content",
+    "nav": [("bio", "Bio"), ("profession", "Career"), ("education", "Education"), ("roles", "Roles"),
+            ("activity", "Activity"), ("papers", "Papers"), ("books", "Books"), ("talks", "Talks"),
+            ("awards", "Awards"), ("media", "Media"), ("slides", "Slides")],
+  },
+  "ja": {
+    "contact": "連絡先", "bio": "略歴", "education": "学歴", "profession": "職歴",
+    "roles": "現在の外部の役職", "activity": "活動歴",
+    "society": "学会", "reviewer": "査読", "conf": "学会", "journal": "論文誌",
+    "mail": "メールアドレス（画像）", "skip": "本文へ移動",
+    "nav": [("bio", "略歴"), ("profession", "職歴"), ("education", "学歴"), ("roles", "役職"),
+            ("activity", "活動歴"), ("papers", "論文"), ("books", "解説記事・書籍"), ("talks", "講演"),
+            ("grants", "研究資金"), ("awards", "受賞"), ("media", "メディア"), ("slides", "講演資料")],
+  },
+}[lang] %}
+{% macro numbered_by_year(items, key="year", tagged=False) %}
+{% for year, start, group in items | by_year(key) %}
+<h4 class="year">{{ year }}</h4>
+<ol start="{{ start }}">
+{% for it in group %}
+<li>{% if tagged and lang == "ja" and it.tag %}<span class="tag">【{{ it.tag }}】</span>{% endif %}{{ it | pick }}</li>
+{% endfor %}
+</ol>
+{% endfor %}
+{% endmacro %}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ profile.page_title }}</title>
+<meta name="description" content="{{ profile.name | pick }} / {{ profile.headline | pick | join(' / ') }}">
+<link rel="stylesheet" href="{{ css }}">
+<link rel="shortcut icon" href="/assets/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="/assets/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="alternate" hreflang="en" href="index.html">
+<link rel="alternate" hreflang="ja" href="index_ja.html">
+</head>
+<body{% block body_attrs %}{% endblock %}>
+<a class="skip" href="#main">{{ L.skip }}</a>
+
+{% block chrome %}
+{% block nav %}
+<nav class="topnav" aria-label="Sections">
+  <div class="topnav-inner">
+    <ul class="anchors">
+{% for id, label in L.nav %}
+      <li><a href="#{{ id }}">{{ label }}</a></li>
+{% endfor %}
+    </ul>
+    <p class="langswitch">
+{% if lang == "en" %}
+      <span aria-current="page">English</span> / <a href="index_ja.html" hreflang="ja">Japanese</a>
+{% else %}
+      <a href="index.html" hreflang="en">English</a> / <span aria-current="page">Japanese</span>
+{% endif %}
+    </p>
+  </div>
+</nav>
+{% endblock %}
+
+{% block header %}
+<header class="hero">
+  <img class="photo" src="{{ profile.photo }}" alt="{{ profile.name | pick }}" width="799" height="1200">
+  <div class="hero-text">
+    <h1>{{ profile.name | pick }}</h1>
+    <ul class="headline">
+{% for line in profile.headline | pick %}
+      <li>{{ line }}</li>
+{% endfor %}
+    </ul>
+    <section id="contact" class="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h" class="visually-hidden">{{ L.contact }}</h2>
+      <img class="mail" src="{{ profile.mail_image }}" alt="{{ L.mail }}" width="427" height="32">
+      <ul class="social">
+{% for l in profile.links %}
+        <li><a href="{{ l.href }}" aria-label="{{ l.label }}" title="{{ l.label }}"><img src="{{ l.icon }}" alt="" height="28"></a></li>
+{% endfor %}
+      </ul>
+    </section>
+  </div>
+</header>
+{% endblock %}
+{% endblock %}
+{% block after_header %}{% endblock %}
+
+<main id="main">
+
+<section id="bio">
+<h2>{{ L.bio }}</h2>
+<p>
+{% for line in profile.bio | pick %}
+{{ line }}
+{% endfor %}
+</p>
+</section>
+
+<section id="profession">
+<h2>{{ L.profession }}</h2>
+<dl class="timeline">
+{% for p in positions | shown %}
+<dt>{{ p | pick("date") }}</dt>
+<dd>{{ p | pick }}</dd>
+{% endfor %}
+</dl>
+</section>
+
+<section id="education">
+<h2>{{ L.education }}</h2>
+<dl class="timeline">
+{% for e in education | shown %}
+<dt>{{ e | pick("date") }}</dt>
+<dd>{{ e | pick }}</dd>
+{% endfor %}
+</dl>
+</section>
+
+<section id="roles">
+<h2>{{ L.roles }}</h2>
+<ul class="plain">
+{% for r in roles | shown %}
+<li>{{ r | pick }}</li>
+{% endfor %}
+</ul>
+</section>
+
+<section id="activity">
+<h2>{{ L.activity }}</h2>
+<h3>{{ L.society }}</h3>
+<dl class="timeline">
+{% for s in society | shown %}
+<dt>{{ s | pick("date") }}</dt>
+<dd>{{ s | pick }}</dd>
+{% endfor %}
+</dl>
+<h3>{{ L.reviewer }}</h3>
+<dl class="reviewer">
+<dt>{{ L.conf }}</dt>
+<dd>
+{% for c in reviewer.conferences | shown %}
+<span class="conf">{{ c | pick }}</span>{% if not loop.last %}, {% endif %}
+
+{% endfor %}
+</dd>
+<dt>{{ L.journal }}</dt>
+<dd>
+{% for j in reviewer.journals %}
+<span class="journal">{{ j }}</span>{% if not loop.last %}, {% else %}.{% endif %}
+
+{% endfor %}
+</dd>
+</dl>
+</section>
+
+<section id="papers">
+<h2>{{ publications.section_title | pick }}</h2>
+{% for sec in publications.sections %}
+<h3>{{ sec.title | pick }}</h3>
+{% if sec.lang in ("both", lang) %}
+{{ numbered_by_year(sec["items"] | shown) }}
+{% else %}
+<p class="pointer">{{ sec.en_pointer }}</p>
+{% endif %}
+{% endfor %}
+</section>
+
+<section id="books">
+<h2>{{ books.section_title | pick }}</h2>
+{{ numbered_by_year(books["items"] | shown, tagged=True) }}
+{% if lang == "en" %}
+<p class="pointer">{{ books.en_pointer }}</p>
+{% endif %}
+</section>
+
+<section id="talks">
+<h2>{{ talks.section_title | pick }}</h2>
+{{ numbered_by_year(talks["items"] | shown, key="date", tagged=True) }}
+{% if lang == "en" %}
+<p class="pointer">{{ talks.en_pointer }}</p>
+{% endif %}
+</section>
+
+{% if grants.lang in ("both", lang) %}
+<section id="grants">
+<h2>{{ grants.section_title | pick }}</h2>
+<ol>
+{% for g in grants["items"] | shown %}
+<li>{{ g | pick }}</li>
+{% endfor %}
+</ol>
+</section>
+
+{% endif %}
+<section id="awards">
+<h2>{{ awards.section_title | pick }}</h2>
+<ol>
+{% for a in awards["items"] | shown %}
+<li>{{ a | pick }}</li>
+{% endfor %}
+</ol>
+{% if lang == "en" %}
+<p class="pointer">{{ awards.en_pointer }}</p>
+{% endif %}
+</section>
+
+{% if media.lang in ("both", lang) %}
+<section id="media">
+<h2>{{ media.section_title | pick }}</h2>
+<ol>
+{% for m in media["items"] | shown %}
+<li><span class="date">{{ m.date }}.</span> {{ m | pick }}</li>
+{% endfor %}
+</ol>
+</section>
+
+{% endif %}
+<section id="slides">
+<h2>{{ slides.section_title | pick }}</h2>
+{% for g in slides.groups | shown %}
+<h3>{{ g.title }}</h3>
+<div class="decks">
+{% for s in g["items"] %}
+{% if s.kind == "slideshare" %}
+<figure class="deck">
+<div class="embed ratio-slideshare"><iframe src="{{ s.embed }}" title="{{ s.title }}" loading="lazy" allowfullscreen></iframe></div>
+<figcaption><strong><a href="{{ s.href }}" title="{{ s.title }}">{{ s.title }}</a></strong> from <strong><a href="{{ s.author_href }}">{{ s.author }}</a></strong></figcaption>
+</figure>
+{% else %}
+<figure class="deck">
+<div class="embed ratio-speakerdeck"><iframe src="{{ s.embed }}" title="{{ s.title }}" loading="lazy" allowfullscreen></iframe></div>
+<figcaption>{{ s.title }}</figcaption>
+</figure>
+{% endif %}
+{% endfor %}
+</div>
+{% endfor %}
+{% if slides.misc.lang in ("both", lang) %}
+<h3>{{ slides.misc.title }}</h3>
+<ul class="plain">
+{% for m in slides.misc["items"] %}
+<li><a href="{{ m.href }}">{{ m.text }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}
+</section>
+
+</main>
+
+<footer class="foot">
+  <p><a href="#">{% if lang == "en" %}↑ Top{% else %}↑ 先頭へ{% endif %}</a></p>
+</footer>
+</body>
+</html>

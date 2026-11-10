@@ -1,0 +1,33 @@
+section_title:
+  en: Talk Slides
+  ja: 定常的コンテンツ
+groups:
+- lang: en
+  title: Keynotes
+  items:
+  - kind: slideshare
+    embed: https://www.slideshare.net/slideshow/embed_code/key/thoD2I4GyhT4he
+    href: //www.slideshare.net/YoshitakaUshiku/frontiers-of-vision-and-language-bridging-images-and-texts-by-deep-learning-81870137
+    title: 'Frontiers of Vision and Language: Bridging Images and Texts by Deep Learning'
+    author_href: https://www.slideshare.net/YoshitakaUshiku
+    author: Yoshitaka Ushiku
+- lang: ja
+  title: 講演資料
+  items:
+  - kind: speakerdeck
+    embed: https://speakerdeck.com/player/155f53fd86eb444d8574806d211cab2c
+    title: Vision and Language とその先へ
+  - kind: speakerdeck
+    embed: https://speakerdeck.com/player/f0ffd0cc488a4a87b47fc67349ab37cf
+    title: Transformerの最前線 〜 畳込みニューラルネットワークの先へ 〜
+  - kind: speakerdeck
+    embed: https://speakerdeck.com/player/4095b75398ae484db92f4de927dd3db5
+    title: CNN vs. ViT
+misc:
+  lang: ja
+  title: 小ネタ
+  items:
+  - href: job.html
+    text: お仕事の依頼について
+  - href: how_to_write_references.html
+    text: 参考文献の書き方

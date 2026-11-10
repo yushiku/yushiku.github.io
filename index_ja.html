@@ -1,57 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125103456-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-125103456-1');
-</script>
-<meta charset="UTF8">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="ushiku.css">
-<link rel="shortcut icon" href="/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
-<link rel="icon" href="/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yoshitaka Ushiku's homepage</title>
+<meta name="description" content="牛久 祥孝 / 株式会社NexaScience 代表取締役 / オムロンサイニックエックス株式会社 リサーチバイスプレジデント">
+<link rel="stylesheet" href="home.css">
+<link rel="shortcut icon" href="/assets/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="/assets/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="alternate" hreflang="en" href="index.html">
+<link rel="alternate" hreflang="ja" href="index_ja.html">
 </head>
-<body>
+<body class="layout-journal-sidebar">
+<a class="skip" href="#main">本文へ移動</a>
 
-<div><a href="index.html">English</a>/Japanese</div>
+<aside class="sidebar">
+<button class="side-toggle" id="side-toggle" type="button" aria-expanded="true" aria-controls="side-panel" hidden>
+  <svg class="i-side" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><rect x="2.5" y="3.5" width="15" height="13" fill="none" stroke="currentColor"/><line x1="7.5" y1="3.5" x2="7.5" y2="16.5" stroke="currentColor"/></svg>
+  <svg class="i-chev" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true" focusable="false"><polyline points="5,8 10,13 15,8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+  <span class="side-toggle-label">サイドバー</span>
+</button>
+<div class="side-panel" id="side-panel">
+<header class="hero">
+  <img class="photo" src="20250327_full.jpg" alt="牛久 祥孝" width="799" height="1200">
+  <div class="hero-text">
+    <h1>牛久 祥孝</h1>
+    <ul class="headline">
+      <li>株式会社NexaScience 代表取締役</li>
+      <li>オムロンサイニックエックス株式会社 リサーチバイスプレジデント</li>
+    </ul>
+    <section id="contact" class="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h" class="visually-hidden">連絡先</h2>
+      <img class="mail" src="mailaddr.png" alt="メールアドレス（画像）" width="427" height="32">
+      <ul class="social">
+        <li><a href="http://www.twitter.com/losnuevetoros" aria-label="X (Twitter)" title="X (Twitter)"><img src="tw.png" alt="" height="28"></a></li>
+        <li><a href="http://www.facebook.com/yoshitaka.ushiku" aria-label="Facebook" title="Facebook"><img src="fb.png" alt="" height="28"></a></li>
+        <li><a href="https://www.linkedin.com/in/losnuevetoros" aria-label="LinkedIn" title="LinkedIn"><img src="li.png" alt="" height="28"></a></li>
+        <li><a href="http://www.slideshare.net/YoshitakaUshiku" aria-label="SlideShare" title="SlideShare"><img src="ss.png" alt="" height="28"></a></li>
+        <li><a href="https://speakerdeck.com/yushiku" aria-label="Speaker Deck" title="Speaker Deck"><img src="sd.png" alt="" height="28"></a></li>
+        <li><a href="https://scholar.google.co.jp/citations?user=kxUld9MAAAAJ&hl=ja" aria-label="Google Scholar" title="Google Scholar"><img src="gs.png" alt="" height="28"></a></li>
+        <li><a href="https://orcid.org/0000-0002-9014-1389" aria-label="ORCID" title="ORCID"><img src="oi.png" alt="" height="28"></a></li>
+      </ul>
+    </section>
+  </div>
+</header>
 
-<h1>牛久 祥孝</h1>
+<nav class="topnav" id="sections" aria-label="目次">
+  <ul class="anchors" id="section-list">
+    <li><a href="#bio">略歴</a></li>
+    <li><a href="#profession">職歴</a></li>
+    <li><a href="#education">学歴</a></li>
+    <li><a href="#roles">役職</a></li>
+    <li><a href="#activity">活動歴</a></li>
+    <li><a href="#papers">論文</a></li>
+    <li><a href="#books">解説記事・書籍</a></li>
+    <li><a href="#talks">講演</a></li>
+    <li><a href="#grants">研究資金</a></li>
+    <li><a href="#awards">受賞</a></li>
+    <li><a href="#media">メディア</a></li>
+    <li><a href="#slides">講演資料</a></li>
+  </ul>
+</nav>
 
-<div>
-<img src="20250327_full.jpg" style="height: 540px; max-width: 50%; height: auto;">
 </div>
+<nav class="langnav" aria-label="言語">
+  <p class="langswitch">
+    <a href="index.html" hreflang="en">English</a> / <span aria-current="page">Japanese</span>
+  </p>
+</nav>
+</aside>
+<script>
+(function () {
+  var d = document.documentElement, b = document.getElementById("side-toggle");
+  var t = b.querySelector(".side-toggle-label"), mq = window.matchMedia("(max-width: 768px)");
+  var K = "yu-sidebar", closed = false, navOpen = false;
+  try { closed = localStorage.getItem(K) === "closed"; } catch (e) {}
+  function render() {
+    var phone = mq.matches;
+    d.setAttribute("data-side", closed ? "closed" : "open");
+    d.setAttribute("data-nav", navOpen ? "open" : "closed");
+    b.setAttribute("aria-expanded", String(phone ? navOpen : !closed));
+    b.setAttribute("aria-controls", phone ? "section-list" : "side-panel");
+    t.textContent = phone ? "目次" : "サイドバー";
+    b.title = phone ? "" : t.textContent;
+  }
+  b.addEventListener("click", function () {
+    if (mq.matches) { navOpen = !navOpen; }
+    else {
+      closed = !closed;
+      try { localStorage.setItem(K, closed ? "closed" : "open"); } catch (e) {}
+    }
+    render();
+  });
+  document.getElementById("section-list").addEventListener("click", function (e) {
+    if (mq.matches && e.target.closest("a")) { navOpen = false; render(); }
+  });
+  if (mq.addEventListener) { mq.addEventListener("change", render); } else { mq.addListener(render); }
+  d.classList.add("js");
+  b.hidden = false;
+  render();
+})();
+</script>
 
-<h2>定常的コンテンツ</h2>
-<h3>講演資料</h3>
-<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/155f53fd86eb444d8574806d211cab2c" title="Vision and Language とその先へ" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 560px; height: 314px;" data-ratio="1.78343949044586"></iframe>
+<main id="main">
 
-<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/f0ffd0cc488a4a87b47fc67349ab37cf" title="Transformerの最前線 〜 畳込みニューラルネットワークの先へ 〜" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 560px; height: 314px;" data-ratio="1.78343949044586"></iframe>
+<section id="bio">
+<h2>略歴</h2>
+<p>
+2013年日本学術振興会特別研究員およびMicrosoft Research Redmond Intern。
+2014年東京大学大学院情報理工学系研究科博士課程修了、NTTコミュニケーション科学基礎研究所入所。
+2016年東京大学情報理工学系研究科講師。
+2018年よりオムロンサイニックエックス株式会社 Principal Investigator。
+2019年より株式会社Ridge-i Chief Research Officer、2022年より合同会社ナインブルズ代表、2024年よりオムロンサイニックエックス株式会社 リサーチバイスプレジデント、株式会社NexaScience 代表取締役、2025年より理化学研究所 TRIP-AGIS チームディレクター、現在に至る。
+主としてコンピュータビジョンや自然言語処理を対象として、機械学習によるクロスメディア理解やAIロボット駆動科学の研究に従事。
+2011年ACM Multimedia Grand Challenge Special Prize受賞、2017年ACM Multimedia Open Source Software Competition Honorable Mention選出、2017年および2018年NVIDIA Pioneering Research Awards受賞、2021年ヤマト科学賞受賞、2023年NISTEPナイスステップな研究者選出。
+</p>
+</section>
 
-<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/4095b75398ae484db92f4de927dd3db5" title="CNN vs. ViT" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 560px; height: 314px;" data-ratio="1.78343949044586"></iframe>
-
-<h3>小ネタ</h3>
-<ul>
-<li><a href="job.html">お仕事の依頼について</a></li>
-<li><a href="how_to_write_references.html">参考文献の書き方</a></li>
-</ul>
-
-<h2>学歴</h2>
-<dl>
-<dt>2009年3月</dt>
-<dd>東京大学 工学部 機械情報工学科 卒業</dd>
-<dt>2011年3月</dt>
-<dd>東京大学 大学院情報理工学系研究科 知能機械情報学専攻 修士課程修了</dd>
-<dt>2014年3月</dt>
-<dd>東京大学 大学院情報理工学系研究科 知能機械情報学専攻 博士課程修了 博士(情報理工学)</dd>
-</dl>
-
+<section id="profession">
 <h2>職歴</h2>
-<dl>
+<dl class="timeline">
 <dt>2013年4月-2014年3月</dt>
 <dd>日本学術振興会 特別研究員（DC2）</dd>
 <dt>2013年6月-2013年8月</dt>
@@ -95,9 +163,23 @@
 <dt>2026年4月-現在</dt>
 <dd><span class="mention">東北大学 言語AI研究センター 特任教授（客員）</span></dd>
 </dl>
+</section>
 
+<section id="education">
+<h2>学歴</h2>
+<dl class="timeline">
+<dt>2009年3月</dt>
+<dd>東京大学 工学部 機械情報工学科 卒業</dd>
+<dt>2011年3月</dt>
+<dd>東京大学 大学院情報理工学系研究科 知能機械情報学専攻 修士課程修了</dd>
+<dt>2014年3月</dt>
+<dd>東京大学 大学院情報理工学系研究科 知能機械情報学専攻 博士課程修了 博士(情報理工学)</dd>
+</dl>
+</section>
+
+<section id="roles">
 <h2>現在の外部の役職</h2>
-<ul>
+<ul class="plain">
 <li>一般社団法人AIロボット協会（AIRoA） 理事</li>
 <li>一般社団法人AIロボット駆動科学イニシアティブ（AIRDS） 理事</li>
 <li>文部科学省 AI for Science 推進委員会 委員</li>
@@ -106,11 +188,12 @@
 <li>一般社団法人日本ディープラーニング協会（JDLA） 有識者会員</li>
 <li>Agentic AI Foundation（AAIF） Japan Chapter コミュニティ・オーガナイザー</li>
 </ul>
+</section>
 
+<section id="activity">
 <h2>活動歴</h2>
-
 <h3>学会</h3>
-<dl>
+<dl class="timeline">
 <dt>2016年8月-2017年8月</dt>
 <dd>画像の認識・理解シンポジウム (MIRU) 若手プログラム実行委員</dd>
 <dt>2017年4月-2018年6月</dt>
@@ -178,9 +261,8 @@
 <dt>2023年12月-2024年8月</dt>
 <dd>International Joint Conferences on Artificial Intelligence (IJCAI) Area Chair</dd>
 </dl>
-
 <h3>査読</h3>
-<dl>
+<dl class="reviewer">
 <dt>学会</dt>
 <dd>
 <span class="conf">AAAI 2020</span>, 
@@ -206,71 +288,74 @@
 <span class="journal">Pattern Recognition Letters</span>, 
 <span class="journal">Robotics and Automation Letters</span>, 
 <span class="journal">Speech and Language Processing</span>, 
-<span class="journal">The Visual Computer</span>
+<span class="journal">The Visual Computer</span>, 
 <span class="journal">Transactions on Affective Computing</span>, 
 <span class="journal">Transactions on Audio</span>, 
 <span class="journal">Transactions on Computer Vision and Applications</span>, 
-<span class="journal">Transactions on Intelligent Systems and Technology</span>,
+<span class="journal">Transactions on Intelligent Systems and Technology</span>, 
 <span class="journal">Transactions on Multimedia</span>, 
 <span class="journal">Transactions on Multimedia Computing, Communications, and Applications</span>, 
 <span class="journal">Transactions on Pattern Analysis and Machine Intelligence</span>, 
-<span class="journal">Transactions on Systems, Man and Cybernetics: Systems</span>. 
+<span class="journal">Transactions on Systems, Man and Cybernetics: Systems</span>.
 </dd>
 </dl>
+</section>
 
-<h2>略歴</h2>
-<p>
-2013年日本学術振興会特別研究員およびMicrosoft Research Redmond Intern。
-2014年東京大学大学院情報理工学系研究科博士課程修了、NTTコミュニケーション科学基礎研究所入所。
-2016年東京大学情報理工学系研究科講師。
-2018年よりオムロンサイニックエックス株式会社 Principal Investigator。
-2019年より株式会社Ridge-i Chief Research Officer、2022年より合同会社ナインブルズ代表、2024年よりオムロンサイニックエックス株式会社 リサーチバイスプレジデント、株式会社NexaScience 代表取締役、2025年より理化学研究所 TRIP-AGIS チームディレクター、現在に至る。
-主としてコンピュータビジョンや自然言語処理を対象として、機械学習によるクロスメディア理解やAIロボット駆動科学の研究に従事。
-2011年ACM Multimedia Grand Challenge Special Prize受賞、2017年ACM Multimedia Open Source Software Competition Honorable Mention選出、2017年および2018年NVIDIA Pioneering Research Awards受賞、2021年ヤマト科学賞受賞、2023年NISTEPナイスステップな研究者選出。
-</p>
-
-<h2>連絡先</h2>
-<div>
-<img src="mailaddr.png" width="427" height="32">
-<a href="http://www.twitter.com/losnuevetoros"><img src="tw.png" width="32" height="32"></a>
-<a href="http://www.facebook.com/yoshitaka.ushiku"><img src="fb.png" width="32" height="32"></a>
-<a href="https://www.linkedin.com/in/losnuevetoros"><img src="li.png" width="38.4" height="32"></a>
-<a href="http://www.slideshare.net/YoshitakaUshiku"><img src="ss.png" width="70.4" height="32"></a>
-<a href="https://speakerdeck.com/yushiku"><img src="sd.png" width="32" height="32"></a>
-<a href="https://scholar.google.co.jp/citations?user=kxUld9MAAAAJ&hl=ja"><img src="gs.png" width="32" height="32"></a>
-<a href="https://orcid.org/0000-0002-9014-1389"><img src="oi.png" width="32" height="32"></a>
-</div>
-
+<section id="papers">
 <h2>論文</h2>
 <h3>国際論文誌（査読付き）</h3>
-<ol>
+<h4 class="year">2026</h4>
+<ol start="1">
 <li>Yusei Ito, Naoya Chiba, Tatsunori Taniai, Ryo Igarashi, Yuta Suzuki, Kotaro Saito, Yoshitaka Ushiku, and Kanta Ono. Enabling single-observation decomposition of multi-phase X-ray diffraction patterns via generative deep learning. <span class="journal">npj Computational Materials</span>, Vol. 12, Article 238, 2026.</li>
 <li>Shiwei Su, Nobuyuki Tanaka, Yoshitaka Ushiku, and Koichi Takahashi. BB-EIT: A Generalized Prediction Model for Protein Adsorption on Polymer Brushes Using Augmented Chemical Embeddings. <span class="journal">ACS Applied Materials &amp; Interfaces</span>, Vol. 18, No. 14, pp. 20976-20988, 2026.</li>
+<li>Taichi Nishimura, Atsushi Hashimoto, Yoshitaka Ushiku, Hirotaka Kameko, and Shinsuke Mori. Recipe Generation from Unsegmented Cooking Videos. <span class="journal">ACM Transactions on Multimedia Computing, Communications and Applications</span>, Vol. 22, No. 9, pp. 1-25, 2026.</li>
+</ol>
+<h4 class="year">2025</h4>
+<ol start="4">
 <li>Kan Hatakeyama-Sato, Toshihiko Nishida, Kenta Kitamura, Yoshitaka Ushiku, Koichi Takahashi, Yuta Nabae, and Teruaki Hayakawa. Perspective on utilizing foundation models for laboratory automation in materials research. <span class="journal">Science and Technology of Advanced Materials: Methods</span>, Vol. 5, No. 1, Article 2582379, 2025.</li>
 <li>Yuta Suzuki, Tatsunori Taniai, Ryo Igarashi, Kotaro Saito, Naoya Chiba, Yoshitaka Ushiku, and Kanta Ono. Bridging text and crystal structures: literature-driven contrastive learning for materials science. <span class="journal">Machine Learning: Science and Technology</span>, Vol. 6, No. 3, 035006, 2025.</li>
 <li>Naruki Yoshikawa, Yuki Asano, Don N. Futaba, Kanako Harada, Taro Hitosugi, Genki N. Kanda, Shoichi Matsuda, Yuuya Nagata, Keisuke Nagato, Masanobu Naito, Tohru Natsume, Kazunori Nishio, Kanta Ono, Haruka Ozaki, Woosuck Shin, Junichiro Shiomi, Kunihiko Shizume, Koichi Takahashi, Seiji Takeda, Ichiro Takeuchi, Ryo Tamura, Koji Tsuda, and Yoshitaka Ushiku. Self-driving laboratories in Japan. <span class="journal">Digital Discovery</span>, Vol. 4, No. 6, pp. 1384-1403, 2025.</li>
+</ol>
+<h4 class="year">2024</h4>
+<ol start="7">
 <li>Yusaku Nakajima, Kai Kawasaki, Yasuo Takeichi, Masashi Hamaya, Yoshitaka Ushiku, and Kanta Ono. Force-Controlled Robotic Mechanochemical Synthesis. <span class="journal">Digital Discovery</span>, Vol. 3, pp.2130-2136, 2024.</li>
 <li>Shigeo Yoshida, Yuki Koyama, and Yoshitaka Ushiku. Towards AI-Mediated Avatar-Based Telecommunication: Investigating Visual Impression of Switching Between User-and AI-Controlled Avatars in Video Chat. <span class="journal">IEEE Access</span>, Vol. 12, pp. 113372-113383, 2024.</li>
-<li>Taichi Nishimura, Atsushi Hashimoto, Yoshitaka Ushiku, Hirotaka Kameko, and Shinsuke Mori. Recipe Generation from Unsegmented Cooking Videos. <span class="journal">ACM Transactions on Multimedia Computing, Communications and Applications</span>, Vol. 22, No. 9, pp. 1-25, 2026.</li>
 <li>Yoshitomo Matsubara, Naoya Chiba, Ryo Igarashi, and Yoshitaka Ushiku. Rethinking Symbolic Regression Datasets and Benchmarks for Scientific Discovery. <span class="journal">Data-centric Machine Learning Research</span>, Vol. 1, No. 3, pp. 1-38, 2024.</li>
+</ol>
+<h4 class="year">2023</h4>
+<ol start="10">
 <li>Naoya Chiba, Yuta Suzuki, Tatsunori Taniai, Ryo Igarashi, Yoshitaka Ushiku, Kotaro Saito, and Kanta Ono. Neural structure fields with application to crystal structure autoencoders. <span class="journal">Communications Materials</span>, Vol.4, No.1, p.106, 2023.</li>
 <li>Kazuhiro Ogata, Reo Gakumi, Atsushi Hashimoto, Yoshitaka Ushiku, and Shigeo Yoshida. The influence of Bouba-and Kiki-like shape on perceived taste of chocolate pieces. <span class="journal">Frontiers in Psychology</span>, Vol.14, 2023.</li>
 <li>Taichi Nishimura, Atsushi Hashimoto, Yoshitaka Ushiku, Hirotaka Kameko, and Shinsuke Mori. State-aware video procedural captioning. <span class="journal">Multimedia Tools and Applications</span>, Vol.82, pp.37273-37301, 2023.</li>
 <li>Yutaka Maruyama, Ryo Igarashi, Yoshitaka Ushiku, and Ayori Mitsutake. Analysis of Protein Folding Simulation with Moving Root Mean Square Deviation. <span class="journal">Journal of Chemical Information and Modeling</span>, Vol.63, No.5, pp.1529-1541, 2023.</li>
+</ol>
+<h4 class="year">2022</h4>
+<ol start="14">
 <li>Yuta Suzuki, Tatsunori Taniai, Kotaro Saito, Yoshitaka Ushiku, and Kanta Ono. Self-supervised learning of materials concepts from crystal structures via deep neural networks. <span class="journal">Machine Learning: Science and Technology</span>, pp.2632-2153, 2022.</li>
 <li>Mutsuki Nakahara, Mai Nishimura, Yoshitaka Ushiku, Takayuki Nishio, Kazuki Maruta, Yu Nakayama, and Daisuke Hisano. Edge Computing-Assisted DNN Image Recognition System With Progressive Image Retransmission. <span class="journal">IEEE Access</span>, Vol.10, pp.91253-91262, 2022.</li>
+</ol>
+<h4 class="year">2021</h4>
+<ol start="16">
 <li>Takehiko Ohkawa, Takuma Yagi, Atsushi Hashimoto, Yoshitaka Ushiku, and Yoichi Sato. Foreground-Aware Stylization and Consensus Pseudo-Labeling for Domain Adaptation of First-Person Hand Segmentation. <span class="journal">IEEE Access</span>, Vol.9, pp.94644-94655, 2021.</li>
 <li>Taichi Nishimura, Atsushi Hashimoto, Yoshitaka Ushiku, Hirotaka Kameko, Yoko Yamakata, and Shinsuke Mori. Structure-Aware Procedural Text Generation From an Image Sequence. <span class="journal">IEEE Access</span>, Vol.9, pp.2125-2141, 2021.</li>
 <li>Hiroaki Minoura, Ryo Yonetani, Mai Nishimura, and Yoshitaka Ushiku. Crowd Density Forecasting by Modeling Patch-Based Dynamics. <span class="journal">IEEE Robotics and Automation Letters</span>, Vol.6, No.2, pp.287-294, 2021.</li>
+</ol>
+<h4 class="year">2019</h4>
+<ol start="19">
 <li>Yusuke Mori, Hiroaki Yamane, Yoshitaka Ushiku, and Tatsuya Harada. How narratives move your mind: A corpus of shared-character stories for connecting emotional flow and interestingness. <span class="journal">Information Processing &amp; Management</span>, Vol.56, No.5, pp.1865-1879, 2019.</li>
 </ol>
+
 <h3>国際学会 (査読付き)</h3>
-<ol>
+<h4 class="year">2026</h4>
+<ol start="1">
 <li>Yuzheng Xu, Tosho Hirasawa, Tadashi Kozuno, and Yoshitaka Ushiku. Am I More Pointwise or Pairwise? Revealing Position Bias in Rubric-Based LLM-as-a-Judge. Findings of the Conference on Empirical Methods in Natural Language Processing (<span class="conf">EMNLP</span> Findings), 2026. (to appear)</li>
 <li>Tomoya Takahashi, Yusaku Nakajima, Cristian C. Beltran-Hernandez, Yuki Kuroda, Kanta Ono, Kazutoshi Tanaka, Masashi Hamaya, and Yoshitaka Ushiku. SCU-Hand with Integrated Single-Sheet Valve: A Funnel-Shaped Robotic Hand for Milligram-Scale Powder Handling. IEEE International Conference on Robotics and Automation (<span class="conf">ICRA</span>), 2026.</li>
 <li>Mimo Shirasaka, Cristian C. Beltran-Hernandez, Masashi Hamaya, and Yoshitaka Ushiku. Robust and Resilient Soft Robotic Object Insertion with Compliance-Enabled Contact Formation and Failure Recovery. IEEE International Conference on Robotics and Automation (<span class="conf">ICRA</span>), 2026.</li>
 <li>Shun Inadumi, Shohei Tanaka, Tosho Hirasawa, Atsushi Hashimoto, Koichiro Yoshino, and Yoshitaka Ushiku. SciPostGen: Bridging the Gap Between Scientific Papers and Poster Layouts. IEEE/CVF Conference on Computer Vision and Pattern Recognition, Findings Track (<span class="conf">CVPR</span> Findings), 2026.</li>
 <li>Shohei Tanaka, Atsushi Hashimoto, and Yoshitaka Ushiku. SciPostLayoutTree: A Dataset for Structural Analysis of Scientific Posters. IEEE/CVF Conference on Computer Vision and Pattern Recognition, Findings Track (<span class="conf">CVPR</span> Findings), 2026.</li>
+</ol>
+<h4 class="year">2025</h4>
+<ol start="6">
 <li>Kuniaki Saito, Donghyun Kim, Kwanyong Park, Atsushi Hashimoto, and Yoshitaka Ushiku. CaptionSmiths: Flexibly Controlling Language Pattern in Image Captioning. IEEE/CVF International Conference on Computer Vision (<span class="conf">ICCV</span>), 2025.</li>
 <li>Risa Shinoda, Nakamasa Inoue, Hirokatsu Kataoka, Masaki Onishi, and Yoshitaka Ushiku. AgroBench: Vision-Language Model Benchmark in Agriculture. IEEE/CVF International Conference on Computer Vision (<span class="conf">ICCV</span>), 2025.</li>
 <li>Ryogo Niwa, Shigeo Yoshida, Yuki Koyama, and Yoshitaka Ushiku. Cooperative Design Optimization through Natural Language Interaction. ACM Symposium on User Interface Software and Technology (<span class="conf">UIST</span>), 2025.</li>
@@ -279,6 +364,9 @@
 <li>Tomoya Takahashi, Cristian C. Beltran-Hernandez, Yuki Kuroda, Kazutoshi Tanaka, Masashi Hamaya, and Yoshitaka Ushiku. SCU-Hand: Soft Conical Universal Robotic Hand for Scooping Granular Media from Containers of Various Sizes. IEEE International Conference on Robotics and Automation (<span class="conf">ICRA</span>), 2025.</li>
 <li>Yusei Ito, Tatsunori Taniai, Ryo Igarashi, Yoshitaka Ushiku, and Kanta Ono. Rethinking the role of frames for SE(3)-invariant crystal structure modeling. International Conference on Learning Representations (<span class="conf">ICLR</span>), 2025.</li>
 <li>Takehiko Ohkawa, Takuma Yagi, Taichi Nishimura, Ryosuke Furuta, Atsushi Hashimoto, Yoshitaka Ushiku, and Yoichi Sato. Exo2EgoDVC: Dense Video Captioning of Egocentric Procedural Activities Using Web Instructional Videos. IEEE/CVF Winter Conference on Applications of Computer Vision (<span class="conf">WACV</span>), 2025.</li>
+</ol>
+<h4 class="year">2024</h4>
+<ol start="14">
 <li>Rintaro Yanagi, Atsushi Hashimoto, Naoya Chiba, Shusaku Sone, Jiaxin Ma, and Yoshitaka Ushiku. Learning 3D Point Cloud Registration as a Single Optimization Problem. Asian Conference on Computer Vision (<span class="conf">ACCV</span>), 2024.</li>
 <li>Atsushi Hashimoto, Koki Maeda, Tosho Hirasawa, Jun Harashima, Leszek Rybicki, Yusuke Fukasawa, and Yoshitaka Ushiku. COM Kitchens: An Unedited Overhead-view Procedural Videos Dataset a Vision-Language Benchmark. European Conference on Computer Vision (<span class="conf">ECCV</span>), 2024.</li>
 <li>Keisuke Shirai, Cristian C Beltran-Hernandez, Masashi Hamaya, Atsushi Hashimoto, Shohei Tanaka, Kento Kawaharazuka, Kazutoshi Tanaka, Yoshitaka Ushiku, and Shinsuke Mori. Vision-language interpreter for robot task planning. IEEE International Conference on Robotics and Automation (<span class="conf">ICRA</span>), 2024.</li>
@@ -286,21 +374,39 @@
 <li>Tatsunori Taniai, Ryo Igarashi, Yuta Suzuki, Naoya Chiba, Kotaro Saito, Yoshitaka Ushiku, and Kanta Ono. Crystalformer: Infinitely Connected Attention for Periodic Structure Encoding. International Conference on Learning Representations (<span class="conf">ICLR</span>), 2024.</li>
 <li>Mahiro Ukai, Shuhei Kurita, Atsushi Hashimoto, Yoshitaka Ushiku, and Nakamasa Inoue. AdaCoder: Adaptive Prompt Compression for Programmatic Visual Question Answering. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), 2024.</li>
 <li>Tomohiro Hashimoto, Ayaka Maruo, Shoichiro Sekiguchi, Yoshitaka Ushiku, and Genya Shimbo. Unsupervised Domain Adaptation for Human and Animal Chest X-Ray Bone Suppression. IEEE International Symposium on Biomedical Imaging (<span class="conf">ISBI</span>), 2024.</li>
+</ol>
+<h4 class="year">2023</h4>
+<ol start="21">
 <li>Yusaku Nakajima, Masashi Hamaya, Kazutoshi Tanaka, Takafumi Hawai, Felix von Drigalski, Yasuo Takeichi, Yoshitaka Ushiku, and Kanta Ono. Robotic Powder Grinding with Audio-Visual Feedback for Laboratory Automation in Materials Science. IEEE/RSJ International Conference on Intelligent Robots and Systems (<span class="conf">IROS</span>), 2023.</li>
+</ol>
+<h4 class="year">2022</h4>
+<ol start="22">
 <li>Yusaku Nakajima, Masashi Hamaya, Yuta Suzuki, Takafumi Hawai, Felix von Drigalski, Kazutoshi Tanaka, Yoshitaka Ushiku, and Kanta Ono. Robotic Powder Grinding with a Soft Jig for Laboratory Automation in Material Science. IEEE/RSJ International Conference on Intelligent Robots and Systems (<span class="conf">IROS</span>), 2022.</li>
 <li>Keisuke Shirai, Atsushi Hashimoto, Taichi Nishimura, Hirotaka Kameko, Shuhei Kurita, Yoshitaka Ushiku, and Shinsuke Mori. Visual Recipe Flow: A Dataset for Learning Visual State Changes of Objects with Recipe Flows. International Conference on Computational Linguistics (<span class="conf">COLING</span>), 2022.</li>
 <li>Atsushi Hashimoto, Taichi Nishimura, Yoshitaka Ushiku, Hirotaka Kameko, and Shinsuke Mori. Cross-modal Representation Learning for Understanding Manufacturing Procedure. International Conference on Human-Computer Interaction (<span class="conf">HCII</span>), 2022.</li>
+</ol>
+<h4 class="year">2021</h4>
+<ol start="25">
 <li>Taichi Nishimura, Atsushi Hashimoto, Yoshitaka Ushiku, Hirotaka Kameko, and Shinsuke Mori. State-aware Video Procedural Captioning. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), 2021.</li>
-<li>Mutsuki Nakahara, Daisuke Hisano, Mai Nishimura, Yoshitaka Ushiku, Kazuki Maruta, and Yu Nakayama. Retransmission Edge Computing System Conducting Adaptive Image Compression Based on Image Recognition Accuracy. IEEE Vehicular Technology Conference (<span class="conf">VTC-Fall</span>), 2021. </li>
+<li>Mutsuki Nakahara, Daisuke Hisano, Mai Nishimura, Yoshitaka Ushiku, Kazuki Maruta, and Yu Nakayama. Retransmission Edge Computing System Conducting Adaptive Image Compression Based on Image Recognition Accuracy. IEEE Vehicular Technology Conference (<span class="conf">VTC-Fall</span>), 2021.</li>
 <li>Qing Yu, Atsushi Hashimoto, and Yoshitaka Ushiku. Divergence Optimization for Noisy Universal Domain Adaptation. The IEEE Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2021.</li>
 <li>Ukyo Honda, Yoshitaka Ushiku, Atsushi Hashimoto, Taro Watanabe, and Yuji Matsumoto. Removing Word-Level Spurious Alignment between Images and Pseudo-Captions in Unsupervised Image Captioning. The Conference of the European Chapter of the Association for Computational Linguistics (<span class="conf">EACL</span>), 2021.</li>
+</ol>
+<h4 class="year">2020</h4>
+<ol start="29">
 <li>Taichi Nishimura, Suzushi Tomori, Hayato Hashimoto, Atsushi Hashimoto, Yoko Yamakata, Jun Harashima, Yoshitaka Ushiku, and Shinsuke Mori. Visual Grounding Annotation of Recipe Flow Graph. Language Resources and Evaluation Conference (<span class="conf">LREC</span>), 2020.</li>
+</ol>
+<h4 class="year">2019</h4>
+<ol start="30">
 <li>Takuhiro Kaneko, Yoshitaka Ushiku, and Tatsuya Harada. Class-distinct and class-mutual image generation with GANs. British Machine Vision Conference (<span class="conf">BMVC</span>), 2019.</li>
-<li>Mikihiro Tanaka, Takayuki Itamochi, Kenichi Narioka, Ikuro Sato, Yoshitaka Ushiku, and Tatsuya Harada. Generating Easy-to-Understand Referring Expressions for Target Identifications. The IEEE International Conference on Computer Vision (<span class="conf">ICCV</span>),	2019.
+<li>Mikihiro Tanaka, Takayuki Itamochi, Kenichi Narioka, Ikuro Sato, Yoshitaka Ushiku, and Tatsuya Harada. Generating Easy-to-Understand Referring Expressions for Target Identifications. The IEEE International Conference on Computer Vision (<span class="conf">ICCV</span>),	2019.</li>
 <li>Takuhiro Kaneko, Yoshitaka Ushiku, and Tatsuya Harada. Label-noise robust generative adversarial networks. The IEEE Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2019.</li>
 <li>Kuniaki Saito, Yoshitaka Ushiku, Tatsuya Harada, and Kate Saenko. Strong-weak distribution alignment for adaptive object detection. The IEEE Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2019</li>
 <li>Yang Li, Yoshitaka Ushiku, and Tatsuya Harada. Pose Graph Optimization for Unsupervised Monocular Visual Odometry. International Conference on Robotics and Automation (<span class="conf">ICRA</span>), 2019.</li>
 <li>Akane Iseki, Yusuke Mukuta, Yoshitaka Ushiku, and Tatsuya Harada. Estimating the causal effect from partially observed time series. The AAAI Conference on Artificial Intelligence (<span class="conf">AAAI</span>), 2019.</li>
+</ol>
+<h4 class="year">2018</h4>
+<ol start="36">
 <li>Kohei Uehara, Antonio Tejero-de-Pablos, Yoshitaka Ushiku, and Tatsuya Harada. Visual Question Generation for Class Acquisition of Unknown Objects. The 15th European Conference on Computer Vision (<span class="conf">ECCV</span>), 2018.</li>
 <li>Kuniaki Saito, Shohei Yamamoto, Yoshitaka Ushiku, and Tatsuya Harada. Open Set Domain Adaptation by Backpropagation. The 15th European Conference on Computer Vision (<span class="conf">ECCV</span>), 2018.</li>
 <li>Andrew Shin, Yoshitaka Ushiku, and Tatsuya Harada. Customized Image Narrative Generation via Interactive Visual Question Generation and Answering. The 31th IEEE Computer Society Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2018. (spotlight presentation)</li>
@@ -312,212 +418,400 @@
 <li>Yuji Tokozume, Yoshitaka Ushiku, and Tatsuya Harada. Learning from Between-class Examples for Deep Sound Recognition. The 6th International Conference on Learning Representations (<span class="conf">ICLR</span>), 2018.</li>
 <li>Katsunori Ohnishi, Shohei Yamamoto, Yoshitaka Ushiku, and Tatsuya Harada. Hierarchical Video Generation from Orthogonal Information: Optical Flow and Texture. AAAI Conference on Artificial Intelligence (<span class="conf">AAAI</span>), 2018. (oral presentation)</li>
 <li>Yusuke Mukuta, Yoshitaka Ushiku, and Tatsuya Harada. Alternating Circulant Random Features for Semigroup Kernels. AAAI Conference on Artificial Intelligence (<span class="conf">AAAI</span>), 2018.</li>
+</ol>
+<h4 class="year">2017</h4>
+<ol start="47">
 <li>Masatoshi Hidaka, Yuichiro Kikura, Yoshitaka Ushiku, and Tatsuya Harada. WebDNN: Fastest DNN Execution Framework on Web Browser. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), Open Source Software Competition, pp.1213-1216, 2017.</li>
 <li>Masataka Yamaguchi, Kuniaki Saito, Yoshitaka Ushiku, and Tatsuya Harada. Spatio-temporal Person Retrieval via Natural Language Queries. IEEE International Conference on Computer Vision (<span class="conf">ICCV</span>), 2017.</li>
 <li>Qishen Ha, Kohei Watanabe, Takumi Karasawa, Yoshitaka Ushiku, and Tatsuya Harada. MFNet: Towards Real-Time Semantic Segmentation for Autonomous Vehicles with Multi-Spectral Scenes. IEEE/RSJ International Conference on Intelligent Robots and Systems (<span class="conf">IROS</span>), 2017.</li>
 <li>Kuniaki Saito, Yoshitaka Ushiku, and Tatsuya Harada. Asymmetric Tri-training for Unsupervised Domain Adaptation. International Conference on Machine Learning (<span class="conf">ICML</span>), pp.2988-2997, 2017.</li>
 <li>Kuniaki Saito, Andrew Shin, Yoshitaka Ushiku, and Tatsuya Harada. DualNet: Domain-Invariant Network for Visual Question Answering. IEEE International Conference on Multimedia and Expo (<span class="conf">ICME</span>), pp.829-834, 2017. (oral presentation)</li>
+</ol>
+<h4 class="year">2016</h4>
+<ol start="52">
 <li>Andrew Shin, Yoshitaka Ushiku, and Tatsuya Harada. Image Captioning with Sentiment Terms via Weakly-Supervised Sentiment Dataset. British Machine Vision Conference (<span class="conf">BMVC</span>), pp.53.1-53.12, 2016.</li>
+</ol>
+<h4 class="year">2015</h4>
+<ol start="53">
 <li>Yoshitaka Ushiku, Masataka Yamaguchi, Yusuke Mukuta, and Tatsuya Harada. Common subspace for model and similarity: Phrase learning for caption generation from images. IEEE International Conference on Computer Vision (<span class="conf">ICCV</span>), pp.2668-2676, 2015. (acceptance rate: 30.9%)</li>
+</ol>
+<h4 class="year">2014</h4>
+<ol start="54">
 <li>Yoshitaka Ushiku, Masatoshi Hidaka, and Tatsuya Harada. Three guidelines of online learning for large-scale visual recognition. IEEE Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), pp.3574-3581, 2014. (acceptance rate: 29.9%)</li>
 <li>Asako Kanezaki, Shogo Inaba, Yoshitaka Ushiku, Yukihiko Yamashita, Hiroaki Muraoka, Yasuo Kuniyoshi, and Tatsuya Harada. Hard negative classes for multiple object detection. IEEE International Conference on Robotics and Automation (<span class="conf">ICRA</span>), pp.3066-3073, 2014.</li>
+</ol>
+<h4 class="year">2012</h4>
+<ol start="56">
 <li>Yoshitaka Ushiku, Tatsuya Harada, and Yasuo Kuniyoshi. Efficient Image Annotation for Automatic Sentence Generation. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), pp.549-558, 2012. (full paper, acceptance rate: 20.2%)</li>
+</ol>
+<h4 class="year">2011</h4>
+<ol start="57">
 <li>Yoshitaka Ushiku, Tatsuya Harada, and Yasuo Kuniyoshi. Understanding Images with Natural Sentences. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), Multimedia Grand Challenge, pp.679-682, 2011. (<span class="mention">Special Prize on the Best Application of a Theoretical Framework</span>) [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2011/ACMMM2011_MGC_ushiku.pdf">pdf</a>]</li>
 <li>Yoshitaka Ushiku, Tatsuya Harada, and Yasuo Kuniyoshi. Automatic Sentence Generation from Images. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), pp.1533-1536, 2011. (short, acceptance rate: usually 30%) [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2011/ACMMM2011_ushiku.pdf">pdf</a>]</li>
 <li>Tatsuya Harada, Yoshitaka Ushiku, Yuya Yamashita, and Yasuo Kuniyoshi. Discriminative Spatial Pyramid. IEEE Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), pp.1617-1624, 2011. (acceptance rate: 26.4%) [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2011/CVPR2011_harada.pdf">pdf</a>]</li>
+</ol>
+<h4 class="year">2010</h4>
+<ol start="60">
 <li>Yoshitaka Ushiku, Tatsuya Harada, and Yasuo Kuniyoshi. Improvement of Image Similarity Measures for Image Browsing and Retrieval Via Latent Space Learning between Images and Long Texts. IEEE International Conference on Image Processing (<span class="conf">ICIP</span>), pp.2365-2368, 2010. [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2010/ICIP2010_ushiku.pdf">pdf</a>]</li>
 </ol>
-<h3>国際学会 (査読無し、デモ/ワークショップ)</h3><!--柳さんのデモ以前が結構抜けてる、少なくとも米谷、馬、千葉、松原あとこれからフロリアン-->
-<ol>
+
+<h3>国際学会 (査読無し、デモ/ワークショップ)</h3>
+<h4 class="year">2025</h4>
+<ol start="1">
 <li>Yosuke Yamagishi, Kuniaki Saito, Atsushi Hashimoto, and Yoshitaka Ushiku. PMC-Vid: A Large-Scale Biomedical Video Captioning Dataset. IEEE/CVF International Conference on Computer Vision Workshops (<span class="conf">ICCV</span>, Workshop), 2025.</li>
 <li>Yuzheng Xu, Shigeo Yoshida, Atsushi Hashimoto, and Yoshitaka Ushiku. VisDev: A Stroke Deviation Visualization System Using Point-Set Registration for Handwriting Training. Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (<span class="conf">CHI</span> EA), 2025.</li>
 <li>Risa Shinoda, Kuniaki Saito, Shohei Tanaka, Tosho Hirasawa, and Yoshitaka Ushiku. SBS Figures: Pre-training Figure QA from Stage-by-Stage Synthesized Images. AAAI Conference on Artificial Intelligence Workshop on Document Understanding and Intelligence (<span class="conf">AAAI</span>, Workshop), 2025.</li>
+</ol>
+<h4 class="year">2024</h4>
+<ol start="4">
 <li>Kazuya Nishimura, Kuniaki Saito, Tosho Hirasawa, and Yoshitaka Ushiku. Toward Structured Related Work Generation with Novelty Statements. Workshop on Scholarly Document Processing (<span class="conf">SDP</span>, Workshop), 2024.</li>
+</ol>
+<h4 class="year">2023</h4>
+<ol start="5">
 <li>Rintaro Yanagi, Atsushi Hashimoto, Naoya Chiba, and Yoshitaka Ushiku. Reference-based dense pose estimation via Partial 3D Point Cloud Matching. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>) Demo Paper Track, 2023.</li>
+</ol>
+<h4 class="year">2022</h4>
+<ol start="6">
 <li>Jiaxin Ma, Yoshitaka Ushiku, and Miori Sagara. The Effect of Improving Annotation Quality on Object Detection Datasets: A Preliminary Study. IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (<span class="conf">CVPR</span>, Workshop), 2022.</li>
+</ol>
+<h4 class="year">2021</h4>
+<ol start="7">
 <li>Taichi Nishimura, Kojiro Sakoda, Atsushi Hashimoto, Yoshitaka Ushiku, Natsuko Tanaka, Fumihito Ono, Hirotaka Kameko, and Shinsuke Mori. Egocentric Biochemical Video-and-Language Dataset. IEEE/CVF International Conference on Computer Vision Workshops (<span class="conf">ICCV</span>, Workshop), 2021.</li>
+</ol>
+<h4 class="year">2018</h4>
+<ol start="8">
 <li>Kohei Watanabe, Kuniaki Saito, Yoshitaka Ushiku, and Tatsuya Harada. Multichannel Semantic Segmentation with Unsupervised Domain Adaptation. European Conference on Computer Vision Workshops (<span class="conf">ECCV</span>, Workshop), 2018.</li>
 <li>Toshihiko Matsuura, Kuniaki Saito, Yoshitaka Ushiku, and Tatsuya Harada. Generalized Bayesian Canonical Correlation Analysis with Missing Modalities. European Conference on Computer Vision Workshops (<span class="conf">ECCV</span>, Workshop), 2018.</li>
+</ol>
+<h4 class="year">2017</h4>
+<ol start="10">
 <li>Kuniaki Saito, Yusuke Mukuta, Yoshitaka Ushiku, Tatsuya Harada. Deep Modality Invariant Adversarial Network for Shared Representation Learning. The 16th International Conference on Computer Vision Workshop on Transferring and Adapting Source Knowledge in Computer Vision (<span class="conf">ICCV</span>, Workshop), 2017.</li>
 <li>Yusuke Mukuta, Yoshitaka Ushiku, Tatsuya Harada. Spatial-Temporal Weighted Pyramid using Spatial Orthogonal Pooling. The 16th International Conference on Computer Vision Workshop on Compact and Efficient Feature Representation and Learning in Computer Vision (<span class="conf">ICCV</span>, Workshop), 2017.</li>
 <li>Takumi Karasawa, Kohei Watanabe, Qishen Ha, Antonio Tejero-De-Pablos, Yoshitaka Ushiku, Tatsuya Harada. Multispectral Object Detection for Autonomous Vehicles. The 25th Annual ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), 2017, (workshop).</li>
+</ol>
+<h4 class="year">2012</h4>
+<ol start="13">
 <li>Yoshitaka Ushiku, Hiroshi Muraoka, Sho Inaba, Teppei Fujisawa, Koki Yasumoto, Naoyuki Gunji, Takayuki Higuchi, Yuko Hara, Tatsuya Harada, and Yasuo Kuniyoshi. ISI at ImageCLEF 2012: Scalable System for Image Annotation. the 3rd Conference and Labs of the Evaluation Forum (<span class="conf">CLEF</span> 2012), pp.1-12, 2012.</li>
 </ol>
+
 <h3>技術報告</h3>
-<ol>
+<h4 class="year">2026</h4>
+<ol start="1">
 <li>Kuniaki Saito and Yoshitaka Ushiku. The Devil is in the Spectrum Bias: Spectrum-Balanced Feature Matching for Robust Representation Distillation. arXiv, 2609.34106, 2026.</li>
 <li>Michiko Yoshitake, Yuta Suzuki, Ryo Igarashi, Yoshitaka Ushiku, and Keisuke Nagato. MaterialFigBENCH: benchmark dataset with figures for evaluating college-level materials science problem-solving abilities of multimodal large language models. arXiv, 2603.11414, 2026.</li>
 <li>Kiyotada Mori, Shohei Tanaka, Tosho Hirasawa, Tadashi Kozuno, Koichiro Yoshino, and Yoshitaka Ushiku. WarrantScore: Modeling Warrants between Claims and Evidence for Substantiation Evaluation in Peer Reviews. arXiv, 2601.17377, 2026.</li>
+</ol>
+<h4 class="year">2025</h4>
+<ol start="4">
 <li>Kuniaki Saito, Risa Shinoda, Shohei Tanaka, Tosho Hirasawa, Fumio Okura, and Yoshitaka Ushiku. HalDec-Bench: Benchmarking Hallucination Detector in Image Captioning. arXiv, 2511.20515, 2025.</li>
+</ol>
+<h4 class="year">2024</h4>
+<ol start="5">
 <li>Akihiro Fujii, Yoshitaka Ushiku, Koji Shimizu, Anh Khoa Augustin Lu, and Satoshi Watanabe. Adaptable Method for Crystal Design across Diverse Constraints and Objectives with Pretrained Property Predictors. arXiv, 2410.08562, 2024.</li>
 <li>Michiko Yoshitake, Yuta Suzuki, Ryo Igarashi, Yoshitaka Ushiku, and Keisuke Nagato. MaterialBENCH: Evaluating College-Level Materials Science Problem-Solving Abilities of Large Language Models. arXiv, 2409.03161, 2024.</li>
 <li>Tong Zheng, Shusaku Sone, Yoshitaka Ushiku, Yuki Oba, and Jiaxin Ma. TNF: Tri-branch Neural Fusion for Multimodal Medical Data Classification. arXiv, 2403.01802, 2024.</li>
+</ol>
+<h4 class="year">2023</h4>
+<ol start="8">
 <li>Shusaku Sone, Jiaxin Ma, Atsushi Hashimoto, Naoya Chiba, and Yoshitaka Ushiku. WeaveNet for Approximating Two-sided Matching Problems. arXiv, 2310.12515, 2023.</li>
 <li>Shiqi Yang, Atsushi Hashimoto, and Yoshitaka Ushiku. A Critical Look at the Current Usage of Foundation Model for Dense Recognition Task. arXiv, 2307.02862, 2023.</li>
 <li>Qing Yu, Atsushi Hashimoto, and Yoshitaka Ushiku. Noisy Universal Domain Adaptation via Divergence Optimization for Visual Recognition. arXiv, 2304.10333, 2023.</li>
+</ol>
+<h4 class="year">2018</h4>
+<ol start="11">
 <li>Shoji Yamamoto, Antonio Tejero-de-Pablos, Yoshitaka Ushiku, and Tatsuya Harada. Conditional Video Generation Using Action-Appearance Captions. arXiv, 1812.01261, 2018.</li>
+</ol>
+<h4 class="year">2017</h4>
+<ol start="12">
 <li>Andrew Shin, Leopold Crestel, Hiroharu Kato, Kuniaki Saito, Katsunori Ohnishi, Masataka Yamaguchi, Masahiro Nakawaki, Yoshitaka Ushiku, and Tatsuya Harada. Melody Generation for Pop Music via Word Representation of Musical Properties. arXiv, 1710.11549, 2017.</li>
+</ol>
+<h4 class="year">2016</h4>
+<ol start="13">
 <li>Andrew Shin, Yoshitaka Ushiku, and Tatsuya Harada. The Color of the Cat is Gray: 1 Million Full-Sentences Visual Question Answering (FSVQA). arXiv, 1609.06657, 2016.</li>
 </ol>
 
 <h3>国内論文誌 (査読付き)</h3>
-<ol>
+<h4 class="year">2011</h4>
+<ol start="1">
 <li>牛久祥孝，原田達也，國吉康夫. 画像・長文からの潜在空間獲得による画像間類似度の改善. 情報処理学会論文誌 (IPSJ), Vol.52, No.12, pp.3496-3503, 2011. [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2011/IPSJ2011_ushiku.pdf">pdf</a>]</li>
 </ol>
-<h3>国内学会 (査読付き)</h3><!--最近のMIRUいくつか-->
-<ol>
+
+<h3>国内学会 (査読付き)</h3>
+<h4 class="year">2019</h4>
+<ol start="1">
 <li>Mayu Otani, Kazuhiro Ota, Yuta Nakashima, Esa Rahtu, Janne Heikkila, and Yoshitaka Ushiku. Collecting Relation-Aware Video Captions. 画像の認識・理解シンポジウム (MIRU), OS2A-6, 2019.</li>
+</ol>
+<h4 class="year">2018</h4>
+<ol start="2">
 <li>Lisa Kawai, Yoshitaka Ushiku, and Tatsuya Harada. Facial Image Generation from Voice. 画像の認識・理解シンポジウム (MIRU), OS4-L3, 2018.</li>
+</ol>
+<h4 class="year">2016</h4>
+<ol start="3">
 <li>Ryuei Murata, Akisato Kimura, Yoshitaka Ushiku, Takayoshi Yamashita, Yuji Yamauchi, and Hironobu Fujiyoshi. Online Learning Based on Mondrian Forests in Parallel Distributed Processing. 画像の認識・理解シンポジウム (MIRU), OS2-05, 2016.</li>
+</ol>
+<h4 class="year">2012</h4>
+<ol start="4">
 <li>牛久祥孝, 原田達也, 國吉康夫. キーフレーズ推定と文法モデルによる画像説明文生成. 画像の認識・理解シンポジウム (MIRU), IS2-05(OS3-01), 2012. (長尾賞(最優秀賞)候補論文)</li>
+</ol>
+<h4 class="year">2011</h4>
+<ol start="5">
 <li>牛久祥孝, 原田達也, 國吉康夫. 画像・文章間の類似度学習による画像説明文の自動生成. 画像の認識・理解シンポジウム (MIRU), pp.365-372, 2011. (<span class="mention">MIRU2011インタラクティブセッション賞</span>) [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2011/MIRU2011_ushiku.pdf">pdf</a>]</li>
+</ol>
+<h4 class="year">2010</h4>
+<ol start="6">
 <li>牛久祥孝, 原田達也, 國吉康夫. 画像・長文からの潜在空間獲得による画像間類似度の改善. 画像の 認識・理解シンポジウム (MIRU), pp.1153-1160, 2010. [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2010/MIRU2010_ushiku.pdf">pdf</a>]</li>
 </ol>
-<h3>国内学会 (査読無し、デモ/ワークショップ)</h3><!--今年のMIRUデモ-->
-<ol>
+
+<h3>国内学会 (査読無し、デモ/ワークショップ)</h3>
+<h4 class="year">2025</h4>
+<ol start="1">
 <li>藤井亮宏, 牛久祥孝, LU Anh Khoa Augustin, 清水康司, 渡邉聡. 適応的な制約条件を満たしつつ、同時に複数の目標物性へと結晶構造を最適化するマテリアルズデザイン手法. 人工知能学会全国大会 (JSAI), 1Win460, 2025.</li>
+</ol>
+<h4 class="year">2024</h4>
+<ol start="2">
 <li>五十嵐亮, 千葉直也, 谷合竜典, 鈴木雄太, 斉藤耕太郎, 牛久祥孝, 小野寛太. 結晶構造の新たなニューラルネットワーク表現：NeSFとCrystalformerのアーキテクチャ. 日本物理学会講演概要集, Vol.79, No.2, 2024.</li>
 <li>橋本敦史, 前田航希, 平澤寅庄, 原島純, Leszek Rybicki, 深澤祐援, 牛久祥孝. 調理作業理解のための言語資源付き固定視点映像データセットの構築. 人工知能学会全国大会 (JSAI), 4Xin252, 2024.</li>
 <li>三輪拓真, 平澤寅庄, 吉野幸一郎, 馬場雪乃, 藤吉弘亘, 坂口慶祐, 松原誠二郎, 宮尾知幸, 椴山儀恵, 布施新一郎, 小野寛太, 牛久祥孝. 化学における知識発見を加速する対話エージェント. 人工知能学会 言語・音声理解と対話処理研究会 (SIG-SLUD), 第102回, 2024.</li>
+</ol>
+<h4 class="year">2023</h4>
+<ol start="5">
 <li>曾根周作, 合澤典子, 二宮高洋, 高田菜生子, 嘉陽彩乃, 檜森紀子, 牛久祥孝, 大森美香, 中澤徹, 乾健太郎. 眼底疾患の疑いのあるユーザに寄り添うVirtual Enablerの検討. 人工知能学会全国大会 (JSAI), 3Xin467, 2023.</li>
 <li>中島優作, 濱屋政志, 羽合孝文, 田中一敏, 牛久祥孝, 小野寛太. 自律実験のための粉体粉砕ロボットシステムの開発と評価. 応用物理学会春季学術講演会, 2023.</li>
 <li>鈴木雄太, 谷合竜典, 斉藤耕太郎, 牛久祥孝, 小野寛太. 自己教師あり深層距離学習を用いた結晶構造からの材料コンセプト学習. 応用物理学会春季学術講演会, 2023.</li>
 <li>千葉直也, 鈴木雄太, 谷合竜典, 五十嵐亮, 牛久祥孝, 斉藤耕太郎, 小野寛太. ニューラル構造場の導入とその結晶構造オートエンコーダーへの応用. 応用物理学会春季学術講演会, 2023.</li>
+</ol>
+<h4 class="year">2021</h4>
+<ol start="9">
 <li>中原睦貴, 久野大介, 西村真衣, 牛久祥孝, 丸田一輝, 中山悠. 画像認識精度に基づいた再送制御による無線エッジコンピューティングにおけるトラヒック削減手法. 電子情報通信学会 センサネットワークとモバイルインテリジェンス研究会 (SeMI), pp.23-28, 2021.</li>
+</ol>
+<h4 class="year">2020</h4>
+<ol start="10">
 <li>長藤圭介, 冨澤森生, 長隆之, 牛久祥孝. 金属積層造形における直接観察とプロセスパラメータ探索. 日本機械学会年次大会, オンライン, 2020.</li>
+</ol>
+<h4 class="year">2019</h4>
+<ol start="11">
 <li>Ryo Yonetani, Tomohiro Takahashi, Atsushi Hashimoto, and Yoshitaka Ushiku. Decentralized Learning of Generative Adversarial Networks from Multi-Client Non-iid Data. 画像の認識・理解シンポジウム (MIRU), PS2-20, 2019.</li>
+</ol>
+<h4 class="year">2017</h4>
+<ol start="12">
 <li>川口維文, 牛久祥孝, Anna Zhu, 内田誠一. Show, Read with Attention, and Tell. 画像の認識・理解シンポジウム (MIRU), PS3-28, 2017.</li>
+</ol>
+<h4 class="year">2016</h4>
+<ol start="13">
 <li>村田隆英, 木村昭悟, 牛久祥孝, 山下隆義, 山内悠嗣, 藤吉弘亘. 教師あり学習の導入によるMondrian Forestsの効率化. 電子情報通信学会 パターン認識・メディア理解研究会 (PRMU), pp.191-196, 2016.</li>
+</ol>
+<h4 class="year">2015</h4>
+<ol start="14">
 <li>牛久祥孝, 木村昭悟, 柏野邦夫. 時刻に基づく画像検索のための反復構造の自動抽出. 画像の認識・理解シンポジウム (MIRU), SS4-26, 2015.</li>
+</ol>
+<h4 class="year">2013</h4>
+<ol start="15">
 <li>郡司直之, 樋口貴之, 安本晃基, 村岡宏是, 牛久祥孝, 原田達也, 國吉康夫. 数の画像特徴とPassive-Aggressiveを用いたfine-grained classification. 電子情報通信学会 パターン認識・メディア理解研究会 (PRMU), pp.25-30, 2013.</li>
+</ol>
+<h4 class="year">2012</h4>
+<ol start="16">
 <li>金崎朝子, 稲葉翔, 牛久祥孝, 山下裕也, 村岡宏是, 原田達也, 國吉康夫. 大規模画像データセットを用いたマルチクラス物体検出器の同時学習 物体毎に特化した負例クラスの導入. 電子情報通信学会 パターン認識・メディア理解研究会 (PRMU), pp.105-112, 2012.</li>
+</ol>
+<h4 class="year">2010</h4>
+<ol start="17">
 <li>牛久祥孝, 山下裕也, 井村純, 中山英樹, 原田達也, 國吉康夫. 複数画像特徴とクラスラベルの相関に着目した距離計量による大規模画像分類. 電子情報通信学会 パターン認識・メディア理解研究会 (PRMU), pp.1-6, 2011. (<span class="mention">2010PRMU研究奨励賞</span>) [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2011/PRMU2011_ushiku.pdf">pdf</a>]</li>
+</ol>
+<h4 class="year">2009</h4>
+<ol start="18">
 <li>牛久祥孝, 中山英樹, 原田達也, 國吉康夫. Web画像と文章の大域的特徴から得る潜在的意味に基づくデータ検索　Web上での一般画像認識実現への新たなアプローチを目指して. 電子情報通信学会 パターン認識・メディア理解研究会 (PRMU), pp.45-50, 2009. [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2009/PRMU2009_ushiku.pdf">pdf</a>]</li>
 </ol>
 
+</section>
+
+<section id="books">
 <h2>解説記事・書籍</h2>
-<ol>
-<li>【解説記事】牛久祥孝. AIロボット駆動科学時代の研究室とは？. 日本ロボット学会誌, Vol.44, No.4, pp.355-359, 2026.</li>
-<li>【解説記事】牛久祥孝. Vision &amp; LanguageとAIロボット駆動科学. AI・データサイエンス論文集, Vol.6, No.1, pp.26-40, 2025.</li>
-<li>【解説記事】【ビジョンと自然言語処理】「AlexNet から10 年――深層学習によるビジョン＆ランゲージ分野への展開――」. 電子情報通信学会誌, Vol.105, No.5, pp.418-423, 2022.</li>
-<li>【解説記事】牛久祥孝, 濱屋政志, 米谷竜. スマートファクトリーR&amp;D ―オムロンサイニックエックスにおける研究事例―. 人工知能, Vol.37, No.3, pp.299-305, 2022.</li>
-<li>【特集ゲストエディタ】山本泰生, 牛久祥孝, 西岡靖之. 特集「スマートファクトリーとAI」にあたって. 人工知能, Vol.37, No.3, p.252, 2022.</li>
-<li>【書籍】イマドキノCV 限られたデータからの深層学習. CV最前線, Winter号, 共立出版, 2021.</li>
-<li>【書籍】Yoshitaka Ushiku. Long Short-Term Memory. In: Ikeuchi K. (eds) Computer Vision. Springer, 2020.</li>
-<li>【書籍】Kuniaki Saito, Shohei Yamamoto, Yoshitaka Ushiku, and Tatsuya Harada. Adversarial Learning Approach for Open Set Domain Adaptation. In: Venkateswara H., Panchanathan S. (eds) Domain Adaptation in Computer Vision with Deep Learning. Springer, pp.175-193, 2020.</li>
-<li>【解説記事】牛久祥孝. 画像に関連した言語生成の取組み. 人工知能学会誌，Vol.34，No.4, pp.483-490，2019. </li>
-<li>【解説記事】牛久祥孝. 画像キャプション生成とその派生タスク. 画像ラボ, Vol.30，No.4, pp.28-31，2019. </li>
-<li>【書籍】編著：中島秀之，浅田稔，橋田浩一，松原仁，山川宏，栗原聡，松尾豊. AI事典 第3版 「言語と画像や音声の相互変換」. 近代科学社, 2019.
-<li>【解説記事】牛久祥孝. 画像/動画の高精度キャプション生成技術. 光学. Vol.47, No.12, pp.502-508, 2018.</li>
-<li>【解説記事ゲストエディタ】牛久祥孝. 視覚・言語融合の最前線. 映像情報メディア学会誌. Vol.72, No.9, pp.650-675, 2018.</li>
-<li>【解説記事】牛久祥孝. 画像・動画キャプション生成. 映像情報メディア学会誌. Vol.72, No.5, pp.650-654, 2018. (<a href="https://www.ite.or.jp/content/journal/message/">ベストオーサー</a>)</li>
-<li>【書籍】米谷竜, 斎藤英雄編著, 池畑諭, 牛久祥孝, 内山英昭, 内海ゆづ子, 小野峻佑, 片岡裕雄, 金崎朝子, 川西康友, 齋藤真樹, 櫻田健, 高橋康輔, 松井勇佑. コンピュータビジョン―広がる要素技術と応用. 未来へつなぐデジタルシリーズ, 37巻, 共立出版, 2018.
-<li>【解説記事】牛久祥孝. 私のブックマーク 視覚と自然言語の融合研究. 人工知能:人工知能学会誌. Vol.32, No.1, pp.136-143, 2016.</li>
-<li>【解説記事】牛久祥孝. ACM Multimedia 参加報告. 情報処理. Vol.56, No.3, p.286, 2015.</li>
+<h4 class="year">2026</h4>
+<ol start="1">
+<li><span class="tag">【解説記事】</span>牛久祥孝. AIロボット駆動科学時代の研究室とは？. 日本ロボット学会誌, Vol.44, No.4, pp.355-359, 2026.</li>
+</ol>
+<h4 class="year">2025</h4>
+<ol start="2">
+<li><span class="tag">【解説記事】</span>牛久祥孝. Vision &amp; LanguageとAIロボット駆動科学. AI・データサイエンス論文集, Vol.6, No.1, pp.26-40, 2025.</li>
+</ol>
+<h4 class="year">2022</h4>
+<ol start="3">
+<li><span class="tag">【解説記事】</span>【ビジョンと自然言語処理】「AlexNet から10 年――深層学習によるビジョン＆ランゲージ分野への展開――」. 電子情報通信学会誌, Vol.105, No.5, pp.418-423, 2022.</li>
+<li><span class="tag">【解説記事】</span>牛久祥孝, 濱屋政志, 米谷竜. スマートファクトリーR&amp;D ―オムロンサイニックエックスにおける研究事例―. 人工知能, Vol.37, No.3, pp.299-305, 2022.</li>
+<li><span class="tag">【特集ゲストエディタ】</span>山本泰生, 牛久祥孝, 西岡靖之. 特集「スマートファクトリーとAI」にあたって. 人工知能, Vol.37, No.3, p.252, 2022.</li>
+</ol>
+<h4 class="year">2021</h4>
+<ol start="6">
+<li><span class="tag">【書籍】</span>イマドキノCV 限られたデータからの深層学習. CV最前線, Winter号, 共立出版, 2021.</li>
+</ol>
+<h4 class="year">2020</h4>
+<ol start="7">
+<li><span class="tag">【書籍】</span>Yoshitaka Ushiku. Long Short-Term Memory. In: Ikeuchi K. (eds) Computer Vision. Springer, 2020.</li>
+<li><span class="tag">【書籍】</span>Kuniaki Saito, Shohei Yamamoto, Yoshitaka Ushiku, and Tatsuya Harada. Adversarial Learning Approach for Open Set Domain Adaptation. In: Venkateswara H., Panchanathan S. (eds) Domain Adaptation in Computer Vision with Deep Learning. Springer, pp.175-193, 2020.</li>
+</ol>
+<h4 class="year">2019</h4>
+<ol start="9">
+<li><span class="tag">【解説記事】</span>牛久祥孝. 画像に関連した言語生成の取組み. 人工知能学会誌，Vol.34，No.4, pp.483-490，2019.</li>
+<li><span class="tag">【解説記事】</span>牛久祥孝. 画像キャプション生成とその派生タスク. 画像ラボ, Vol.30，No.4, pp.28-31，2019.</li>
+<li><span class="tag">【書籍】</span>編著：中島秀之，浅田稔，橋田浩一，松原仁，山川宏，栗原聡，松尾豊. AI事典 第3版 「言語と画像や音声の相互変換」. 近代科学社, 2019.</li>
+</ol>
+<h4 class="year">2018</h4>
+<ol start="12">
+<li><span class="tag">【解説記事】</span>牛久祥孝. 画像/動画の高精度キャプション生成技術. 光学. Vol.47, No.12, pp.502-508, 2018.</li>
+<li><span class="tag">【解説記事ゲストエディタ】</span>牛久祥孝. 視覚・言語融合の最前線. 映像情報メディア学会誌. Vol.72, No.9, pp.650-675, 2018.</li>
+<li><span class="tag">【解説記事】</span>牛久祥孝. 画像・動画キャプション生成. 映像情報メディア学会誌. Vol.72, No.5, pp.650-654, 2018. (<a href="https://www.ite.or.jp/content/journal/message/">ベストオーサー</a>)</li>
+<li><span class="tag">【書籍】</span>米谷竜, 斎藤英雄編著, 池畑諭, 牛久祥孝, 内山英昭, 内海ゆづ子, 小野峻佑, 片岡裕雄, 金崎朝子, 川西康友, 齋藤真樹, 櫻田健, 高橋康輔, 松井勇佑. コンピュータビジョン―広がる要素技術と応用. 未来へつなぐデジタルシリーズ, 37巻, 共立出版, 2018.</li>
+</ol>
+<h4 class="year">2016</h4>
+<ol start="16">
+<li><span class="tag">【解説記事】</span>牛久祥孝. 私のブックマーク 視覚と自然言語の融合研究. 人工知能:人工知能学会誌. Vol.32, No.1, pp.136-143, 2016.</li>
+</ol>
+<h4 class="year">2015</h4>
+<ol start="17">
+<li><span class="tag">【解説記事】</span>牛久祥孝. ACM Multimedia 参加報告. 情報処理. Vol.56, No.3, p.286, 2015.</li>
 </ol>
 
-<h2>基調講演・招待講演・講師</h2><!--恐らく足りない-->
-<ol>
-<li>【講演】牛久祥孝. AI for Science、発見の先で問われること. 第29回情報論的学習理論ワークショップ (IBIS2026) 企画セッション「AI for Science」, オンライン, 日本, 2026/10/29.</li>
-<li>【講演】牛久祥孝. フィジカルAIに関するレビュー. 透明酸化物光・電子材料研究会 第18回研究会, 東京大学 本郷キャンパス, 日本, 2026/10/16.</li>
-<li>【モデレーター】牛久祥孝. パネル討論「AI時代の研究開発」. AI for Science 2026 公開シンポジウム（JST-CRDS・文部科学省）, 東京, 日本, 2026/09/17.</li>
-<li>【講演】牛久祥孝. AI for Scienceの未来に向けて. AI for Science 2026 公開シンポジウム（JST-CRDS・文部科学省）, 東京, 日本, 2026/09/17.</li>
-<li>【基調講演】牛久祥孝. CoInnovator：AIが人間の創造性を加速する未来を目指して. ソフトウェアエンジニアリングシンポジウム2026 (SES2026), 慶應義塾大学 日吉キャンパス, 日本, 2026/09/12.</li>
-<li>【パネル】牛久祥孝. 人間とロボットの境界が溶ける社会で、人は幸せ？. HRWC 2026 (Human Robot World Challenge 2026), 徳島, 日本, 2026/07/19.</li>
-<li>【講演】牛久祥孝. AIロボット科学者の話 ～ ロボットも含めてAIエージェントにする. HRWC 2026 (Human Robot World Challenge 2026), 徳島, 日本, 2026/07/19.</li>
-<li>【講演】牛久祥孝. AIロボット駆動科学. 人工知能学会全国大会 企画セッション「AI for Scienceの新たな地平」, 高崎, 日本, 2026/06/10.</li>
-<li>【基調講演】牛久祥孝. 米国の脳×日本の神経系 －フィジカルAI時代の開発力と国産化の展望－. センシング技術応用セミナー2026, 大阪, 日本, 2026/06/05.</li>
-<li>【招待講演】Yoshitaka Ushiku. Embodied AI for Science--Toward the Creation of Knowledge Through Generative AI and Autonomous Robots. 2026 MRS Spring Meeting, Symposium MT01, 2026/05/01.</li>
-<li>【招待講演】牛久祥孝. フィジカルAI for Science. 応用物理学会春季学術講演会 シンポジウム「人間×AI×ロボティクスが拓く自律材料研究のフロンティア」, 日本, 2026/03/16.</li>
-<li>【講演】牛久祥孝. 日本企業の開発力と国産化の展望. 日本経済研究センター 未来社会とテクノロジー研究会, 日本, 2026/03/10.</li>
-<li>【講演】牛久祥孝. 技術とビジネスの「共通言語」をAIで創る ～無形資産を「探す・作る・活かす」ためのAIパートナー活用論～. マーケットワン・ジャパン 知財マーケティングセミナー, 東京, 日本, 2026/02/19.</li>
-<li>【招待講演】Yoshitaka Ushiku. Embodied AI for Science. The 8th R-CCS International Symposium, 大阪, 日本, 2026/01/28.</li>
-<li>【講演】牛久祥孝. Embodied AI for Science. 統計数理研究所 シンポジウム「AI4S 2026 ～機械学習・統計数理が切り拓くAI for Scienceの新展開～」, 一橋講堂, 日本, 2026/01/19.</li>
-<li>【モデレーター】牛久祥孝. パネルディスカッション. AIロボット駆動科学研究会 vol.4, 東京大学 本郷キャンパス, 日本, 2025/11/14.</li>
-<li>【講演】牛久祥孝. Embodied AI for Science. 第106回 Machine Learning 15minutes! Hybrid, 東京, 日本, 2025/10/25.</li>
-<li>【講演】牛久祥孝. 人と融和して知の創造・越境をする AI ロボット. 情報処理学会 連続セミナー2025 第7回「AIロボット駆動科学」, オンライン, 日本, 2025/10/02.</li>
-<li>【モデレーター】牛久祥孝. AIが拓く次世代マテリアル開発の新潮流 〜 インフォマティクスと自動実験による材料開発の革新 〜. DEEPCORE KERNEL AI-Driven Science Talks #3, 東京, 日本, 2025/09/30.</li>
-<li>【モデレーター】牛久祥孝. AIが駆動するロボティクスの進化 〜 新たな産業を切り拓くテクノロジーの最前線 〜. DEEPCORE KERNEL AI-Driven Science Talks #2, 東京, 日本, 2025/09/19.</li>
-<li>【パネル】牛久祥孝. 日本のマテリアル研究現場のあり方／日本の計測機器の役割. MEEP公開シンポジウム（JASIS2025）, 幕張メッセ, 日本, 2025/09/03.</li>
-<li>【講演】牛久祥孝. Vision and LanguageからのEmbodied AIとAI for Science. SUMO.ai #01 マルチモーダルAI技術勉強会, 東京, 日本, 2025/07/25.</li>
-<li>【モデレーター】牛久祥孝. 日本発、次世代ヒューマノイド/AIロボットの挑戦 〜グローバル競争を勝ち抜く戦略〜. IVS2025, 京都, 日本, 2025/07/03.</li>
-<li>【講演】牛久祥孝. Frontiers of Vision and Language: Bridging Images and Texts by Deep Learning. 第129回日本眼科学会総会 シンポジウム「領域横断的なAI活用の先端研究」, 東京, 日本, 2025/04/17.</li>
-<li>【講演】牛久祥孝. 科学×ロボット×生成(仮). GPU UNITE 新年会 2025, 東京, 日本, 2025/04/09.</li>
-<li>【講演】牛久祥孝. 人と融和して知の創造・越境をするAIロボット. 日本電子材料技術協会 セミナー「半導体・製造・ロボティックス」, 東京, 日本, 2025/03/28.</li>
-<li>【講演】牛久祥孝. AIロボット駆動科学のスピンアウト. 第98回 Machine Learning 15minutes! Broadcast, オンライン, 日本, 2025/02/22.</li>
-<li>【招待講演】牛久祥孝. 人間とAIのクリエイティブな融和. HCGシンポジウム2024, 金沢, 日本, 2024/12/11.</li>
-<li>【パネル】牛久祥孝. 生命科学の未来を予想する――データベースはもう要らなくなる...ってコト?!. トーゴーの日シンポジウム2024「AI＋ロボティクス＋データベースが変える生命科学」, 東京, 日本, 2024/10/05.</li>
-<li>【講演】牛久祥孝. Vision &amp; LanguageとAIロボット駆動科学. 土木学会 応用力学委員会 第3回応用数理・AIセミナー, 日本, 2024/09/09.</li>
-<li>【講演】牛久祥孝. 視覚と言葉を繋ぐAIのこれまでとこれから. 科学技術・学術政策研究所 講演会「近未来への招待状～ナイスステップな研究者2023からのメッセージ～」第3回, オンライン, 日本, 2024/07/23.</li>
-<li>【講演】牛久祥孝. 生成AIとAIロボット駆動科学. 東北大学 第2回 医学AIセミナー 特別レクチャー, 仙台, 日本, 2024/07/09.</li>
-<li>【講演】牛久祥孝. ビジョン＆ランゲージ. 第92回人工知能セミナー「マルチモーダル情報処理の最新動向」, 東京, 日本, 2024/07/03.</li>
-<li>【講演】牛久祥孝. AIロボット駆動科学のご紹介. 第90回 Machine Learning 15minutes! Hybrid, 東京, 日本, 2024/06/29.</li>
-<li>【パネル】牛久祥孝. 次世代AIモデルの研究開発へ. 2024年度人工知能学会全国大会 企画セッションKS-17, 浜松, 日本, 2024/05/30.</li>
-<li>【招待講演】牛久祥孝. 基盤モデルからAIサイエンティストへ. 人工知能学会 合同研究会2023 合同企画, 慶應義塾大学 矢上キャンパス, 日本, 2023/11/25.</li>
-<li>【講演】牛久祥孝. 進化するAI・ロボティクス、最新LLMのインパクトをトップ研究者が解説. NIKKEI Tech Foresight（NIKKEI LIVE）, オンライン, 日本, 2023/11/24.</li>
-<li>【招待講演】牛久祥孝. 科学研究する生成AIをつくる. GPU UNITE 2023 Day3：生成AI Day, オンライン, 日本, 2023/11/02.</li>
-<li>【講演】牛久祥孝. 人と融和して知の創造・越境をするAIロボット. 第41回日本ロボット学会学術講演会 オープンフォーラム OF6, 仙台, 日本, 2023/09/11.</li>
-<li>【講演】Yoshitaka Ushiku. Invitation to Vision and Language. IEICE English Webinar (Distinguished Lecturer Program), online, Japan, 2023/06/30.</li>
-<li>【基調講演】牛久祥孝. Ridge-iにおける環境と社会活動のモニタリング. ビジョン技術の実利用ワークショップ (ViEW2022) OS4「SDGs達成へ向けての画像技術活用」, オンライン, 日本, 2022/12/09.</li>
-<li>【講演】牛久祥孝. AIがノーベル賞を取る日. 第72回 Machine Learning 15minutes! Broadcast, オンライン, 日本, 2022/11/26.</li>
-<li>【講演】牛久祥孝. AIとDX. GPU UNITE 2022 Day1：GPU &amp; AIセッション, オンライン, 日本, 2022/08/05.</li>
-<li>【講師】牛久祥孝. Transformerの最前線〜 畳込みニューラルネットワークの先へ 〜. 第28回画像センシングシンポジウム (SSII2022) チュートリアル TS1, 横浜, 日本, 2022/06/08.</li>
-<li>【招待講演】牛久祥孝. 人工知能と建築. 建築学会 デザイン科学数理知能小委員会・研究集会, オンライン, 日本, 2022/02/24</li>
-<li>【招待講演】牛久祥孝. 次のAIとDXの実現可能性について~具体的なアクションプラン・社会実装例の解説~. 株式会社POL WEBセミナー, オンライン, 日本, 2022/02/16</li>
-<li>【招待講演】牛久祥孝. Vision and Languageとその先へ.	統計・機械学習若手シンポジウム, オンライン, 日本, 2022/02/09</li>
-<li>【招待講演】牛久祥孝. マテリアル探索を飛躍的に加速する機械学習基盤技術. 兵庫県立大学 兵庫県MI研究会, オンライン, 日本, 2022/01/19</li>
-<li>【講師】牛久祥孝. AIと人間の共生に向けて～世界最先端の状況～. JICA（インドネシア知的財産総局）, オンライン, インドネシア, 2022/01/13.</li>
-<li>【招待講演】Yoshitaka Ushiku. Challenges of Integrating Vision and Language. International Display Workshops, online, Japan, 2021/12/01.</li>
-<li>【招待講演】牛久祥孝. OSXのビジョン＆ランゲージが目指す人と機械の融和. コンピュータ産業研究会, オンライン, 日本, 2021/11/24.</li>
-<li>【講師】牛久祥孝. AIと人間の共生に向けて～世界最先端の状況～. JICA（ベトナム国家知的財産庁）, オンライン, ベトナム, 2021/11/17.</li>
-<li>【招待講演】牛久祥孝. イメージングAIの「第7世代」と今後のアクションプラン. GPU 2021, オンライン, 日本, 2021/11/05.</li>
-<li>【招待講演】牛久祥孝. 建築情報学会にAIどうでSHOW. Archi Future 2021, オンライン, 日本, 2021/10/28.</li>
-<li>【招待講演】牛久祥孝. 【xTalk #14】牛久祥孝×落合陽一×菅野裕介. JST CREST xDiversity, オンライン, 日本, 2021/09/22.</li>
-<li>【招待講演】牛久祥孝. Transformer. JEITA認識形入力方式標準化専門委員会, オンライン, 日本, 2021/09/16.</li>
-<li>【招待講演】牛久祥孝. 次のAIと医療のかかわりについて. 日本緑内障学会, オンライン, 日本, 2021/09/12.</li>
-<li>【招待講演】牛久祥孝. マルチモーダル理解～Vision and Languageとその先へ. 愛媛大学DS研究セミナー, オンライン, 日本, 2021/08/24.</li>
-<li>【招待講演】牛久祥孝. 次のAIとDXの実現可能性について. 日本ディープラーニング協会 CDLE勉強会, オンライン, 日本, 2021/08/12.</li>
-<li>【招待講演】牛久祥孝. FIREの話. MIRU 2021 若手プログラム, オンライン, 日本, 2021/07/24.</li>
-<li>【招待講演】牛久祥孝. CVPR技術報告会. 日本ディープラーニング協会, オンライン, 日本, 2021/07/19.</li>
-<li>【講義】牛久祥孝. 多様なデータを理解する：マルチモーダル機械学習の最前線. 埼玉工業大学講義（大山航先生）, オンライン, 日本, 2021/07/14.</li>
-<li>【招待講演】牛久祥孝. 企業研究者の「熱い想い」をお届けします. 情報処理学会全国大会, オンライン, 日本, 2021/03/19.</li>
-<li>【招待講演】牛久祥孝. マルチモーダル機械学習とマテリアルへの応用可能性. 応用物理学会春季学術講演会, オンライン, 日本, 2021/03/16.</li>
-<li>【招待講演】牛久祥孝. マルチモーダル理解～Vision and Languageとその先へ. 京都大学学術情報メディアセンターセミナー, 京都, 日本, 2021/03/12.</li>
-<li>【招待講演】Yoshitaka Ushiku. Multimodal Understanding: Vision and Language, and its Beyond. International Workshop on Frontiers of Computer Vision, Daegu, Korea, 2021/02/22.</li>
-<li>【招待講演】牛久祥孝. AIと人間の共生に向けて ～世界最先端の状況～. Hitachi Intellectual Assets Forum, オンライン, 日本, 2020/12/01.</li>
-<li>【基調講演】牛久祥孝. 機械学習を『民主化』する取り組み. SB C&amp;Sセミナー「AI・ディープラーニング研究者が話を聞きたい研究者の話と開発基盤の最新動向」, 2020/1/17.</li>
-<li>【基調講演】牛久祥孝. 深層学習によるビジョン＆ランゲ―ジの世界. ビジョン技術の実利用ワークショップ(ViEW), 2019/12/5.</li>
-<li>【招待講演】Yoshitaka Ushiku. Deep Learning for Natural Language Processing and Computer Vision. Tutorial on Asian Conference on Machine Learning, Nagoya, Japan, 2019/11/17.</li>
-<li>【招待講演】牛久祥孝. 画像・映像理解と自然言語への架け橋. 情報処理学会連続セミナー第3回, 2019/9/26.</li>
-<li>【招待講演】牛久祥孝. 多様なデータへのキャプションを自動で生成する技術の創出. 情報科学技術フォーラム(FIT), 2019/9/3.</li>
-<li>【招待講演】牛久祥孝. ビジョン＆ランゲージ～「意図」をどのようにモデリングするか？ 画像センシングシンポジウム(SSII), 2019/6/12.</li>
-<li>【招待講演】牛久祥孝. 機械学習による生成技術とその応用展開. ITOC機械学習セミナーシリーズVol.3, 2019/3/25.</li>
-<li>【講師】牛久祥孝. ～AI・IoT講座～ 人工知能（AI）基礎講座. 独立行政法人工業所有権情報・研修館, 2019/2/21および2019/3/11.</li>
-<li>【招待講演】牛久祥孝. 機械学習による生成技術とその応用展開. ISID エンジニアリングフォーラム, 2018/11/28.</li>
-<li>【招待講演】牛久祥孝. 視覚と対話の融合研究. 人工知能学会 言語・音声理解と対話処理研究会(SIG-SLUD), 2018/11/21.</li>
-<li>【招待講演】牛久祥孝. Deep Learningによる視覚・言語融合の最前線. NLP若手の会(YANS), 2018/8/28.</li>
-<li>【招待講演】牛久祥孝. 敵対的学習による動画生成とドメイン適応. 人工知能学会 第75回人工知能セミナー, 2018/8/27.</li>
-<li>【招待講演】牛久祥孝. Deep Learningによる視覚・言語融合の最前線. 精密工学会 画像応用技術専門委員会(IAIP), 2018/7/13.</li>
-<li>【招待講演】牛久祥孝. 視覚と言葉をつなげる技術. 情報処理学会 IPSJ-ONE, 2018/3/15.</li>
-<li>【招待講演】牛久祥孝. Deep Learningによる視覚・言語融合の最前線. 情報処理学会 コンピュータビジョンとイメージメディア研究会(CVIM), 2018/3/2.</li>
-<li>【招待講演】牛久祥孝. Deep Learningによる視覚・言語融合の最前線. 映像情報メディア学会 冬季大会, 2017/12/13.</li>
-<li>【招待講演】牛久祥孝. Deep Learningによる視覚・言語融合の最前線. 画像符号化シンポジウム(PCSJ) / 映像メディア処理シンポジウム(IMPS), 2017/11/22.</li>
-<li>【基調講演】Yoshitaka Ushiku. Frontiers of Vision and Language: Bridging Images and Texts by Deep Learning. Workshop of Machine Learning under International Conference on Document Analysis and Recognition, 2017/11/11.</li>
-<li>【招待講演】Kuniaki Saito, Yoshitaka Ushiku, and Tatsuya Harada. Asymmetric Tri-training for Unsupervised Domain Adaptation. International Conference on Machine Learning. 第20回画像の認識・理解シンポジウム, 2017/08/10.</li>
-<li>【招待講演】牛久祥孝. Deep Learning による視覚×言語融合の最前線. ABEJA Technopreneur College, 2017/06/30.</li>
-<li>【招待講演】Yoshitaka Ushiku. Recognize, Describe, and Generate: Introduction of Recent Work at MIL. GPU Technology Conference, 2017/05/11.</li>
-<li>【招待講演】牛久祥孝. Deep Learning による視覚×言語融合の最前線. 電子情報通信学会総合大会 企画講演セッション「もっと知りたい！ Deep Learning 〜基礎から活用ノウハウ，応用まで〜」, 2017/03/22.</li>
-<li>【招待講演】牛久祥孝. 視覚×言語の最前線. ステアラボ人工知能シンポジウム, 2017/03/12.</li>
-<li>【招待講演】牛久祥孝. 画像キャプションの自動生成. 第16回全脳アーキテクチャ勉強会～人工知能は意味をどう獲得するのか～＠リクルートテクノロジーズ, 2016/10/12.</li>
-<li>【招待講演】Yoshitaka Ushiku, Masataka Yamaguchi, Yusuke Mukuta, and Tatsuya Harada. Common subspace for model and similarity: Phrase learning for caption generation from images. 第19回画像の認識・理解シンポジウム, 2016/08/02.</li>
-<li>【招待講演】牛久祥孝. 画像キャプションの自動生成. 第19回画像の認識・理解シンポジウム (チュートリアルセッション), 2016/08/01.</li>
-<li>【招待講演】牛久祥孝. 画像キャプションの自動生成. 第3回ステアラボ人工知能セミナー＠千葉工業大学 (スカイツリータウン), 2016/06/29.</li>
-<li>【招待講演】牛久祥孝. 画像キャプションの自動生成. 人工知能セミナー第7回 「自然言語処理のＡＩの最新動向」＠産総研, 2016/06/21.</li>
-<li>【招待講演】牛久祥孝. 画像キャプションの自動生成. 確率場と深層学習に関する第1回CRESTシンポジウム＠早稲田大学, 2016/01/13.</li>
-<li>【招待講演】Yoshitaka Ushiku, Tatsuya Harada, and Yasuo Kuniyoshi. Efficient Image Annotation for Automatic Sentence Generation. Greater Tokyo Area Multimedia/Vision Workshop, 2012/08/30.</li>
+</section>
+
+<section id="talks">
+<h2>基調講演・招待講演・講師</h2>
+<h4 class="year">2026</h4>
+<ol start="1">
+<li><span class="tag">【講演】</span>牛久祥孝. AI for Science、発見の先で問われること. 第29回情報論的学習理論ワークショップ (IBIS2026) 企画セッション「AI for Science」, オンライン, 日本, 2026/10/29.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. フィジカルAIに関するレビュー. 透明酸化物光・電子材料研究会 第18回研究会, 東京大学 本郷キャンパス, 日本, 2026/10/16.</li>
+<li><span class="tag">【モデレーター】</span>牛久祥孝. パネル討論「AI時代の研究開発」. AI for Science 2026 公開シンポジウム（JST-CRDS・文部科学省）, 東京, 日本, 2026/09/17.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. AI for Scienceの未来に向けて. AI for Science 2026 公開シンポジウム（JST-CRDS・文部科学省）, 東京, 日本, 2026/09/17.</li>
+<li><span class="tag">【基調講演】</span>牛久祥孝. CoInnovator：AIが人間の創造性を加速する未来を目指して. ソフトウェアエンジニアリングシンポジウム2026 (SES2026), 慶應義塾大学 日吉キャンパス, 日本, 2026/09/12.</li>
+<li><span class="tag">【パネル】</span>牛久祥孝. 人間とロボットの境界が溶ける社会で、人は幸せ？. HRWC 2026 (Human Robot World Challenge 2026), 徳島, 日本, 2026/07/19.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. AIロボット科学者の話 ～ ロボットも含めてAIエージェントにする. HRWC 2026 (Human Robot World Challenge 2026), 徳島, 日本, 2026/07/19.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. AIロボット駆動科学. 人工知能学会全国大会 企画セッション「AI for Scienceの新たな地平」, 高崎, 日本, 2026/06/10.</li>
+<li><span class="tag">【基調講演】</span>牛久祥孝. 米国の脳×日本の神経系 －フィジカルAI時代の開発力と国産化の展望－. センシング技術応用セミナー2026, 大阪, 日本, 2026/06/05.</li>
+<li><span class="tag">【招待講演】</span>Yoshitaka Ushiku. Embodied AI for Science--Toward the Creation of Knowledge Through Generative AI and Autonomous Robots. 2026 MRS Spring Meeting, Symposium MT01, 2026/05/01.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. フィジカルAI for Science. 応用物理学会春季学術講演会 シンポジウム「人間×AI×ロボティクスが拓く自律材料研究のフロンティア」, 日本, 2026/03/16.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. 日本企業の開発力と国産化の展望. 日本経済研究センター 未来社会とテクノロジー研究会, 日本, 2026/03/10.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. 技術とビジネスの「共通言語」をAIで創る ～無形資産を「探す・作る・活かす」ためのAIパートナー活用論～. マーケットワン・ジャパン 知財マーケティングセミナー, 東京, 日本, 2026/02/19.</li>
+<li><span class="tag">【招待講演】</span>Yoshitaka Ushiku. Embodied AI for Science. The 8th R-CCS International Symposium, 大阪, 日本, 2026/01/28.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. Embodied AI for Science. 統計数理研究所 シンポジウム「AI4S 2026 ～機械学習・統計数理が切り拓くAI for Scienceの新展開～」, 一橋講堂, 日本, 2026/01/19.</li>
+</ol>
+<h4 class="year">2025</h4>
+<ol start="16">
+<li><span class="tag">【モデレーター】</span>牛久祥孝. パネルディスカッション. AIロボット駆動科学研究会 vol.4, 東京大学 本郷キャンパス, 日本, 2025/11/14.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. Embodied AI for Science. 第106回 Machine Learning 15minutes! Hybrid, 東京, 日本, 2025/10/25.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. 人と融和して知の創造・越境をする AI ロボット. 情報処理学会 連続セミナー2025 第7回「AIロボット駆動科学」, オンライン, 日本, 2025/10/02.</li>
+<li><span class="tag">【モデレーター】</span>牛久祥孝. AIが拓く次世代マテリアル開発の新潮流 〜 インフォマティクスと自動実験による材料開発の革新 〜. DEEPCORE KERNEL AI-Driven Science Talks #3, 東京, 日本, 2025/09/30.</li>
+<li><span class="tag">【モデレーター】</span>牛久祥孝. AIが駆動するロボティクスの進化 〜 新たな産業を切り拓くテクノロジーの最前線 〜. DEEPCORE KERNEL AI-Driven Science Talks #2, 東京, 日本, 2025/09/19.</li>
+<li><span class="tag">【パネル】</span>牛久祥孝. 日本のマテリアル研究現場のあり方／日本の計測機器の役割. MEEP公開シンポジウム（JASIS2025）, 幕張メッセ, 日本, 2025/09/03.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. Vision and LanguageからのEmbodied AIとAI for Science. SUMO.ai #01 マルチモーダルAI技術勉強会, 東京, 日本, 2025/07/25.</li>
+<li><span class="tag">【モデレーター】</span>牛久祥孝. 日本発、次世代ヒューマノイド/AIロボットの挑戦 〜グローバル競争を勝ち抜く戦略〜. IVS2025, 京都, 日本, 2025/07/03.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. Frontiers of Vision and Language: Bridging Images and Texts by Deep Learning. 第129回日本眼科学会総会 シンポジウム「領域横断的なAI活用の先端研究」, 東京, 日本, 2025/04/17.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. 科学×ロボット×生成(仮). GPU UNITE 新年会 2025, 東京, 日本, 2025/04/09.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. 人と融和して知の創造・越境をするAIロボット. 日本電子材料技術協会 セミナー「半導体・製造・ロボティックス」, 東京, 日本, 2025/03/28.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. AIロボット駆動科学のスピンアウト. 第98回 Machine Learning 15minutes! Broadcast, オンライン, 日本, 2025/02/22.</li>
+</ol>
+<h4 class="year">2024</h4>
+<ol start="28">
+<li><span class="tag">【招待講演】</span>牛久祥孝. 人間とAIのクリエイティブな融和. HCGシンポジウム2024, 金沢, 日本, 2024/12/11.</li>
+<li><span class="tag">【パネル】</span>牛久祥孝. 生命科学の未来を予想する――データベースはもう要らなくなる...ってコト?!. トーゴーの日シンポジウム2024「AI＋ロボティクス＋データベースが変える生命科学」, 東京, 日本, 2024/10/05.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. Vision &amp; LanguageとAIロボット駆動科学. 土木学会 応用力学委員会 第3回応用数理・AIセミナー, 日本, 2024/09/09.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. 視覚と言葉を繋ぐAIのこれまでとこれから. 科学技術・学術政策研究所 講演会「近未来への招待状～ナイスステップな研究者2023からのメッセージ～」第3回, オンライン, 日本, 2024/07/23.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. 生成AIとAIロボット駆動科学. 東北大学 第2回 医学AIセミナー 特別レクチャー, 仙台, 日本, 2024/07/09.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. ビジョン＆ランゲージ. 第92回人工知能セミナー「マルチモーダル情報処理の最新動向」, 東京, 日本, 2024/07/03.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. AIロボット駆動科学のご紹介. 第90回 Machine Learning 15minutes! Hybrid, 東京, 日本, 2024/06/29.</li>
+<li><span class="tag">【パネル】</span>牛久祥孝. 次世代AIモデルの研究開発へ. 2024年度人工知能学会全国大会 企画セッションKS-17, 浜松, 日本, 2024/05/30.</li>
+</ol>
+<h4 class="year">2023</h4>
+<ol start="36">
+<li><span class="tag">【招待講演】</span>牛久祥孝. 基盤モデルからAIサイエンティストへ. 人工知能学会 合同研究会2023 合同企画, 慶應義塾大学 矢上キャンパス, 日本, 2023/11/25.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. 進化するAI・ロボティクス、最新LLMのインパクトをトップ研究者が解説. NIKKEI Tech Foresight（NIKKEI LIVE）, オンライン, 日本, 2023/11/24.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 科学研究する生成AIをつくる. GPU UNITE 2023 Day3：生成AI Day, オンライン, 日本, 2023/11/02.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. 人と融和して知の創造・越境をするAIロボット. 第41回日本ロボット学会学術講演会 オープンフォーラム OF6, 仙台, 日本, 2023/09/11.</li>
+<li><span class="tag">【講演】</span>Yoshitaka Ushiku. Invitation to Vision and Language. IEICE English Webinar (Distinguished Lecturer Program), online, Japan, 2023/06/30.</li>
+</ol>
+<h4 class="year">2022</h4>
+<ol start="41">
+<li><span class="tag">【基調講演】</span>牛久祥孝. Ridge-iにおける環境と社会活動のモニタリング. ビジョン技術の実利用ワークショップ (ViEW2022) OS4「SDGs達成へ向けての画像技術活用」, オンライン, 日本, 2022/12/09.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. AIがノーベル賞を取る日. 第72回 Machine Learning 15minutes! Broadcast, オンライン, 日本, 2022/11/26.</li>
+<li><span class="tag">【講演】</span>牛久祥孝. AIとDX. GPU UNITE 2022 Day1：GPU &amp; AIセッション, オンライン, 日本, 2022/08/05.</li>
+<li><span class="tag">【講師】</span>牛久祥孝. Transformerの最前線〜 畳込みニューラルネットワークの先へ 〜. 第28回画像センシングシンポジウム (SSII2022) チュートリアル TS1, 横浜, 日本, 2022/06/08.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 人工知能と建築. 建築学会 デザイン科学数理知能小委員会・研究集会, オンライン, 日本, 2022/02/24</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 次のAIとDXの実現可能性について~具体的なアクションプラン・社会実装例の解説~. 株式会社POL WEBセミナー, オンライン, 日本, 2022/02/16</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. Vision and Languageとその先へ.	統計・機械学習若手シンポジウム, オンライン, 日本, 2022/02/09</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. マテリアル探索を飛躍的に加速する機械学習基盤技術. 兵庫県立大学 兵庫県MI研究会, オンライン, 日本, 2022/01/19</li>
+<li><span class="tag">【講師】</span>牛久祥孝. AIと人間の共生に向けて～世界最先端の状況～. JICA（インドネシア知的財産総局）, オンライン, インドネシア, 2022/01/13.</li>
+</ol>
+<h4 class="year">2021</h4>
+<ol start="50">
+<li><span class="tag">【招待講演】</span>Yoshitaka Ushiku. Challenges of Integrating Vision and Language. International Display Workshops, online, Japan, 2021/12/01.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. OSXのビジョン＆ランゲージが目指す人と機械の融和. コンピュータ産業研究会, オンライン, 日本, 2021/11/24.</li>
+<li><span class="tag">【講師】</span>牛久祥孝. AIと人間の共生に向けて～世界最先端の状況～. JICA（ベトナム国家知的財産庁）, オンライン, ベトナム, 2021/11/17.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. イメージングAIの「第7世代」と今後のアクションプラン. GPU 2021, オンライン, 日本, 2021/11/05.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 建築情報学会にAIどうでSHOW. Archi Future 2021, オンライン, 日本, 2021/10/28.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 【xTalk #14】牛久祥孝×落合陽一×菅野裕介. JST CREST xDiversity, オンライン, 日本, 2021/09/22.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. Transformer. JEITA認識形入力方式標準化専門委員会, オンライン, 日本, 2021/09/16.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 次のAIと医療のかかわりについて. 日本緑内障学会, オンライン, 日本, 2021/09/12.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. マルチモーダル理解～Vision and Languageとその先へ. 愛媛大学DS研究セミナー, オンライン, 日本, 2021/08/24.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 次のAIとDXの実現可能性について. 日本ディープラーニング協会 CDLE勉強会, オンライン, 日本, 2021/08/12.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. FIREの話. MIRU 2021 若手プログラム, オンライン, 日本, 2021/07/24.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. CVPR技術報告会. 日本ディープラーニング協会, オンライン, 日本, 2021/07/19.</li>
+<li><span class="tag">【講義】</span>牛久祥孝. 多様なデータを理解する：マルチモーダル機械学習の最前線. 埼玉工業大学講義（大山航先生）, オンライン, 日本, 2021/07/14.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 企業研究者の「熱い想い」をお届けします. 情報処理学会全国大会, オンライン, 日本, 2021/03/19.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. マルチモーダル機械学習とマテリアルへの応用可能性. 応用物理学会春季学術講演会, オンライン, 日本, 2021/03/16.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. マルチモーダル理解～Vision and Languageとその先へ. 京都大学学術情報メディアセンターセミナー, 京都, 日本, 2021/03/12.</li>
+<li><span class="tag">【招待講演】</span>Yoshitaka Ushiku. Multimodal Understanding: Vision and Language, and its Beyond. International Workshop on Frontiers of Computer Vision, Daegu, Korea, 2021/02/22.</li>
+</ol>
+<h4 class="year">2020</h4>
+<ol start="67">
+<li><span class="tag">【招待講演】</span>牛久祥孝. AIと人間の共生に向けて ～世界最先端の状況～. Hitachi Intellectual Assets Forum, オンライン, 日本, 2020/12/01.</li>
+<li><span class="tag">【基調講演】</span>牛久祥孝. 機械学習を『民主化』する取り組み. SB C&amp;Sセミナー「AI・ディープラーニング研究者が話を聞きたい研究者の話と開発基盤の最新動向」, 2020/1/17.</li>
+</ol>
+<h4 class="year">2019</h4>
+<ol start="69">
+<li><span class="tag">【基調講演】</span>牛久祥孝. 深層学習によるビジョン＆ランゲ―ジの世界. ビジョン技術の実利用ワークショップ(ViEW), 2019/12/5.</li>
+<li><span class="tag">【招待講演】</span>Yoshitaka Ushiku. Deep Learning for Natural Language Processing and Computer Vision. Tutorial on Asian Conference on Machine Learning, Nagoya, Japan, 2019/11/17.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 画像・映像理解と自然言語への架け橋. 情報処理学会連続セミナー第3回, 2019/9/26.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 多様なデータへのキャプションを自動で生成する技術の創出. 情報科学技術フォーラム(FIT), 2019/9/3.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. ビジョン＆ランゲージ～「意図」をどのようにモデリングするか？ 画像センシングシンポジウム(SSII), 2019/6/12.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 機械学習による生成技術とその応用展開. ITOC機械学習セミナーシリーズVol.3, 2019/3/25.</li>
+<li><span class="tag">【講師】</span>牛久祥孝. ～AI・IoT講座～ 人工知能（AI）基礎講座. 独立行政法人工業所有権情報・研修館, 2019/2/21および2019/3/11.</li>
+</ol>
+<h4 class="year">2018</h4>
+<ol start="76">
+<li><span class="tag">【招待講演】</span>牛久祥孝. 機械学習による生成技術とその応用展開. ISID エンジニアリングフォーラム, 2018/11/28.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 視覚と対話の融合研究. 人工知能学会 言語・音声理解と対話処理研究会(SIG-SLUD), 2018/11/21.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. Deep Learningによる視覚・言語融合の最前線. NLP若手の会(YANS), 2018/8/28.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 敵対的学習による動画生成とドメイン適応. 人工知能学会 第75回人工知能セミナー, 2018/8/27.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. Deep Learningによる視覚・言語融合の最前線. 精密工学会 画像応用技術専門委員会(IAIP), 2018/7/13.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 視覚と言葉をつなげる技術. 情報処理学会 IPSJ-ONE, 2018/3/15.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. Deep Learningによる視覚・言語融合の最前線. 情報処理学会 コンピュータビジョンとイメージメディア研究会(CVIM), 2018/3/2.</li>
+</ol>
+<h4 class="year">2017</h4>
+<ol start="83">
+<li><span class="tag">【招待講演】</span>牛久祥孝. Deep Learningによる視覚・言語融合の最前線. 映像情報メディア学会 冬季大会, 2017/12/13.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. Deep Learningによる視覚・言語融合の最前線. 画像符号化シンポジウム(PCSJ) / 映像メディア処理シンポジウム(IMPS), 2017/11/22.</li>
+<li><span class="tag">【基調講演】</span>Yoshitaka Ushiku. Frontiers of Vision and Language: Bridging Images and Texts by Deep Learning. Workshop of Machine Learning under International Conference on Document Analysis and Recognition, 2017/11/11.</li>
+<li><span class="tag">【招待講演】</span>Kuniaki Saito, Yoshitaka Ushiku, and Tatsuya Harada. Asymmetric Tri-training for Unsupervised Domain Adaptation. International Conference on Machine Learning. 第20回画像の認識・理解シンポジウム, 2017/08/10.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. Deep Learning による視覚×言語融合の最前線. ABEJA Technopreneur College, 2017/06/30.</li>
+<li><span class="tag">【招待講演】</span>Yoshitaka Ushiku. Recognize, Describe, and Generate: Introduction of Recent Work at MIL. GPU Technology Conference, 2017/05/11.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. Deep Learning による視覚×言語融合の最前線. 電子情報通信学会総合大会 企画講演セッション「もっと知りたい！ Deep Learning 〜基礎から活用ノウハウ，応用まで〜」, 2017/03/22.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 視覚×言語の最前線. ステアラボ人工知能シンポジウム, 2017/03/12.</li>
+</ol>
+<h4 class="year">2016</h4>
+<ol start="91">
+<li><span class="tag">【招待講演】</span>牛久祥孝. 画像キャプションの自動生成. 第16回全脳アーキテクチャ勉強会～人工知能は意味をどう獲得するのか～＠リクルートテクノロジーズ, 2016/10/12.</li>
+<li><span class="tag">【招待講演】</span>Yoshitaka Ushiku, Masataka Yamaguchi, Yusuke Mukuta, and Tatsuya Harada. Common subspace for model and similarity: Phrase learning for caption generation from images. 第19回画像の認識・理解シンポジウム, 2016/08/02.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 画像キャプションの自動生成. 第19回画像の認識・理解シンポジウム (チュートリアルセッション), 2016/08/01.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 画像キャプションの自動生成. 第3回ステアラボ人工知能セミナー＠千葉工業大学 (スカイツリータウン), 2016/06/29.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 画像キャプションの自動生成. 人工知能セミナー第7回 「自然言語処理のＡＩの最新動向」＠産総研, 2016/06/21.</li>
+<li><span class="tag">【招待講演】</span>牛久祥孝. 画像キャプションの自動生成. 確率場と深層学習に関する第1回CRESTシンポジウム＠早稲田大学, 2016/01/13.</li>
+</ol>
+<h4 class="year">2012</h4>
+<ol start="97">
+<li><span class="tag">【招待講演】</span>Yoshitaka Ushiku, Tatsuya Harada, and Yasuo Kuniyoshi. Efficient Image Annotation for Automatic Sentence Generation. Greater Tokyo Area Multimedia/Vision Workshop, 2012/08/30.</li>
 </ol>
 
-<h2>研究資金</h2><!--ムーンショットをいつから書くか-->
+</section>
+
+<section id="grants">
+<h2>研究資金</h2>
 <ol>
 <li>2021-2025. JST 未来社会創造事業（本格研究：「共通基盤」領域）「革新的な知や製品を創出する共通基盤システム・装置の実現」. 分担(代表:長藤圭介). マテリアル探索空間拡張プラットフォームの構築. 18,460万円.</li>
 <li>2019-2020. JST 未来社会創造事業（探索加速型：「共通基盤」領域）「革新的な知や製品を創出する共通基盤システム・装置の実現」. 分担(代表:小野寛太). 数理科学を活用したマルチスケール・マルチモーダル構造解析システム. 350万円.</li>
@@ -525,7 +819,9 @@
 <li>2017-2018. JST ACT-I「情報と未来」領域. 代表. 多様なデータへのキャプションを自動で生成する技術の創出. 300万円.</li>
 <li>2017-2021. JSPS 基盤研究(S). 分担(代表:内田誠一). 機械可読時代における文字科学の創成と応用展開. 2242万円.</li>
 </ol>
+</section>
 
+<section id="awards">
 <h2>受賞およびコンペティション</h2>
 <ol>
 <li>2023. <span class="award">ナイスステップな研究者</span>. 文部科学省 科学技術・学術政策研究所.</li>
@@ -545,29 +841,77 @@
 <li>2010. <span class="award">研究奨励賞</span>. 2009年度 電子情報通信学会パターン認識・マルチメディア理解研究会 (PRMU).</li>
 <li>2010. <span class="award">Third place</span>. Large Scale Visual Recognition Challenge 2010 (ILSVRC2010).</li>
 </ol>
+</section>
 
-<h2>メディア</h2><!--最近のメディア掲載が無い-->
+<section id="media">
+<h2>メディア</h2>
 <ol>
-<li>2023/10/16. オムロン、かしこく学ぶ・動く・繋ぐAIロボット実現へ. <a href="https://www.watch.impress.co.jp/docs/news/1539073.html">https://www.watch.impress.co.jp/docs/news/1539073.html</a>. Impress Watch.</li>
-<li>2023/10/05. 「覚醒プロジェクト」PMに聞く　「情熱と柔軟性のある方と、ともに課題に取り組みたい」 オムロンサイニックエックス・牛久祥孝氏. <a href="https://ascii.jp/elem/000/004/161/4161121/">https://ascii.jp/elem/000/004/161/4161121/</a>. ASCII x AI.</li>
-<li>2023/08/21. オムロンが料理の自動化？　近未来デザインから新しいモノづくりの軸を確立. <a href="https://monoist.itmedia.co.jp/mn/articles/2308/18/news085.html">https://monoist.itmedia.co.jp/mn/articles/2308/18/news085.html</a>. MONOist.</li>
-<li>2023/06/22. オムロン　サイニックエックス、近未来デザインの研究開発集団　自律、自走、自由な発想　しがらみ徹底排除. <a href="https://dempa-digital.com/article/446028">https://dempa-digital.com/article/446028</a>. 電波新聞.</li>
-<li>2023/06/15. オムロン、ＡＩでノーベル賞級の研究　全固体電池開発支援も. <a href="https://www.sankei.com/article/20230615-PFXGX7ZUAFIUNOJMJVOD4F7SNU/">https://www.sankei.com/article/20230615-PFXGX7ZUAFIUNOJMJVOD4F7SNU/</a>. 産経新聞.</li>
-<li>2022/12/23. 「賢すぎるAI」の大競争時代 画像生成AIは一端に過ぎない. <a href="https://wedge.ismedia.jp/articles/-/28876">https://wedge.ismedia.jp/articles/-/28876</a>. Wedge.</li>
-<li>2022/10/31. AI、ノーベル賞めざす「研究者」に　論文読み自ら仮説. <a href="https://www.nikkei.com/article/DGXZQOUC138PB0T11C22A0000000/">https://www.nikkei.com/article/DGXZQOUC138PB0T11C22A0000000/</a>. 日本経済新聞.</li>
-<li>2022/01/11. グリーンAIへスタートアップ知恵　空調機使わず省電力. <a href="https://www.nikkei.com/article/DGXZQOUC05C0G0V00C22A1000000/">https://www.nikkei.com/article/DGXZQOUC05C0G0V00C22A1000000/</a>. 日本経済新聞.</li>
-<li>2021/07/26. 画像とテキストを融合し理解する「ビジョン＆ランゲージ」. <a href="https://forbesjapan.com/articles/detail/43563">https://forbesjapan.com/articles/detail/43563</a>. ForbesJAPAN9月号.</li>
-<li>2021/02/06. AIが絵を描いたら、異色のモナリザに　革新は間近. <a href="https://www.nikkei.com/article/DGXZQOGG264N10W1A120C2000000/">https://www.nikkei.com/article/DGXZQOGG264N10W1A120C2000000/</a>. 日本経済新聞.</li>
-<li>2019/12/16. ヒントンに敗れた男、牛久祥孝氏が語る画像認識のトレンド「ディープラーニングの次のトレンドは情報変換」. <a href="https://ainow.ai/2019/12/16/181774/">https://ainow.ai/2019/12/16/181774/</a>. AINOW.</li>
-<li>2019/09/01. 「AIのゴッドファーザー」雌伏の30年 華麗なるAI人脈(笑). <a href="https://www.nikkei.com/article/DGXMZO49075690X20C19A8000000/">https://www.nikkei.com/article/DGXMZO49075690X20C19A8000000/</a>. 日本経済新聞.</li>
-<li>2019/04/06. AI研究者、大学脱出　企業で基礎研究　裁量大きく. <a href="https://www.nikkei.com/article/DGXMZO43385830V00C19A4TJM000/">https://www.nikkei.com/article/DGXMZO43385830V00C19A4TJM000/</a>. 日本経済新聞.</li>
-<li>2018/04/26. オムロンが新会社サイニックエックスを新設、慶大教授らと研究開発を加速. <a href="https://www.sbbit.jp/article/cont1/34865">https://www.sbbit.jp/article/cont1/34865</a>. ビジネス+IT.</li>
-<li>2018/04/25. 「近未来をデザインする」 オムロンサイニックエックス株式会社設立. <a href="https://ainow.ai/2018/04/25/137445/">https://ainow.ai/2018/04/25/137445/</a>. AINOW.</li>
-<li>2018/01/25. 画像認識技術で説明文を生成　東大の牛久講師. <a href="https://www.nikkei.com/article/DGXMZO26087170U8A120C1X11000/">https://www.nikkei.com/article/DGXMZO26087170U8A120C1X11000/</a>. 日本経済新聞.</li>
-<li>2017/11/08. 拓く研究人（１７８）東京大学大学院情報理工学系研究科講師・牛久祥孝氏（３１歳）. <a href="https://www.nikkan.co.jp/articles/view/00449939/0/106">https://www.nikkan.co.jp/articles/view/00449939/0/106</a>. 日刊工業新聞.</li>
-<li>2017/08/23. ZIP! 日本テレビ.</li>
-<li>2003/09/12. 全国高等学校クイズ選手権. 日本テレビ.</li>
+<li><span class="date">2026/04/24.</span> 【#654】AIロボット科学者で日本の研究開発を加速する。研究・知財・事業化を繋ぐ. <a href="https://venture.jp/news/2026/04/24/21188/">https://venture.jp/news/2026/04/24/21188/</a>. ベンチャー.jp.</li>
+<li><span class="date">2026/02/25.</span> AIとロボットが織りなす日本の未来：社会実装に挑む共創プラットフォーム・AIRoAの視点. <a href="https://gen-ai-media.guga.or.jp/story/story-6949/">https://gen-ai-media.guga.or.jp/story/story-6949/</a>. Generative AI Media.</li>
+<li><span class="date">2026/01/14.</span> AI研究者が語る「ドラえもんを現実にする3つの道」　「夢」で終わらせないための“実装条件”. <a href="https://revent.8card.net/columns/0u4guway86">https://revent.8card.net/columns/0u4guway86</a>. Re|vent（旧ログミーBusiness）.</li>
+<li><span class="date">2025/04/01.</span> Could an AI Win the Nobel Prize? Maybe By 2050, If This Project Is Successful. <a href="https://www.technologynetworks.com/informatics/articles/could-an-ai-win-the-nobel-prize-maybe-by-2050-if-this-project-is-successful-397964">https://www.technologynetworks.com/informatics/articles/could-an-ai-win-the-nobel-prize-maybe-by-2050-if-this-project-is-successful-397964</a>. Technology Networks.</li>
+<li><span class="date">2025/03/27.</span> トヨタほか24社が汎用ロボット実現に挑む「AIロボット協会」が活動開始. <a href="https://pc.watch.impress.co.jp/docs/news/2001880.html">https://pc.watch.impress.co.jp/docs/news/2001880.html</a>. PC Watch.</li>
+<li><span class="date">2025/03/01.</span> 学生フォーラム〔第127回〕牛久祥孝先生インタビュー「AIで科学の未来を切り開く—大局的な視点で一歩先の挑戦を続ける」. <a href="https://www.jstage.jst.go.jp/article/jjsai/40/2/40_249/_article/-char/ja/">https://www.jstage.jst.go.jp/article/jjsai/40/2/40_249/_article/-char/ja/</a>. 人工知能 40巻2号.</li>
+<li><span class="date">2025/01/18.</span> 画像認識AI研究のパイオニア牛久氏「人智の民主化」に挑戦——NexaScienceがグローバル・ブレイン主催「XLIMIT」3rdバッチ最優秀賞獲得. <a href="https://thebridge.jp/2025/01/nexascience-wins-the-grand-prize-in-the-3rd-batch-of-xlimit-hosted-by-global-brains">https://thebridge.jp/2025/01/nexascience-wins-the-grand-prize-in-the-3rd-batch-of-xlimit-hosted-by-global-brains</a>. BRIDGE.</li>
+<li><span class="date">2024/11/25.</span> 【後編】AIで変わる科学研究とノーベル賞　～AI研究者へインタビュー. <a href="https://blog.miraikan.jst.go.jp/articles/20241125aiai-1.html">https://blog.miraikan.jst.go.jp/articles/20241125aiai-1.html</a>. 日本科学未来館 科学コミュニケーターブログ.</li>
+<li><span class="date">2024/11/25.</span> 【前編】AIで変わる科学研究とノーベル賞　～AI研究者へインタビュー. <a href="https://blog.miraikan.jst.go.jp/articles/20241125aiai.html">https://blog.miraikan.jst.go.jp/articles/20241125aiai.html</a>. 日本科学未来館 科学コミュニケーターブログ.</li>
+<li><span class="date">2024/07/11.</span> Sakana AI・秋葉拓哉のキャリアを牛久祥孝が深掘り！ なぜ「研究一筋は“違う”」と思ったのか？. <a href="https://type.jp/et/feature/26186/">https://type.jp/et/feature/26186/</a>. エンジニアtype.</li>
+<li><span class="date">2024/03/25.</span> 研究機関か民間か「悩む必要なんてない」チューリング青木俊介が牛久祥孝に聞きたい【研究者のキャリアの話】. <a href="https://type.jp/et/feature/25322/">https://type.jp/et/feature/25322/</a>. エンジニアtype.</li>
+<li><span class="date">2024/01/24.</span> 2023年の総括と2024年の展望（画像生成AIの社会活用）. <a href="https://www.nikkei.com/prime/tech-foresight/article/DGXZQOUC239XV0T20C24A1000000">https://www.nikkei.com/prime/tech-foresight/article/DGXZQOUC239XV0T20C24A1000000</a>. NIKKEI Tech Foresight.</li>
+<li><span class="date">2023/12/27.</span> Vol.15 後編　牛久祥孝さん（AI研究者）【動画】AIで変わる美術教育　～AIを通じて発想が美術になる. <a href="https://www.nichibun-g.co.jp/chubi/joint_art/2485/">https://www.nichibun-g.co.jp/chubi/joint_art/2485/</a>. 日本文教出版 チュービ「つながる美術」.</li>
+<li><span class="date">2023/12/22.</span> Vol.15 前半　牛久祥孝さん（AI研究者）【動画】AIで変わる美術教育　～世界的AI研究者の夢は「ドラえもんをつくる」. <a href="https://www.nichibun-g.co.jp/chubi/joint_art/2480/">https://www.nichibun-g.co.jp/chubi/joint_art/2480/</a>. 日本文教出版 チュービ「つながる美術」.</li>
+<li><span class="date">2023/11/24.</span> 研究者が持つアイデアを、AIロボットが実現する未来. <a href="https://esse-sense.com/articles/113">https://esse-sense.com/articles/113</a>. esse-sense.</li>
+<li><span class="date">2023/11/14.</span> OpenAI、長文に強いLLM「GPT-4 Turbo」 AI研究者分析. <a href="https://www.nikkei.com/prime/tech-foresight/article/DGXZQOUC133JY0T11C23A1000000">https://www.nikkei.com/prime/tech-foresight/article/DGXZQOUC133JY0T11C23A1000000</a>. NIKKEI Tech Foresight.</li>
+<li><span class="date">2023/10/16.</span> オムロン、かしこく学ぶ・動く・繋ぐAIロボット実現へ. <a href="https://www.watch.impress.co.jp/docs/news/1539073.html">https://www.watch.impress.co.jp/docs/news/1539073.html</a>. Impress Watch.</li>
+<li><span class="date">2023/10/05.</span> 「覚醒プロジェクト」PMに聞く　「情熱と柔軟性のある方と、ともに課題に取り組みたい」 オムロンサイニックエックス・牛久祥孝氏. <a href="https://ascii.jp/elem/000/004/161/4161121/">https://ascii.jp/elem/000/004/161/4161121/</a>. ASCII x AI.</li>
+<li><span class="date">2023/08/21.</span> オムロンが料理の自動化？　近未来デザインから新しいモノづくりの軸を確立. <a href="https://monoist.itmedia.co.jp/mn/articles/2308/18/news085.html">https://monoist.itmedia.co.jp/mn/articles/2308/18/news085.html</a>. MONOist.</li>
+<li><span class="date">2023/06/22.</span> オムロン　サイニックエックス、近未来デザインの研究開発集団　自律、自走、自由な発想　しがらみ徹底排除. <a href="https://dempa-digital.com/article/446028">https://dempa-digital.com/article/446028</a>. 電波新聞.</li>
+<li><span class="date">2023/06/15.</span> オムロン、ＡＩでノーベル賞級の研究　全固体電池開発支援も. <a href="https://www.sankei.com/article/20230615-PFXGX7ZUAFIUNOJMJVOD4F7SNU/">https://www.sankei.com/article/20230615-PFXGX7ZUAFIUNOJMJVOD4F7SNU/</a>. 産経新聞.</li>
+<li><span class="date">2022/12/23.</span> 「賢すぎるAI」の大競争時代 画像生成AIは一端に過ぎない. <a href="https://wedge.ismedia.jp/articles/-/28876">https://wedge.ismedia.jp/articles/-/28876</a>. Wedge.</li>
+<li><span class="date">2022/10/31.</span> AI、ノーベル賞めざす「研究者」に　論文読み自ら仮説. <a href="https://www.nikkei.com/article/DGXZQOUC138PB0T11C22A0000000/">https://www.nikkei.com/article/DGXZQOUC138PB0T11C22A0000000/</a>. 日本経済新聞.</li>
+<li><span class="date">2022/01/11.</span> グリーンAIへスタートアップ知恵　空調機使わず省電力. <a href="https://www.nikkei.com/article/DGXZQOUC05C0G0V00C22A1000000/">https://www.nikkei.com/article/DGXZQOUC05C0G0V00C22A1000000/</a>. 日本経済新聞.</li>
+<li><span class="date">2021/07/26.</span> 画像とテキストを融合し理解する「ビジョン＆ランゲージ」. <a href="https://forbesjapan.com/articles/detail/43563">https://forbesjapan.com/articles/detail/43563</a>. ForbesJAPAN9月号.</li>
+<li><span class="date">2021/02/06.</span> AIが絵を描いたら、異色のモナリザに　革新は間近. <a href="https://www.nikkei.com/article/DGXZQOGG264N10W1A120C2000000/">https://www.nikkei.com/article/DGXZQOGG264N10W1A120C2000000/</a>. 日本経済新聞.</li>
+<li><span class="date">2019/12/16.</span> ヒントンに敗れた男、牛久祥孝氏が語る画像認識のトレンド「ディープラーニングの次のトレンドは情報変換」. <a href="https://ainow.ai/2019/12/16/181774/">https://ainow.ai/2019/12/16/181774/</a>. AINOW.</li>
+<li><span class="date">2019/09/01.</span> 「AIのゴッドファーザー」雌伏の30年 華麗なるAI人脈(笑). <a href="https://www.nikkei.com/article/DGXMZO49075690X20C19A8000000/">https://www.nikkei.com/article/DGXMZO49075690X20C19A8000000/</a>. 日本経済新聞.</li>
+<li><span class="date">2019/04/06.</span> AI研究者、大学脱出　企業で基礎研究　裁量大きく. <a href="https://www.nikkei.com/article/DGXMZO43385830V00C19A4TJM000/">https://www.nikkei.com/article/DGXMZO43385830V00C19A4TJM000/</a>. 日本経済新聞.</li>
+<li><span class="date">2018/04/26.</span> オムロンが新会社サイニックエックスを新設、慶大教授らと研究開発を加速. <a href="https://www.sbbit.jp/article/cont1/34865">https://www.sbbit.jp/article/cont1/34865</a>. ビジネス+IT.</li>
+<li><span class="date">2018/04/25.</span> 「近未来をデザインする」 オムロンサイニックエックス株式会社設立. <a href="https://ainow.ai/2018/04/25/137445/">https://ainow.ai/2018/04/25/137445/</a>. AINOW.</li>
+<li><span class="date">2018/01/25.</span> 画像認識技術で説明文を生成　東大の牛久講師. <a href="https://www.nikkei.com/article/DGXMZO26087170U8A120C1X11000/">https://www.nikkei.com/article/DGXMZO26087170U8A120C1X11000/</a>. 日本経済新聞.</li>
+<li><span class="date">2017/11/08.</span> 拓く研究人（１７８）東京大学大学院情報理工学系研究科講師・牛久祥孝氏（３１歳）. <a href="https://www.nikkan.co.jp/articles/view/00449939/0/106">https://www.nikkan.co.jp/articles/view/00449939/0/106</a>. 日刊工業新聞.</li>
+<li><span class="date">2017/08/23.</span> ZIP! 日本テレビ.</li>
+<li><span class="date">2003/09/12.</span> 全国高等学校クイズ選手権. 日本テレビ.</li>
 </ol>
+</section>
 
+<section id="slides">
+<h2>定常的コンテンツ</h2>
+<h3>講演資料</h3>
+<div class="decks">
+<figure class="deck">
+<div class="embed ratio-speakerdeck"><iframe src="https://speakerdeck.com/player/155f53fd86eb444d8574806d211cab2c" title="Vision and Language とその先へ" loading="lazy" allowfullscreen></iframe></div>
+<figcaption>Vision and Language とその先へ</figcaption>
+</figure>
+<figure class="deck">
+<div class="embed ratio-speakerdeck"><iframe src="https://speakerdeck.com/player/f0ffd0cc488a4a87b47fc67349ab37cf" title="Transformerの最前線 〜 畳込みニューラルネットワークの先へ 〜" loading="lazy" allowfullscreen></iframe></div>
+<figcaption>Transformerの最前線 〜 畳込みニューラルネットワークの先へ 〜</figcaption>
+</figure>
+<figure class="deck">
+<div class="embed ratio-speakerdeck"><iframe src="https://speakerdeck.com/player/4095b75398ae484db92f4de927dd3db5" title="CNN vs. ViT" loading="lazy" allowfullscreen></iframe></div>
+<figcaption>CNN vs. ViT</figcaption>
+</figure>
+</div>
+<h3>小ネタ</h3>
+<ul class="plain">
+<li><a href="job.html">お仕事の依頼について</a></li>
+<li><a href="how_to_write_references.html">参考文献の書き方</a></li>
+</ul>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p><a href="#">↑ 先頭へ</a></p>
+</footer>
 </body>
 </html>

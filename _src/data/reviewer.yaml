@@ -1,0 +1,32 @@
+conferences:
+- text: AAAI 2020
+- text: ACMMM 2013 2016 2018 2019
+- text: ACPR 2017
+- text: BMVC 2020
+- text: CVPR 2019 2020 2021 2022 2023 2024 2025 2026
+- text_en: ECCV 2020 (<a href="https://eccv2020.eu/outstanding-reviewers/">Outstanding Reviewer</a>) 2022
+  text_ja: ECCV 2020 (<a href="https://eccv2020.eu/outstanding-reviewers/">Outstanding Reviewer</a>) 2022 2024
+- text: ICCV 2019 2021 2023 2025
+- text: ICLR 2020 2021 2022 (<a href="https://iclr.cc/Conferences/2022/Reviewers">Highlighted Reviewer</a>) 2023 2024 2025 2026
+- text: ICML 2021 2022 2024 2025
+- text: IJCAI 2018 2019
+- text: NeurIPS 2020 2021 2022 2023 2024 2025
+- text: PCM 2018
+journals:
+- Advanced Robotics
+- Computer Speech and Language
+- IEEE Access
+- International Journal of Computer Vision
+- Neural Networks
+- Pattern Recognition Letters
+- Robotics and Automation Letters
+- Speech and Language Processing
+- The Visual Computer
+- Transactions on Affective Computing
+- Transactions on Audio
+- Transactions on Computer Vision and Applications
+- Transactions on Intelligent Systems and Technology
+- Transactions on Multimedia
+- Transactions on Multimedia Computing, Communications, and Applications
+- Transactions on Pattern Analysis and Machine Intelligence
+- 'Transactions on Systems, Man and Cybernetics: Systems'

@@ -1,0 +1,323 @@
+section_title:
+  en: Papers
+  ja: 論文
+sections:
+- id: journal
+  title:
+    en: Journal (refereed)
+    ja: 国際論文誌（査読付き）
+  lang: both
+  items:
+  - year: 2026
+    text: Yusei Ito, Naoya Chiba, Tatsunori Taniai, Ryo Igarashi, Yuta Suzuki, Kotaro Saito, Yoshitaka Ushiku, and Kanta Ono. Enabling single-observation decomposition of multi-phase X-ray diffraction patterns via generative deep learning. <span class="journal">npj Computational Materials</span>, Vol. 12, Article 238, 2026.
+  - year: 2026
+    text: 'Shiwei Su, Nobuyuki Tanaka, Yoshitaka Ushiku, and Koichi Takahashi. BB-EIT: A Generalized Prediction Model for Protein Adsorption on Polymer Brushes Using Augmented Chemical Embeddings. <span class="journal">ACS Applied Materials &amp; Interfaces</span>, Vol. 18, No. 14, pp. 20976-20988, 2026.'
+  - year: 2025
+    text: 'Kan Hatakeyama-Sato, Toshihiko Nishida, Kenta Kitamura, Yoshitaka Ushiku, Koichi Takahashi, Yuta Nabae, and Teruaki Hayakawa. Perspective on utilizing foundation models for laboratory automation in materials research. <span class="journal">Science and Technology of Advanced Materials: Methods</span>, Vol. 5, No. 1, Article 2582379, 2025.'
+  - year: 2025
+    text: 'Yuta Suzuki, Tatsunori Taniai, Ryo Igarashi, Kotaro Saito, Naoya Chiba, Yoshitaka Ushiku, and Kanta Ono. Bridging text and crystal structures: literature-driven contrastive learning for materials science. <span class="journal">Machine Learning: Science and Technology</span>, Vol. 6, No. 3, 035006, 2025.'
+  - year: 2025
+    text: Naruki Yoshikawa, Yuki Asano, Don N. Futaba, Kanako Harada, Taro Hitosugi, Genki N. Kanda, Shoichi Matsuda, Yuuya Nagata, Keisuke Nagato, Masanobu Naito, Tohru Natsume, Kazunori Nishio, Kanta Ono, Haruka Ozaki, Woosuck Shin, Junichiro Shiomi, Kunihiko Shizume, Koichi Takahashi, Seiji Takeda, Ichiro Takeuchi, Ryo Tamura, Koji Tsuda, and Yoshitaka Ushiku. Self-driving laboratories in Japan. <span class="journal">Digital Discovery</span>, Vol. 4, No. 6, pp. 1384-1403, 2025.
+  - year: 2024
+    text: Yusaku Nakajima, Kai Kawasaki, Yasuo Takeichi, Masashi Hamaya, Yoshitaka Ushiku, and Kanta Ono. Force-Controlled Robotic Mechanochemical Synthesis. <span class="journal">Digital Discovery</span>, Vol. 3, pp.2130-2136, 2024.
+  - year: 2024
+    text: 'Shigeo Yoshida, Yuki Koyama, and Yoshitaka Ushiku. Towards AI-Mediated Avatar-Based Telecommunication: Investigating Visual Impression of Switching Between User-and AI-Controlled Avatars in Video Chat. <span class="journal">IEEE Access</span>, Vol. 12, pp. 113372-113383, 2024.'
+  - year: 2026
+    text: Taichi Nishimura, Atsushi Hashimoto, Yoshitaka Ushiku, Hirotaka Kameko, and Shinsuke Mori. Recipe Generation from Unsegmented Cooking Videos. <span class="journal">ACM Transactions on Multimedia Computing, Communications and Applications</span>, Vol. 22, No. 9, pp. 1-25, 2026.
+  - year: 2024
+    text: Yoshitomo Matsubara, Naoya Chiba, Ryo Igarashi, and Yoshitaka Ushiku. Rethinking Symbolic Regression Datasets and Benchmarks for Scientific Discovery. <span class="journal">Data-centric Machine Learning Research</span>, Vol. 1, No. 3, pp. 1-38, 2024.
+  - year: 2023
+    text: Naoya Chiba, Yuta Suzuki, Tatsunori Taniai, Ryo Igarashi, Yoshitaka Ushiku, Kotaro Saito, and Kanta Ono. Neural structure fields with application to crystal structure autoencoders. <span class="journal">Communications Materials</span>, Vol.4, No.1, p.106, 2023.
+  - year: 2023
+    text: Kazuhiro Ogata, Reo Gakumi, Atsushi Hashimoto, Yoshitaka Ushiku, and Shigeo Yoshida. The influence of Bouba-and Kiki-like shape on perceived taste of chocolate pieces. <span class="journal">Frontiers in Psychology</span>, Vol.14, 2023.
+  - year: 2023
+    text: Taichi Nishimura, Atsushi Hashimoto, Yoshitaka Ushiku, Hirotaka Kameko, and Shinsuke Mori. State-aware video procedural captioning. <span class="journal">Multimedia Tools and Applications</span>, Vol.82, pp.37273-37301, 2023.
+  - year: 2023
+    text: Yutaka Maruyama, Ryo Igarashi, Yoshitaka Ushiku, and Ayori Mitsutake. Analysis of Protein Folding Simulation with Moving Root Mean Square Deviation. <span class="journal">Journal of Chemical Information and Modeling</span>, Vol.63, No.5, pp.1529-1541, 2023.
+  - year: 2022
+    text: 'Yuta Suzuki, Tatsunori Taniai, Kotaro Saito, Yoshitaka Ushiku, and Kanta Ono. Self-supervised learning of materials concepts from crystal structures via deep neural networks. <span class="journal">Machine Learning: Science and Technology</span>, pp.2632-2153, 2022.'
+  - year: 2022
+    text: Mutsuki Nakahara, Mai Nishimura, Yoshitaka Ushiku, Takayuki Nishio, Kazuki Maruta, Yu Nakayama, and Daisuke Hisano. Edge Computing-Assisted DNN Image Recognition System With Progressive Image Retransmission. <span class="journal">IEEE Access</span>, Vol.10, pp.91253-91262, 2022.
+  - year: 2021
+    text: Takehiko Ohkawa, Takuma Yagi, Atsushi Hashimoto, Yoshitaka Ushiku, and Yoichi Sato. Foreground-Aware Stylization and Consensus Pseudo-Labeling for Domain Adaptation of First-Person Hand Segmentation. <span class="journal">IEEE Access</span>, Vol.9, pp.94644-94655, 2021.
+  - year: 2021
+    text: Taichi Nishimura, Atsushi Hashimoto, Yoshitaka Ushiku, Hirotaka Kameko, Yoko Yamakata, and Shinsuke Mori. Structure-Aware Procedural Text Generation From an Image Sequence. <span class="journal">IEEE Access</span>, Vol.9, pp.2125-2141, 2021.
+  - year: 2021
+    text: Hiroaki Minoura, Ryo Yonetani, Mai Nishimura, and Yoshitaka Ushiku. Crowd Density Forecasting by Modeling Patch-Based Dynamics. <span class="journal">IEEE Robotics and Automation Letters</span>, Vol.6, No.2, pp.287-294, 2021.
+  - year: 2019
+    text: 'Yusuke Mori, Hiroaki Yamane, Yoshitaka Ushiku, and Tatsuya Harada. How narratives move your mind: A corpus of shared-character stories for connecting emotional flow and interestingness. <span class="journal">Information Processing &amp; Management</span>, Vol.56, No.5, pp.1865-1879, 2019.'
+- id: intl_conf
+  title:
+    en: International Conference (refereed)
+    ja: 国際学会 (査読付き)
+  lang: both
+  items:
+  - year: 2026
+    text: Yuzheng Xu, Tosho Hirasawa, Tadashi Kozuno, and Yoshitaka Ushiku. Am I More Pointwise or Pairwise? Revealing Position Bias in Rubric-Based LLM-as-a-Judge. Findings of the Conference on Empirical Methods in Natural Language Processing (<span class="conf">EMNLP</span> Findings), 2026. (to appear)
+  - year: 2026
+    text: 'Tomoya Takahashi, Yusaku Nakajima, Cristian C. Beltran-Hernandez, Yuki Kuroda, Kanta Ono, Kazutoshi Tanaka, Masashi Hamaya, and Yoshitaka Ushiku. SCU-Hand with Integrated Single-Sheet Valve: A Funnel-Shaped Robotic Hand for Milligram-Scale Powder Handling. IEEE International Conference on Robotics and Automation (<span class="conf">ICRA</span>), 2026.'
+  - year: 2026
+    text: Mimo Shirasaka, Cristian C. Beltran-Hernandez, Masashi Hamaya, and Yoshitaka Ushiku. Robust and Resilient Soft Robotic Object Insertion with Compliance-Enabled Contact Formation and Failure Recovery. IEEE International Conference on Robotics and Automation (<span class="conf">ICRA</span>), 2026.
+  - year: 2026
+    text: 'Shun Inadumi, Shohei Tanaka, Tosho Hirasawa, Atsushi Hashimoto, Koichiro Yoshino, and Yoshitaka Ushiku. SciPostGen: Bridging the Gap Between Scientific Papers and Poster Layouts. IEEE/CVF Conference on Computer Vision and Pattern Recognition, Findings Track (<span class="conf">CVPR</span> Findings), 2026.'
+  - year: 2026
+    text: 'Shohei Tanaka, Atsushi Hashimoto, and Yoshitaka Ushiku. SciPostLayoutTree: A Dataset for Structural Analysis of Scientific Posters. IEEE/CVF Conference on Computer Vision and Pattern Recognition, Findings Track (<span class="conf">CVPR</span> Findings), 2026.'
+  - year: 2025
+    text: 'Kuniaki Saito, Donghyun Kim, Kwanyong Park, Atsushi Hashimoto, and Yoshitaka Ushiku. CaptionSmiths: Flexibly Controlling Language Pattern in Image Captioning. IEEE/CVF International Conference on Computer Vision (<span class="conf">ICCV</span>), 2025.'
+  - year: 2025
+    text: 'Risa Shinoda, Nakamasa Inoue, Hirokatsu Kataoka, Masaki Onishi, and Yoshitaka Ushiku. AgroBench: Vision-Language Model Benchmark in Agriculture. IEEE/CVF International Conference on Computer Vision (<span class="conf">ICCV</span>), 2025.'
+  - year: 2025
+    text: Ryogo Niwa, Shigeo Yoshida, Yuki Koyama, and Yoshitaka Ushiku. Cooperative Design Optimization through Natural Language Interaction. ACM Symposium on User Interface Software and Technology (<span class="conf">UIST</span>), 2025.
+  - year: 2025
+    text: 'Chenhao Chen, Taiga Masuda, Yoshitaka Ushiku, Shohei Tanaka, Kuniaki Saito, Tsubasa Hirakawa, Takayoshi Yamashita, and Hironobu Fujiyoshi. CRNLI: A Textual Entailment Dataset in the Chemistry Domain. International Conference on Text, Speech, and Dialogue (<span class="conf">TSD</span>), 2025.'
+  - year: 2025
+    text: Kuniaki Saito, Chen-Yu Lee, Kihyuk Sohn, and Yoshitaka Ushiku. Where is the answer? An empirical study of positional bias for parametric knowledge extraction in language model. Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics (<span class="conf">NAACL</span>), 2025.
+  - year: 2025
+    text: 'Tomoya Takahashi, Cristian C. Beltran-Hernandez, Yuki Kuroda, Kazutoshi Tanaka, Masashi Hamaya, and Yoshitaka Ushiku. SCU-Hand: Soft Conical Universal Robotic Hand for Scooping Granular Media from Containers of Various Sizes. IEEE International Conference on Robotics and Automation (<span class="conf">ICRA</span>), 2025.'
+  - year: 2025
+    text: Yusei Ito, Tatsunori Taniai, Ryo Igarashi, Yoshitaka Ushiku, and Kanta Ono. Rethinking the role of frames for SE(3)-invariant crystal structure modeling. International Conference on Learning Representations (<span class="conf">ICLR</span>), 2025.
+  - year: 2025
+    text: 'Takehiko Ohkawa, Takuma Yagi, Taichi Nishimura, Ryosuke Furuta, Atsushi Hashimoto, Yoshitaka Ushiku, and Yoichi Sato. Exo2EgoDVC: Dense Video Captioning of Egocentric Procedural Activities Using Web Instructional Videos. IEEE/CVF Winter Conference on Applications of Computer Vision (<span class="conf">WACV</span>), 2025.'
+  - year: 2024
+    text: Rintaro Yanagi, Atsushi Hashimoto, Naoya Chiba, Shusaku Sone, Jiaxin Ma, and Yoshitaka Ushiku. Learning 3D Point Cloud Registration as a Single Optimization Problem. Asian Conference on Computer Vision (<span class="conf">ACCV</span>), 2024.
+  - year: 2024
+    text: 'Atsushi Hashimoto, Koki Maeda, Tosho Hirasawa, Jun Harashima, Leszek Rybicki, Yusuke Fukasawa, and Yoshitaka Ushiku. COM Kitchens: An Unedited Overhead-view Procedural Videos Dataset a Vision-Language Benchmark. European Conference on Computer Vision (<span class="conf">ECCV</span>), 2024.'
+  - year: 2024
+    text: Keisuke Shirai, Cristian C Beltran-Hernandez, Masashi Hamaya, Atsushi Hashimoto, Shohei Tanaka, Kento Kawaharazuka, Kazutoshi Tanaka, Yoshitaka Ushiku, and Shinsuke Mori. Vision-language interpreter for robot task planning. IEEE International Conference on Robotics and Automation (<span class="conf">ICRA</span>), 2024.
+  - year: 2024
+    text: 'Sota Miyamoto, Takuma Yagi, Yuto Makimoto, Mahiro Ukai, Yoshitaka Ushiku, Atsushi Hashimoto, and Nakamasa Inoue. PolarDB: Formula-Driven Dataset for Pre-Training Trajectory Encoders. IEEE International Conference on Acoustics, Speech and Signal Processing (<span class="conf">ICASSP</span>), 2024.'
+  - year: 2024
+    text: 'Tatsunori Taniai, Ryo Igarashi, Yuta Suzuki, Naoya Chiba, Kotaro Saito, Yoshitaka Ushiku, and Kanta Ono. Crystalformer: Infinitely Connected Attention for Periodic Structure Encoding. International Conference on Learning Representations (<span class="conf">ICLR</span>), 2024.'
+  - year: 2024
+    text: 'Mahiro Ukai, Shuhei Kurita, Atsushi Hashimoto, Yoshitaka Ushiku, and Nakamasa Inoue. AdaCoder: Adaptive Prompt Compression for Programmatic Visual Question Answering. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), 2024.'
+  - year: 2024
+    text: Tomohiro Hashimoto, Ayaka Maruo, Shoichiro Sekiguchi, Yoshitaka Ushiku, and Genya Shimbo. Unsupervised Domain Adaptation for Human and Animal Chest X-Ray Bone Suppression. IEEE International Symposium on Biomedical Imaging (<span class="conf">ISBI</span>), 2024.
+  - year: 2023
+    text: Yusaku Nakajima, Masashi Hamaya, Kazutoshi Tanaka, Takafumi Hawai, Felix von Drigalski, Yasuo Takeichi, Yoshitaka Ushiku, and Kanta Ono. Robotic Powder Grinding with Audio-Visual Feedback for Laboratory Automation in Materials Science. IEEE/RSJ International Conference on Intelligent Robots and Systems (<span class="conf">IROS</span>), 2023.
+  - year: 2022
+    text: Yusaku Nakajima, Masashi Hamaya, Yuta Suzuki, Takafumi Hawai, Felix von Drigalski, Kazutoshi Tanaka, Yoshitaka Ushiku, and Kanta Ono. Robotic Powder Grinding with a Soft Jig for Laboratory Automation in Material Science. IEEE/RSJ International Conference on Intelligent Robots and Systems (<span class="conf">IROS</span>), 2022.
+  - year: 2022
+    text: 'Keisuke Shirai, Atsushi Hashimoto, Taichi Nishimura, Hirotaka Kameko, Shuhei Kurita, Yoshitaka Ushiku, and Shinsuke Mori. Visual Recipe Flow: A Dataset for Learning Visual State Changes of Objects with Recipe Flows. International Conference on Computational Linguistics (<span class="conf">COLING</span>), 2022.'
+  - year: 2022
+    text: Atsushi Hashimoto, Taichi Nishimura, Yoshitaka Ushiku, Hirotaka Kameko, and Shinsuke Mori. Cross-modal Representation Learning for Understanding Manufacturing Procedure. International Conference on Human-Computer Interaction (<span class="conf">HCII</span>), 2022.
+  - year: 2021
+    text: Taichi Nishimura, Atsushi Hashimoto, Yoshitaka Ushiku, Hirotaka Kameko, and Shinsuke Mori. State-aware Video Procedural Captioning. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), 2021.
+  - year: 2021
+    text: Mutsuki Nakahara, Daisuke Hisano, Mai Nishimura, Yoshitaka Ushiku, Kazuki Maruta, and Yu Nakayama. Retransmission Edge Computing System Conducting Adaptive Image Compression Based on Image Recognition Accuracy. IEEE Vehicular Technology Conference (<span class="conf">VTC-Fall</span>), 2021.
+  - year: 2021
+    text: Qing Yu, Atsushi Hashimoto, and Yoshitaka Ushiku. Divergence Optimization for Noisy Universal Domain Adaptation. The IEEE Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2021.
+  - year: 2021
+    text: Ukyo Honda, Yoshitaka Ushiku, Atsushi Hashimoto, Taro Watanabe, and Yuji Matsumoto. Removing Word-Level Spurious Alignment between Images and Pseudo-Captions in Unsupervised Image Captioning. The Conference of the European Chapter of the Association for Computational Linguistics (<span class="conf">EACL</span>), 2021.
+  - year: 2020
+    text: Taichi Nishimura, Suzushi Tomori, Hayato Hashimoto, Atsushi Hashimoto, Yoko Yamakata, Jun Harashima, Yoshitaka Ushiku, and Shinsuke Mori. Visual Grounding Annotation of Recipe Flow Graph. Language Resources and Evaluation Conference (<span class="conf">LREC</span>), 2020.
+  - year: 2019
+    text: Takuhiro Kaneko, Yoshitaka Ushiku, and Tatsuya Harada. Class-distinct and class-mutual image generation with GANs. British Machine Vision Conference (<span class="conf">BMVC</span>), 2019.
+  - year: 2019
+    text: "Mikihiro Tanaka, Takayuki Itamochi, Kenichi Narioka, Ikuro Sato, Yoshitaka Ushiku, and Tatsuya Harada. Generating Easy-to-Understand Referring Expressions for Target Identifications. The IEEE International Conference on Computer Vision (<span class=\"conf\">ICCV</span>),\t2019."
+  - year: 2019
+    text: Takuhiro Kaneko, Yoshitaka Ushiku, and Tatsuya Harada. Label-noise robust generative adversarial networks. The IEEE Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2019.
+  - year: 2019
+    text: Kuniaki Saito, Yoshitaka Ushiku, Tatsuya Harada, and Kate Saenko. Strong-weak distribution alignment for adaptive object detection. The IEEE Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2019
+  - year: 2019
+    text: Yang Li, Yoshitaka Ushiku, and Tatsuya Harada. Pose Graph Optimization for Unsupervised Monocular Visual Odometry. International Conference on Robotics and Automation (<span class="conf">ICRA</span>), 2019.
+  - year: 2019
+    text: Akane Iseki, Yusuke Mukuta, Yoshitaka Ushiku, and Tatsuya Harada. Estimating the causal effect from partially observed time series. The AAAI Conference on Artificial Intelligence (<span class="conf">AAAI</span>), 2019.
+  - year: 2018
+    text_en: Kohei Uehara, Antonio Tejero-de-Pablos, Yoshitaka Ushiku, Tatsuya Harada. Visual Question Generation for Class Acquisition of Unknown Objects. The 15th European Conference on Computer Vision (<span class="conf">ECCV</span>), 2018.
+    text_ja: Kohei Uehara, Antonio Tejero-de-Pablos, Yoshitaka Ushiku, and Tatsuya Harada. Visual Question Generation for Class Acquisition of Unknown Objects. The 15th European Conference on Computer Vision (<span class="conf">ECCV</span>), 2018.
+  - year: 2018
+    text_en: Kuniaki Saito, Shohei Yamamoto, Yoshitaka Ushiku, Tatsuya Harada. Open Set Domain Adaptation by Backpropagation. The 15th European Conference on Computer Vision (<span class="conf">ECCV</span>), 2018.
+    text_ja: Kuniaki Saito, Shohei Yamamoto, Yoshitaka Ushiku, and Tatsuya Harada. Open Set Domain Adaptation by Backpropagation. The 15th European Conference on Computer Vision (<span class="conf">ECCV</span>), 2018.
+  - year: 2018
+    text_en: Andrew Shin, Yoshitaka Ushiku, Tatsuya Harada. Customized Image Narrative Generation via Interactive Visual Question Generation and Answering. The 31th IEEE Computer Society Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2018. (spotlight presentation)
+    text_ja: Andrew Shin, Yoshitaka Ushiku, and Tatsuya Harada. Customized Image Narrative Generation via Interactive Visual Question Generation and Answering. The 31th IEEE Computer Society Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2018. (spotlight presentation)
+  - year: 2018
+    text_en: Atsushi Kanehira, Luc Van Gool, Yoshitaka Ushiku, Tatsuya Harada. Viewpoint-aware Video Summarization. The 31th IEEE Computer Society Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2018. (spotlight presentation)
+    text_ja: Atsushi Kanehira, Luc Van Gool, Yoshitaka Ushiku, and Tatsuya Harada. Viewpoint-aware Video Summarization. The 31th IEEE Computer Society Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2018. (spotlight presentation)
+  - year: 2018
+    text_en: Hiroharu Kato, Yoshitaka Ushiku, Tatsuya Harada. Neural 3D Mesh Renderer. The 31th IEEE Computer Society Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2018. (spotlight presentation)
+    text_ja: Hiroharu Kato, Yoshitaka Ushiku, and Tatsuya Harada. Neural 3D Mesh Renderer. The 31th IEEE Computer Society Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2018. (spotlight presentation)
+  - year: 2018
+    text_en: Kuniaki Saito, Kohei Watanabe, Yoshitaka Ushiku, Tatsuya Harada. Maximum Classifier Discrepancy for Unsupervised Domain Adaptation. The 31th IEEE Computer Society Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2018. (oral presentation)
+    text_ja: Kuniaki Saito, Kohei Watanabe, Yoshitaka Ushiku, and Tatsuya Harada. Maximum Classifier Discrepancy for Unsupervised Domain Adaptation. The 31th IEEE Computer Society Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2018. (oral presentation)
+  - year: 2018
+    text_en: Yuji Tokozume, Yoshitaka Ushiku, Tatsuya Harada. Between-class Learning for Image Classification. The 31th IEEE Computer Society Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2018..
+    text_ja: Yuji Tokozume, Yoshitaka Ushiku, and Tatsuya Harada. Between-class Learning for Image Classification. The 31th IEEE Computer Society Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2018..
+  - year: 2018
+    text_en: Kuniaki Saito, Yoshitaka Ushiku, Tatsuya Harada, Kate Saenko. Adversarial Dropout Regularization. The 6th International Conference on Learning Representations (<span class="conf">ICLR</span>), 2018.
+    text_ja: Kuniaki Saito, Yoshitaka Ushiku, Tatsuya Harada, and Kate Saenko. Adversarial Dropout Regularization. The 6th International Conference on Learning Representations (<span class="conf">ICLR</span>), 2018.
+  - year: 2018
+    text_en: Yuji Tokozume, Yoshitaka Ushiku, Tatsuya Harada. Learning from Between-class Examples for Deep Sound Recognition. The 6th International Conference on Learning Representations (<span class="conf">ICLR</span>), 2018.
+    text_ja: Yuji Tokozume, Yoshitaka Ushiku, and Tatsuya Harada. Learning from Between-class Examples for Deep Sound Recognition. The 6th International Conference on Learning Representations (<span class="conf">ICLR</span>), 2018.
+  - year: 2018
+    text_en: 'Katsunori Ohnishi, Shohei Yamamoto, Yoshitaka Ushiku, Tatsuya Harada. Hierarchical Video Generation from Orthogonal Information: Optical Flow and Texture. AAAI Conference on Artificial Intelligence (<span class="conf">AAAI</span>), 2018. (oral presentation)'
+    text_ja: 'Katsunori Ohnishi, Shohei Yamamoto, Yoshitaka Ushiku, and Tatsuya Harada. Hierarchical Video Generation from Orthogonal Information: Optical Flow and Texture. AAAI Conference on Artificial Intelligence (<span class="conf">AAAI</span>), 2018. (oral presentation)'
+  - year: 2018
+    text_en: Yusuke Mukuta, Yoshitaka Ushiku, Tatsuya Harada. Alternating Circulant Random Features for Semigroup Kernels. AAAI Conference on Artificial Intelligence (<span class="conf">AAAI</span>), 2018.
+    text_ja: Yusuke Mukuta, Yoshitaka Ushiku, and Tatsuya Harada. Alternating Circulant Random Features for Semigroup Kernels. AAAI Conference on Artificial Intelligence (<span class="conf">AAAI</span>), 2018.
+  - year: 2017
+    text_en: 'Masatoshi Hidaka, Yuichiro Kikura, Yoshitaka Ushiku, Tatsuya Harada. WebDNN: Fastest DNN Execution Framework on Web Browser. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), Open Source Software Competition, pp.1213-1216, 2017.'
+    text_ja: 'Masatoshi Hidaka, Yuichiro Kikura, Yoshitaka Ushiku, and Tatsuya Harada. WebDNN: Fastest DNN Execution Framework on Web Browser. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), Open Source Software Competition, pp.1213-1216, 2017.'
+  - year: 2017
+    text_en: Masataka Yamaguchi, Kuniaki Saito, Yoshitaka Ushiku, Tatsuya Harada. Spatio-temporal Person Retrieval via Natural Language Queries. IEEE International Conference on Computer Vision (<span class="conf">ICCV</span>), 2017.
+    text_ja: Masataka Yamaguchi, Kuniaki Saito, Yoshitaka Ushiku, and Tatsuya Harada. Spatio-temporal Person Retrieval via Natural Language Queries. IEEE International Conference on Computer Vision (<span class="conf">ICCV</span>), 2017.
+  - year: 2017
+    text_en: 'Qishen Ha, Kohei Watanabe, Takumi Karasawa, Yoshitaka Ushiku, Tatsuya Harada. MFNet: Towards Real-Time Semantic Segmentation for Autonomous Vehicles with Multi-Spectral Scenes. IEEE/RSJ International Conference on Intelligent Robots and Systems (<span class="conf">IROS</span>), 2017.'
+    text_ja: 'Qishen Ha, Kohei Watanabe, Takumi Karasawa, Yoshitaka Ushiku, and Tatsuya Harada. MFNet: Towards Real-Time Semantic Segmentation for Autonomous Vehicles with Multi-Spectral Scenes. IEEE/RSJ International Conference on Intelligent Robots and Systems (<span class="conf">IROS</span>), 2017.'
+  - year: 2017
+    text: Kuniaki Saito, Yoshitaka Ushiku, and Tatsuya Harada. Asymmetric Tri-training for Unsupervised Domain Adaptation. International Conference on Machine Learning (<span class="conf">ICML</span>), pp.2988-2997, 2017.
+  - year: 2017
+    text: 'Kuniaki Saito, Andrew Shin, Yoshitaka Ushiku, and Tatsuya Harada. DualNet: Domain-Invariant Network for Visual Question Answering. IEEE International Conference on Multimedia and Expo (<span class="conf">ICME</span>), pp.829-834, 2017. (oral presentation)'
+  - year: 2016
+    text: Andrew Shin, Yoshitaka Ushiku, and Tatsuya Harada. Image Captioning with Sentiment Terms via Weakly-Supervised Sentiment Dataset. British Machine Vision Conference (<span class="conf">BMVC</span>), pp.53.1-53.12, 2016.
+  - year: 2015
+    text: 'Yoshitaka Ushiku, Masataka Yamaguchi, Yusuke Mukuta, and Tatsuya Harada. Common subspace for model and similarity: Phrase learning for caption generation from images. IEEE International Conference on Computer Vision (<span class="conf">ICCV</span>), pp.2668-2676, 2015. (acceptance rate: 30.9%)'
+  - year: 2014
+    text: 'Yoshitaka Ushiku, Masatoshi Hidaka, and Tatsuya Harada. Three guidelines of online learning for large-scale visual recognition. IEEE Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), pp.3574-3581, 2014. (acceptance rate: 29.9%)'
+  - year: 2014
+    text: Asako Kanezaki, Shogo Inaba, Yoshitaka Ushiku, Yukihiko Yamashita, Hiroaki Muraoka, Yasuo Kuniyoshi, and Tatsuya Harada. Hard negative classes for multiple object detection. IEEE International Conference on Robotics and Automation (<span class="conf">ICRA</span>), pp.3066-3073, 2014.
+  - year: 2012
+    text: 'Yoshitaka Ushiku, Tatsuya Harada, and Yasuo Kuniyoshi. Efficient Image Annotation for Automatic Sentence Generation. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), pp.549-558, 2012. (full paper, acceptance rate: 20.2%)'
+  - year: 2011
+    text: Yoshitaka Ushiku, Tatsuya Harada, and Yasuo Kuniyoshi. Understanding Images with Natural Sentences. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), Multimedia Grand Challenge, pp.679-682, 2011. (<span class="mention">Special Prize on the Best Application of a Theoretical Framework</span>) [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2011/ACMMM2011_MGC_ushiku.pdf">pdf</a>]
+  - year: 2011
+    text: 'Yoshitaka Ushiku, Tatsuya Harada, and Yasuo Kuniyoshi. Automatic Sentence Generation from Images. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), pp.1533-1536, 2011. (short, acceptance rate: usually 30%) [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2011/ACMMM2011_ushiku.pdf">pdf</a>]'
+  - year: 2011
+    text: 'Tatsuya Harada, Yoshitaka Ushiku, Yuya Yamashita, and Yasuo Kuniyoshi. Discriminative Spatial Pyramid. IEEE Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), pp.1617-1624, 2011. (acceptance rate: 26.4%) [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2011/CVPR2011_harada.pdf">pdf</a>]'
+  - year: 2010
+    text: Yoshitaka Ushiku, Tatsuya Harada, and Yasuo Kuniyoshi. Improvement of Image Similarity Measures for Image Browsing and Retrieval Via Latent Space Learning between Images and Long Texts. IEEE International Conference on Image Processing (<span class="conf">ICIP</span>), pp.2365-2368, 2010. [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2010/ICIP2010_ushiku.pdf">pdf</a>]
+- id: intl_ws
+  title:
+    en: International Conference (unrefereed, demo or workshop)
+    ja: 国際学会 (査読無し、デモ/ワークショップ)
+  lang: both
+  items:
+  - year: 2025
+    text: 'Yosuke Yamagishi, Kuniaki Saito, Atsushi Hashimoto, and Yoshitaka Ushiku. PMC-Vid: A Large-Scale Biomedical Video Captioning Dataset. IEEE/CVF International Conference on Computer Vision Workshops (<span class="conf">ICCV</span>, Workshop), 2025.'
+  - year: 2025
+    text: 'Yuzheng Xu, Shigeo Yoshida, Atsushi Hashimoto, and Yoshitaka Ushiku. VisDev: A Stroke Deviation Visualization System Using Point-Set Registration for Handwriting Training. Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (<span class="conf">CHI</span> EA), 2025.'
+  - year: 2025
+    text: 'Risa Shinoda, Kuniaki Saito, Shohei Tanaka, Tosho Hirasawa, and Yoshitaka Ushiku. SBS Figures: Pre-training Figure QA from Stage-by-Stage Synthesized Images. AAAI Conference on Artificial Intelligence Workshop on Document Understanding and Intelligence (<span class="conf">AAAI</span>, Workshop), 2025.'
+  - year: 2024
+    text: Kazuya Nishimura, Kuniaki Saito, Tosho Hirasawa, and Yoshitaka Ushiku. Toward Structured Related Work Generation with Novelty Statements. Workshop on Scholarly Document Processing (<span class="conf">SDP</span>, Workshop), 2024.
+  - year: 2023
+    text: Rintaro Yanagi, Atsushi Hashimoto, Naoya Chiba, and Yoshitaka Ushiku. Reference-based dense pose estimation via Partial 3D Point Cloud Matching. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>) Demo Paper Track, 2023.
+  - year: 2022
+    text: 'Jiaxin Ma, Yoshitaka Ushiku, and Miori Sagara. The Effect of Improving Annotation Quality on Object Detection Datasets: A Preliminary Study. IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (<span class="conf">CVPR</span>, Workshop), 2022.'
+  - year: 2021
+    text: Taichi Nishimura, Kojiro Sakoda, Atsushi Hashimoto, Yoshitaka Ushiku, Natsuko Tanaka, Fumihito Ono, Hirotaka Kameko, and Shinsuke Mori. Egocentric Biochemical Video-and-Language Dataset. IEEE/CVF International Conference on Computer Vision Workshops (<span class="conf">ICCV</span>, Workshop), 2021.
+  - year: 2018
+    text: Kohei Watanabe, Kuniaki Saito, Yoshitaka Ushiku, and Tatsuya Harada. Multichannel Semantic Segmentation with Unsupervised Domain Adaptation. European Conference on Computer Vision Workshops (<span class="conf">ECCV</span>, Workshop), 2018.
+  - year: 2018
+    text: Toshihiko Matsuura, Kuniaki Saito, Yoshitaka Ushiku, and Tatsuya Harada. Generalized Bayesian Canonical Correlation Analysis with Missing Modalities. European Conference on Computer Vision Workshops (<span class="conf">ECCV</span>, Workshop), 2018.
+  - year: 2017
+    text: Kuniaki Saito, Yusuke Mukuta, Yoshitaka Ushiku, Tatsuya Harada. Deep Modality Invariant Adversarial Network for Shared Representation Learning. The 16th International Conference on Computer Vision Workshop on Transferring and Adapting Source Knowledge in Computer Vision (<span class="conf">ICCV</span>, Workshop), 2017.
+  - year: 2017
+    text: Yusuke Mukuta, Yoshitaka Ushiku, Tatsuya Harada. Spatial-Temporal Weighted Pyramid using Spatial Orthogonal Pooling. The 16th International Conference on Computer Vision Workshop on Compact and Efficient Feature Representation and Learning in Computer Vision (<span class="conf">ICCV</span>, Workshop), 2017.
+  - year: 2017
+    text: Takumi Karasawa, Kohei Watanabe, Qishen Ha, Antonio Tejero-De-Pablos, Yoshitaka Ushiku, Tatsuya Harada. Multispectral Object Detection for Autonomous Vehicles. The 25th Annual ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), 2017, (workshop).
+  - year: 2012
+    text: 'Yoshitaka Ushiku, Hiroshi Muraoka, Sho Inaba, Teppei Fujisawa, Koki Yasumoto, Naoyuki Gunji, Takayuki Higuchi, Yuko Hara, Tatsuya Harada, and Yasuo Kuniyoshi. ISI at ImageCLEF 2012: Scalable System for Image Annotation. the 3rd Conference and Labs of the Evaluation Forum (<span class="conf">CLEF</span> 2012), pp.1-12, 2012.'
+- id: tech_report
+  title:
+    en: Technical Report
+    ja: 技術報告
+  lang: both
+  items:
+  - year: 2026
+    text: 'Kuniaki Saito and Yoshitaka Ushiku. The Devil is in the Spectrum Bias: Spectrum-Balanced Feature Matching for Robust Representation Distillation. arXiv, 2609.34106, 2026.'
+  - year: 2026
+    text: 'Michiko Yoshitake, Yuta Suzuki, Ryo Igarashi, Yoshitaka Ushiku, and Keisuke Nagato. MaterialFigBENCH: benchmark dataset with figures for evaluating college-level materials science problem-solving abilities of multimodal large language models. arXiv, 2603.11414, 2026.'
+  - year: 2026
+    text: 'Kiyotada Mori, Shohei Tanaka, Tosho Hirasawa, Tadashi Kozuno, Koichiro Yoshino, and Yoshitaka Ushiku. WarrantScore: Modeling Warrants between Claims and Evidence for Substantiation Evaluation in Peer Reviews. arXiv, 2601.17377, 2026.'
+  - year: 2025
+    text: 'Kuniaki Saito, Risa Shinoda, Shohei Tanaka, Tosho Hirasawa, Fumio Okura, and Yoshitaka Ushiku. HalDec-Bench: Benchmarking Hallucination Detector in Image Captioning. arXiv, 2511.20515, 2025.'
+  - year: 2024
+    text: Akihiro Fujii, Yoshitaka Ushiku, Koji Shimizu, Anh Khoa Augustin Lu, and Satoshi Watanabe. Adaptable Method for Crystal Design across Diverse Constraints and Objectives with Pretrained Property Predictors. arXiv, 2410.08562, 2024.
+  - year: 2024
+    text: 'Michiko Yoshitake, Yuta Suzuki, Ryo Igarashi, Yoshitaka Ushiku, and Keisuke Nagato. MaterialBENCH: Evaluating College-Level Materials Science Problem-Solving Abilities of Large Language Models. arXiv, 2409.03161, 2024.'
+  - year: 2024
+    text: 'Tong Zheng, Shusaku Sone, Yoshitaka Ushiku, Yuki Oba, and Jiaxin Ma. TNF: Tri-branch Neural Fusion for Multimodal Medical Data Classification. arXiv, 2403.01802, 2024.'
+  - year: 2023
+    text: Shusaku Sone, Jiaxin Ma, Atsushi Hashimoto, Naoya Chiba, and Yoshitaka Ushiku. WeaveNet for Approximating Two-sided Matching Problems. arXiv, 2310.12515, 2023.
+  - year: 2023
+    text: Shiqi Yang, Atsushi Hashimoto, and Yoshitaka Ushiku. A Critical Look at the Current Usage of Foundation Model for Dense Recognition Task. arXiv, 2307.02862, 2023.
+  - year: 2023
+    text: Qing Yu, Atsushi Hashimoto, and Yoshitaka Ushiku. Noisy Universal Domain Adaptation via Divergence Optimization for Visual Recognition. arXiv, 2304.10333, 2023.
+  - year: 2018
+    text: Shoji Yamamoto, Antonio Tejero-de-Pablos, Yoshitaka Ushiku, and Tatsuya Harada. Conditional Video Generation Using Action-Appearance Captions. arXiv, 1812.01261, 2018.
+  - year: 2017
+    text: Andrew Shin, Leopold Crestel, Hiroharu Kato, Kuniaki Saito, Katsunori Ohnishi, Masataka Yamaguchi, Masahiro Nakawaki, Yoshitaka Ushiku, and Tatsuya Harada. Melody Generation for Pop Music via Word Representation of Musical Properties. arXiv, 1710.11549, 2017.
+  - year: 2016
+    text: 'Andrew Shin, Yoshitaka Ushiku, and Tatsuya Harada. The Color of the Cat is Gray: 1 Million Full-Sentences Visual Question Answering (FSVQA). arXiv, 1609.06657, 2016.'
+- id: domestic_journal
+  title:
+    en: Domestic Journal (refereed, In Japanese)
+    ja: 国内論文誌 (査読付き)
+  lang: ja
+  en_pointer: Go to <a href="index_ja.html">japanese page</a> for domestic papers.
+  items:
+  - year: 2011
+    text: 牛久祥孝，原田達也，國吉康夫. 画像・長文からの潜在空間獲得による画像間類似度の改善. 情報処理学会論文誌 (IPSJ), Vol.52, No.12, pp.3496-3503, 2011. [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2011/IPSJ2011_ushiku.pdf">pdf</a>]
+- id: domestic_conf
+  title:
+    en: Domestic Conference (refereed, In Japanese)
+    ja: 国内学会 (査読付き)
+  lang: ja
+  en_pointer: Go to <a href="index_ja.html">japanese page</a> for domestic papers.
+  items:
+  - year: 2019
+    text: Mayu Otani, Kazuhiro Ota, Yuta Nakashima, Esa Rahtu, Janne Heikkila, and Yoshitaka Ushiku. Collecting Relation-Aware Video Captions. 画像の認識・理解シンポジウム (MIRU), OS2A-6, 2019.
+  - year: 2018
+    text: Lisa Kawai, Yoshitaka Ushiku, and Tatsuya Harada. Facial Image Generation from Voice. 画像の認識・理解シンポジウム (MIRU), OS4-L3, 2018.
+  - year: 2016
+    text: Ryuei Murata, Akisato Kimura, Yoshitaka Ushiku, Takayoshi Yamashita, Yuji Yamauchi, and Hironobu Fujiyoshi. Online Learning Based on Mondrian Forests in Parallel Distributed Processing. 画像の認識・理解シンポジウム (MIRU), OS2-05, 2016.
+  - year: 2012
+    text: 牛久祥孝, 原田達也, 國吉康夫. キーフレーズ推定と文法モデルによる画像説明文生成. 画像の認識・理解シンポジウム (MIRU), IS2-05(OS3-01), 2012. (長尾賞(最優秀賞)候補論文)
+  - year: 2011
+    text: 牛久祥孝, 原田達也, 國吉康夫. 画像・文章間の類似度学習による画像説明文の自動生成. 画像の認識・理解シンポジウム (MIRU), pp.365-372, 2011. (<span class="mention">MIRU2011インタラクティブセッション賞</span>) [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2011/MIRU2011_ushiku.pdf">pdf</a>]
+  - year: 2010
+    text: 牛久祥孝, 原田達也, 國吉康夫. 画像・長文からの潜在空間獲得による画像間類似度の改善. 画像の 認識・理解シンポジウム (MIRU), pp.1153-1160, 2010. [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2010/MIRU2010_ushiku.pdf">pdf</a>]
+- id: domestic_ws
+  title:
+    en: Domestic Conference (unrefereed, In Japanese)
+    ja: 国内学会 (査読無し、デモ/ワークショップ)
+  lang: ja
+  en_pointer: Go to <a href="index_ja.html">japanese page</a> for domestic papers.
+  items:
+  - year: 2025
+    text: 藤井亮宏, 牛久祥孝, LU Anh Khoa Augustin, 清水康司, 渡邉聡. 適応的な制約条件を満たしつつ、同時に複数の目標物性へと結晶構造を最適化するマテリアルズデザイン手法. 人工知能学会全国大会 (JSAI), 1Win460, 2025.
+  - year: 2024
+    text: 五十嵐亮, 千葉直也, 谷合竜典, 鈴木雄太, 斉藤耕太郎, 牛久祥孝, 小野寛太. 結晶構造の新たなニューラルネットワーク表現：NeSFとCrystalformerのアーキテクチャ. 日本物理学会講演概要集, Vol.79, No.2, 2024.
+  - year: 2024
+    text: 橋本敦史, 前田航希, 平澤寅庄, 原島純, Leszek Rybicki, 深澤祐援, 牛久祥孝. 調理作業理解のための言語資源付き固定視点映像データセットの構築. 人工知能学会全国大会 (JSAI), 4Xin252, 2024.
+  - year: 2024
+    text: 三輪拓真, 平澤寅庄, 吉野幸一郎, 馬場雪乃, 藤吉弘亘, 坂口慶祐, 松原誠二郎, 宮尾知幸, 椴山儀恵, 布施新一郎, 小野寛太, 牛久祥孝. 化学における知識発見を加速する対話エージェント. 人工知能学会 言語・音声理解と対話処理研究会 (SIG-SLUD), 第102回, 2024.
+  - year: 2023
+    text: 曾根周作, 合澤典子, 二宮高洋, 高田菜生子, 嘉陽彩乃, 檜森紀子, 牛久祥孝, 大森美香, 中澤徹, 乾健太郎. 眼底疾患の疑いのあるユーザに寄り添うVirtual Enablerの検討. 人工知能学会全国大会 (JSAI), 3Xin467, 2023.
+  - year: 2023
+    text: 中島優作, 濱屋政志, 羽合孝文, 田中一敏, 牛久祥孝, 小野寛太. 自律実験のための粉体粉砕ロボットシステムの開発と評価. 応用物理学会春季学術講演会, 2023.
+  - year: 2023
+    text: 鈴木雄太, 谷合竜典, 斉藤耕太郎, 牛久祥孝, 小野寛太. 自己教師あり深層距離学習を用いた結晶構造からの材料コンセプト学習. 応用物理学会春季学術講演会, 2023.
+  - year: 2023
+    text: 千葉直也, 鈴木雄太, 谷合竜典, 五十嵐亮, 牛久祥孝, 斉藤耕太郎, 小野寛太. ニューラル構造場の導入とその結晶構造オートエンコーダーへの応用. 応用物理学会春季学術講演会, 2023.
+  - year: 2021
+    text: 中原睦貴, 久野大介, 西村真衣, 牛久祥孝, 丸田一輝, 中山悠. 画像認識精度に基づいた再送制御による無線エッジコンピューティングにおけるトラヒック削減手法. 電子情報通信学会 センサネットワークとモバイルインテリジェンス研究会 (SeMI), pp.23-28, 2021.
+  - year: 2020
+    text: 長藤圭介, 冨澤森生, 長隆之, 牛久祥孝. 金属積層造形における直接観察とプロセスパラメータ探索. 日本機械学会年次大会, オンライン, 2020.
+  - year: 2019
+    text: Ryo Yonetani, Tomohiro Takahashi, Atsushi Hashimoto, and Yoshitaka Ushiku. Decentralized Learning of Generative Adversarial Networks from Multi-Client Non-iid Data. 画像の認識・理解シンポジウム (MIRU), PS2-20, 2019.
+  - year: 2017
+    text: 川口維文, 牛久祥孝, Anna Zhu, 内田誠一. Show, Read with Attention, and Tell. 画像の認識・理解シンポジウム (MIRU), PS3-28, 2017.
+  - year: 2016
+    text: 村田隆英, 木村昭悟, 牛久祥孝, 山下隆義, 山内悠嗣, 藤吉弘亘. 教師あり学習の導入によるMondrian Forestsの効率化. 電子情報通信学会 パターン認識・メディア理解研究会 (PRMU), pp.191-196, 2016.
+  - year: 2015
+    text: 牛久祥孝, 木村昭悟, 柏野邦夫. 時刻に基づく画像検索のための反復構造の自動抽出. 画像の認識・理解シンポジウム (MIRU), SS4-26, 2015.
+  - year: 2013
+    text: 郡司直之, 樋口貴之, 安本晃基, 村岡宏是, 牛久祥孝, 原田達也, 國吉康夫. 数の画像特徴とPassive-Aggressiveを用いたfine-grained classification. 電子情報通信学会 パターン認識・メディア理解研究会 (PRMU), pp.25-30, 2013.
+  - year: 2012
+    text: 金崎朝子, 稲葉翔, 牛久祥孝, 山下裕也, 村岡宏是, 原田達也, 國吉康夫. 大規模画像データセットを用いたマルチクラス物体検出器の同時学習 物体毎に特化した負例クラスの導入. 電子情報通信学会 パターン認識・メディア理解研究会 (PRMU), pp.105-112, 2012.
+  - year: 2010
+    text: 牛久祥孝, 山下裕也, 井村純, 中山英樹, 原田達也, 國吉康夫. 複数画像特徴とクラスラベルの相関に着目した距離計量による大規模画像分類. 電子情報通信学会 パターン認識・メディア理解研究会 (PRMU), pp.1-6, 2011. (<span class="mention">2010PRMU研究奨励賞</span>) [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2011/PRMU2011_ushiku.pdf">pdf</a>]
+  - year: 2009
+    text: 牛久祥孝, 中山英樹, 原田達也, 國吉康夫. Web画像と文章の大域的特徴から得る潜在的意味に基づくデータ検索　Web上での一般画像認識実現への新たなアプローチを目指して. 電子情報通信学会 パターン認識・メディア理解研究会 (PRMU), pp.45-50, 2009. [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2009/PRMU2009_ushiku.pdf">pdf</a>]

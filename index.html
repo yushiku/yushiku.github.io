@@ -1,47 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125103456-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-125103456-1');
-</script>
-<meta charset="UTF8">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="ushiku.css">
-<link rel="shortcut icon" href="/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
-<link rel="icon" href="/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yoshitaka Ushiku's homepage</title>
+<meta name="description" content="Yoshitaka Ushiku / Chief Executive Officer, NexaScience, Inc. / Vice President for Research, OMRON SINIC X Corporation (OSX)">
+<link rel="stylesheet" href="home.css">
+<link rel="shortcut icon" href="/assets/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="/assets/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="alternate" hreflang="en" href="index.html">
+<link rel="alternate" hreflang="ja" href="index_ja.html">
 </head>
-<body>
+<body class="layout-journal-sidebar">
+<a class="skip" href="#main">Skip to content</a>
 
-<div>English/<a href="index_ja.html">Japanese</a></div>
+<aside class="sidebar">
+<button class="side-toggle" id="side-toggle" type="button" aria-expanded="true" aria-controls="side-panel" hidden>
+  <svg class="i-side" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><rect x="2.5" y="3.5" width="15" height="13" fill="none" stroke="currentColor"/><line x1="7.5" y1="3.5" x2="7.5" y2="16.5" stroke="currentColor"/></svg>
+  <svg class="i-chev" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true" focusable="false"><polyline points="5,8 10,13 15,8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+  <span class="side-toggle-label">Sidebar</span>
+</button>
+<div class="side-panel" id="side-panel">
+<header class="hero">
+  <img class="photo" src="20250327_full.jpg" alt="Yoshitaka Ushiku" width="799" height="1200">
+  <div class="hero-text">
+    <h1>Yoshitaka Ushiku</h1>
+    <ul class="headline">
+      <li>Chief Executive Officer, NexaScience, Inc.</li>
+      <li>Vice President for Research, OMRON SINIC X Corporation (OSX)</li>
+    </ul>
+    <section id="contact" class="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h" class="visually-hidden">Contact</h2>
+      <img class="mail" src="mailaddr.png" alt="E-mail address (image)" width="427" height="32">
+      <ul class="social">
+        <li><a href="http://www.twitter.com/losnuevetoros" aria-label="X (Twitter)" title="X (Twitter)"><img src="tw.png" alt="" height="28"></a></li>
+        <li><a href="http://www.facebook.com/yoshitaka.ushiku" aria-label="Facebook" title="Facebook"><img src="fb.png" alt="" height="28"></a></li>
+        <li><a href="https://www.linkedin.com/in/losnuevetoros" aria-label="LinkedIn" title="LinkedIn"><img src="li.png" alt="" height="28"></a></li>
+        <li><a href="http://www.slideshare.net/YoshitakaUshiku" aria-label="SlideShare" title="SlideShare"><img src="ss.png" alt="" height="28"></a></li>
+        <li><a href="https://speakerdeck.com/yushiku" aria-label="Speaker Deck" title="Speaker Deck"><img src="sd.png" alt="" height="28"></a></li>
+        <li><a href="https://scholar.google.co.jp/citations?user=kxUld9MAAAAJ&hl=ja" aria-label="Google Scholar" title="Google Scholar"><img src="gs.png" alt="" height="28"></a></li>
+        <li><a href="https://orcid.org/0000-0002-9014-1389" aria-label="ORCID" title="ORCID"><img src="oi.png" alt="" height="28"></a></li>
+      </ul>
+    </section>
+  </div>
+</header>
 
-<h1>Yoshitaka Ushiku</h1>
+<nav class="topnav" id="sections" aria-label="Sections">
+  <ul class="anchors" id="section-list">
+    <li><a href="#bio">Bio</a></li>
+    <li><a href="#profession">Career</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#roles">Roles</a></li>
+    <li><a href="#activity">Activity</a></li>
+    <li><a href="#papers">Papers</a></li>
+    <li><a href="#books">Books</a></li>
+    <li><a href="#talks">Talks</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#media">Media</a></li>
+    <li><a href="#slides">Slides</a></li>
+  </ul>
+</nav>
 
-<div>
-<img src="20250327_full.jpg" style="height: 540px; max-width: 50%; height: auto;">
 </div>
+<nav class="langnav" aria-label="Language">
+  <p class="langswitch">
+    <span aria-current="page">English</span> / <a href="index_ja.html" hreflang="ja">Japanese</a>
+  </p>
+</nav>
+</aside>
+<script>
+(function () {
+  var d = document.documentElement, b = document.getElementById("side-toggle");
+  var t = b.querySelector(".side-toggle-label"), mq = window.matchMedia("(max-width: 768px)");
+  var K = "yu-sidebar", closed = false, navOpen = false;
+  try { closed = localStorage.getItem(K) === "closed"; } catch (e) {}
+  function render() {
+    var phone = mq.matches;
+    d.setAttribute("data-side", closed ? "closed" : "open");
+    d.setAttribute("data-nav", navOpen ? "open" : "closed");
+    b.setAttribute("aria-expanded", String(phone ? navOpen : !closed));
+    b.setAttribute("aria-controls", phone ? "section-list" : "side-panel");
+    t.textContent = phone ? "Sections" : "Sidebar";
+    b.title = phone ? "" : t.textContent;
+  }
+  b.addEventListener("click", function () {
+    if (mq.matches) { navOpen = !navOpen; }
+    else {
+      closed = !closed;
+      try { localStorage.setItem(K, closed ? "closed" : "open"); } catch (e) {}
+    }
+    render();
+  });
+  document.getElementById("section-list").addEventListener("click", function (e) {
+    if (mq.matches && e.target.closest("a")) { navOpen = false; render(); }
+  });
+  if (mq.addEventListener) { mq.addEventListener("change", render); } else { mq.addListener(render); }
+  d.classList.add("js");
+  b.hidden = false;
+  render();
+})();
+</script>
 
-<h2>Talk Slides</h2>
-<h3>Keynotes</h3>
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/thoD2I4GyhT4he" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/YoshitakaUshiku/frontiers-of-vision-and-language-bridging-images-and-texts-by-deep-learning-81870137" title="Frontiers of Vision and Language: Bridging Images and Texts by Deep Learning" target="_blank">Frontiers of Vision and Language: Bridging Images and Texts by Deep Learning</a> </strong> from <strong><a href="https://www.slideshare.net/YoshitakaUshiku" target="_blank">Yoshitaka Ushiku</a></strong> </div>
+<main id="main">
 
-<h2>Education</h2>
-<dl>
-<dt>2009</dt>
-<dd>BS of Engineering (The Univeresity of Tokyo)</dd>
-<dt>2011</dt>
-<dd>MA of Information Science and Technology (The University of Tokyo)</dd>
-<dt>2014</dt>
-<dd>Ph.D. (The University of Tokyo)</dd>
-</dl>
+<section id="bio">
+<h2>Biography</h2>
+<p>
+Yoshitaka Ushiku is Chief Executive Officer at NexaScience, Inc. and Vice President for Research at OMRON SINIC X.
+He received his B.E., M.A., and Ph.D. degrees from the University of Tokyo in 2009, 2011, and 2014, respectively.
+In 2014, he joined NTT CS Labs, Japan, where he was involved in research on image recognition.
+From 2016 to 2018, he was a Lecturer at the University of Tokyo, Japan.
+He has held both positions since 2024.
+He has also been Team Director at RIKEN TRIP-AGIS since 2025 and the managing partner of Nine Bulls, LLC since 2022.
+His research interests lie in cross-media understanding through machine learning, mainly for computer vision and natural language processing.
+He received ACM Multimedia Grand Challenge Special Prize in 2011, ACM Multimedia Open Source Software Competition Honorable Mention in 2017, NVIDIA Pioneering Research Awards in 2017 and 2018, the Yamato Science Award in 2021, and NISTEP Nice Step Researcher in 2023.
+</p>
+</section>
 
+<section id="profession">
 <h2>Profession</h2>
-<dl>
+<dl class="timeline">
 <dt>Apr. 2013 - Mar. 2014</dt>
 <dd>Research Fellow, Japan Society for Promotion of Science</dd>
 <dt>June 2013 - Aug. 2013</dt>
@@ -50,9 +128,9 @@
 <dd>Research Scientist, NTT Communication Science Laboratories.</dd>
 <dt>Apr. 2016 - Sep. 2018</dt>
 <dd>Lecturer, Department of Mechano-Informatics, Graduate School of Information Science and Technology, the University of Tokyo</dd>
-<dt>June 2016 - Sep. 2018</dt>
-<dd>Visiting Researcher, National Institute of Advanced Industrial Science and Technology (AIST)</dd>
 <dt>Sep. 2016 - Sep. 2018</dt>
+<dd>Visiting Researcher, National Institute of Advanced Industrial Science and Technology (AIST)</dd>
+<dt>Dec. 2016 - Sep. 2018</dt>
 <dd>Collaborative Researcher, National Institute for Japanese Language and Linguistics (NINJAL)</dd>
 <dt>Apr. 2018 - Sep. 2018</dt>
 <dd>Technical Advisor, OMRON SINIC X Corporation (OSX)</dd>
@@ -68,26 +146,40 @@
 <dd>Lecturer (part-time), Tohoku University</dd>
 <dt>Nov. 2021 - Oct. 2024</dt>
 <dd>Chief Research Officer, Ridge-i Co., Ltd.</dd>
-<dt>Jan. 2022 - </dt>
+<dt>Jan. 2022 -</dt>
 <dd><span class="mention">Chief Executive Officer, <a href="ninebulls.html">Nine Bulls, LLC (In Japanese only)</a></span></dd>
-<dt>Oct. 2023 - </dt>
+<dt>Oct. 2023 -</dt>
 <dd><span class="mention">Project Manager, National Institute of Advanced Industrial Science and Technology (AIST) Kakusei Project</span></dd>
 <dt>Dec. 2023 - Mar. 2025</dt>
 <dd>Senior Visiting Scientist, RIKEN Center for Biosystems Dynamics Research</dd>
-<dt>Apr. 2024 - </dt>
+<dt>Apr. 2024 -</dt>
 <dd><span class="mention">Vice President for Research, OMRON SINIC X Corporation (OSX)</span></dd>
-<dt>Oct. 2024 - </dt>
+<dt>Oct. 2024 -</dt>
 <dd><span class="mention">Chief Executive Officer, <a href="https://www.nexascience.com">NexaScience, Inc. (In Japanese only)</a></span></dd>
-<dt>Oct. 2024 - </dt>
+<dt>Oct. 2024 -</dt>
 <dd><span class="mention">Advisor, Ridge-i Co., Ltd.</span></dd>
-<dt>Apr. 2025 - </dt>
+<dt>Apr. 2025 -</dt>
 <dd><span class="mention">Team Director, Universal Foundation Model for Scientific Research Team, Advanced General Intelligence for Science Program (AGIS), TRIP Headquarters, RIKEN</span></dd>
-<dt>Apr. 2026 - </dt>
+<dt>Apr. 2026 -</dt>
 <dd><span class="mention">Specially Appointed Professor (Visiting), Language AI Research Center, Tohoku University</span></dd>
 </dl>
+</section>
 
+<section id="education">
+<h2>Education</h2>
+<dl class="timeline">
+<dt>2009</dt>
+<dd>BS of Engineering (The Univeresity of Tokyo)</dd>
+<dt>2011</dt>
+<dd>MA of Information Science and Technology (The University of Tokyo)</dd>
+<dt>2014</dt>
+<dd>Ph.D. (The University of Tokyo)</dd>
+</dl>
+</section>
+
+<section id="roles">
 <h2>Current Roles in Academic and Public Organizations</h2>
-<ul>
+<ul class="plain">
 <li>Director, AI Robot Association (AIRoA)</li>
 <li>Director, AI Robot-Driven Science Initiative (AIRDS)</li>
 <li>Member, AI for Science Promotion Committee, Ministry of Education, Culture, Sports, Science and Technology (MEXT)</li>
@@ -96,11 +188,12 @@
 <li>Expert Member, Japan Deep Learning Association (JDLA)</li>
 <li>Community Organizer, Agentic AI Foundation (AAIF) Japan Chapter</li>
 </ul>
+</section>
 
+<section id="activity">
 <h2>Activity</h2>
-
 <h3>Society</h3>
-<dl>
+<dl class="timeline">
 <dt>June 2018</dt>
 <dd>International Conference on Multimedia Retrieval (ICMR) Publication Co-chairs</dd>
 <dt>October 2019</dt>
@@ -116,9 +209,8 @@
 <dt>August 2024</dt>
 <dd>International Joint Conferences on Artificial Intelligence (IJCAI) Area Chair</dd>
 </dl>
-
 <h3>Reviewer</h3>
-<dl>
+<dl class="reviewer">
 <dt>Conference</dt>
 <dd>
 <span class="conf">AAAI 2020</span>, 
@@ -144,72 +236,74 @@
 <span class="journal">Pattern Recognition Letters</span>, 
 <span class="journal">Robotics and Automation Letters</span>, 
 <span class="journal">Speech and Language Processing</span>, 
-<span class="journal">The Visual Computer</span>
+<span class="journal">The Visual Computer</span>, 
 <span class="journal">Transactions on Affective Computing</span>, 
 <span class="journal">Transactions on Audio</span>, 
 <span class="journal">Transactions on Computer Vision and Applications</span>, 
-<span class="journal">Transactions on Intelligent Systems and Technology</span>,
+<span class="journal">Transactions on Intelligent Systems and Technology</span>, 
 <span class="journal">Transactions on Multimedia</span>, 
 <span class="journal">Transactions on Multimedia Computing, Communications, and Applications</span>, 
 <span class="journal">Transactions on Pattern Analysis and Machine Intelligence</span>, 
 <span class="journal">Transactions on Systems, Man and Cybernetics: Systems</span>.
 </dd>
-</dl>  
+</dl>
+</section>
 
-<h2>Biography</h2>
-<p>
-Yoshitaka Ushiku is Chief Executive Officer at NexaScience, Inc. and Vice President for Research at OMRON SINIC X.
-He received his B.E., M.A., and Ph.D. degrees from the University of Tokyo in 2009, 2011, and 2014, respectively.
-In 2014, he joined NTT CS Labs, Japan, where he was involved in research on image recognition.
-From 2016 to 2018, he was a Lecturer at the University of Tokyo, Japan.
-He has held both positions since 2024.
-He has also been Team Director at RIKEN TRIP-AGIS since 2025 and the managing partner of Nine Bulls, LLC since 2022.
-His research interests lie in cross-media understanding through machine learning, mainly for computer vision and natural language processing.
-He received ACM Multimedia Grand Challenge Special Prize in 2011, ACM Multimedia Open Source Software Competition Honorable Mention in 2017, NVIDIA Pioneering Research Awards in 2017 and 2018, the Yamato Science Award in 2021, and NISTEP Nice Step Researcher in 2023.
-</p>
-
-<h2>Contact</h2>
-<div>
-<img src="mailaddr.png" width="427" height="32">
-<a href="http://www.twitter.com/losnuevetoros"><img src="tw.png" width="32" height="32"></a>
-<a href="http://www.facebook.com/yoshitaka.ushiku"><img src="fb.png" width="32" height="32"></a>
-<a href="https://www.linkedin.com/in/losnuevetoros"><img src="li.png" width="38.4" height="32"></a>
-<a href="http://www.slideshare.net/YoshitakaUshiku"><img src="ss.png" width="70.4" height="32"></a>
-<a href="https://speakerdeck.com/yushiku"><img src="sd.png" width="32" height="32"></a>
-<a href="https://scholar.google.co.jp/citations?user=kxUld9MAAAAJ&hl=ja"><img src="gs.png" width="32" height="32"></a>
-<a href="https://orcid.org/0000-0002-9014-1389"><img src="oi.png" width="32" height="32"></a>
-</div>
-
+<section id="papers">
 <h2>Papers</h2>
 <h3>Journal (refereed)</h3>
-<ol>
+<h4 class="year">2026</h4>
+<ol start="1">
 <li>Yusei Ito, Naoya Chiba, Tatsunori Taniai, Ryo Igarashi, Yuta Suzuki, Kotaro Saito, Yoshitaka Ushiku, and Kanta Ono. Enabling single-observation decomposition of multi-phase X-ray diffraction patterns via generative deep learning. <span class="journal">npj Computational Materials</span>, Vol. 12, Article 238, 2026.</li>
 <li>Shiwei Su, Nobuyuki Tanaka, Yoshitaka Ushiku, and Koichi Takahashi. BB-EIT: A Generalized Prediction Model for Protein Adsorption on Polymer Brushes Using Augmented Chemical Embeddings. <span class="journal">ACS Applied Materials &amp; Interfaces</span>, Vol. 18, No. 14, pp. 20976-20988, 2026.</li>
+<li>Taichi Nishimura, Atsushi Hashimoto, Yoshitaka Ushiku, Hirotaka Kameko, and Shinsuke Mori. Recipe Generation from Unsegmented Cooking Videos. <span class="journal">ACM Transactions on Multimedia Computing, Communications and Applications</span>, Vol. 22, No. 9, pp. 1-25, 2026.</li>
+</ol>
+<h4 class="year">2025</h4>
+<ol start="4">
 <li>Kan Hatakeyama-Sato, Toshihiko Nishida, Kenta Kitamura, Yoshitaka Ushiku, Koichi Takahashi, Yuta Nabae, and Teruaki Hayakawa. Perspective on utilizing foundation models for laboratory automation in materials research. <span class="journal">Science and Technology of Advanced Materials: Methods</span>, Vol. 5, No. 1, Article 2582379, 2025.</li>
 <li>Yuta Suzuki, Tatsunori Taniai, Ryo Igarashi, Kotaro Saito, Naoya Chiba, Yoshitaka Ushiku, and Kanta Ono. Bridging text and crystal structures: literature-driven contrastive learning for materials science. <span class="journal">Machine Learning: Science and Technology</span>, Vol. 6, No. 3, 035006, 2025.</li>
 <li>Naruki Yoshikawa, Yuki Asano, Don N. Futaba, Kanako Harada, Taro Hitosugi, Genki N. Kanda, Shoichi Matsuda, Yuuya Nagata, Keisuke Nagato, Masanobu Naito, Tohru Natsume, Kazunori Nishio, Kanta Ono, Haruka Ozaki, Woosuck Shin, Junichiro Shiomi, Kunihiko Shizume, Koichi Takahashi, Seiji Takeda, Ichiro Takeuchi, Ryo Tamura, Koji Tsuda, and Yoshitaka Ushiku. Self-driving laboratories in Japan. <span class="journal">Digital Discovery</span>, Vol. 4, No. 6, pp. 1384-1403, 2025.</li>
+</ol>
+<h4 class="year">2024</h4>
+<ol start="7">
 <li>Yusaku Nakajima, Kai Kawasaki, Yasuo Takeichi, Masashi Hamaya, Yoshitaka Ushiku, and Kanta Ono. Force-Controlled Robotic Mechanochemical Synthesis. <span class="journal">Digital Discovery</span>, Vol. 3, pp.2130-2136, 2024.</li>
 <li>Shigeo Yoshida, Yuki Koyama, and Yoshitaka Ushiku. Towards AI-Mediated Avatar-Based Telecommunication: Investigating Visual Impression of Switching Between User-and AI-Controlled Avatars in Video Chat. <span class="journal">IEEE Access</span>, Vol. 12, pp. 113372-113383, 2024.</li>
-<li>Taichi Nishimura, Atsushi Hashimoto, Yoshitaka Ushiku, Hirotaka Kameko, and Shinsuke Mori. Recipe Generation from Unsegmented Cooking Videos. <span class="journal">ACM Transactions on Multimedia Computing, Communications and Applications</span>, Vol. 22, No. 9, pp. 1-25, 2026.</li>
 <li>Yoshitomo Matsubara, Naoya Chiba, Ryo Igarashi, and Yoshitaka Ushiku. Rethinking Symbolic Regression Datasets and Benchmarks for Scientific Discovery. <span class="journal">Data-centric Machine Learning Research</span>, Vol. 1, No. 3, pp. 1-38, 2024.</li>
+</ol>
+<h4 class="year">2023</h4>
+<ol start="10">
 <li>Naoya Chiba, Yuta Suzuki, Tatsunori Taniai, Ryo Igarashi, Yoshitaka Ushiku, Kotaro Saito, and Kanta Ono. Neural structure fields with application to crystal structure autoencoders. <span class="journal">Communications Materials</span>, Vol.4, No.1, p.106, 2023.</li>
 <li>Kazuhiro Ogata, Reo Gakumi, Atsushi Hashimoto, Yoshitaka Ushiku, and Shigeo Yoshida. The influence of Bouba-and Kiki-like shape on perceived taste of chocolate pieces. <span class="journal">Frontiers in Psychology</span>, Vol.14, 2023.</li>
 <li>Taichi Nishimura, Atsushi Hashimoto, Yoshitaka Ushiku, Hirotaka Kameko, and Shinsuke Mori. State-aware video procedural captioning. <span class="journal">Multimedia Tools and Applications</span>, Vol.82, pp.37273-37301, 2023.</li>
 <li>Yutaka Maruyama, Ryo Igarashi, Yoshitaka Ushiku, and Ayori Mitsutake. Analysis of Protein Folding Simulation with Moving Root Mean Square Deviation. <span class="journal">Journal of Chemical Information and Modeling</span>, Vol.63, No.5, pp.1529-1541, 2023.</li>
+</ol>
+<h4 class="year">2022</h4>
+<ol start="14">
 <li>Yuta Suzuki, Tatsunori Taniai, Kotaro Saito, Yoshitaka Ushiku, and Kanta Ono. Self-supervised learning of materials concepts from crystal structures via deep neural networks. <span class="journal">Machine Learning: Science and Technology</span>, pp.2632-2153, 2022.</li>
 <li>Mutsuki Nakahara, Mai Nishimura, Yoshitaka Ushiku, Takayuki Nishio, Kazuki Maruta, Yu Nakayama, and Daisuke Hisano. Edge Computing-Assisted DNN Image Recognition System With Progressive Image Retransmission. <span class="journal">IEEE Access</span>, Vol.10, pp.91253-91262, 2022.</li>
+</ol>
+<h4 class="year">2021</h4>
+<ol start="16">
 <li>Takehiko Ohkawa, Takuma Yagi, Atsushi Hashimoto, Yoshitaka Ushiku, and Yoichi Sato. Foreground-Aware Stylization and Consensus Pseudo-Labeling for Domain Adaptation of First-Person Hand Segmentation. <span class="journal">IEEE Access</span>, Vol.9, pp.94644-94655, 2021.</li>
 <li>Taichi Nishimura, Atsushi Hashimoto, Yoshitaka Ushiku, Hirotaka Kameko, Yoko Yamakata, and Shinsuke Mori. Structure-Aware Procedural Text Generation From an Image Sequence. <span class="journal">IEEE Access</span>, Vol.9, pp.2125-2141, 2021.</li>
 <li>Hiroaki Minoura, Ryo Yonetani, Mai Nishimura, and Yoshitaka Ushiku. Crowd Density Forecasting by Modeling Patch-Based Dynamics. <span class="journal">IEEE Robotics and Automation Letters</span>, Vol.6, No.2, pp.287-294, 2021.</li>
+</ol>
+<h4 class="year">2019</h4>
+<ol start="19">
 <li>Yusuke Mori, Hiroaki Yamane, Yoshitaka Ushiku, and Tatsuya Harada. How narratives move your mind: A corpus of shared-character stories for connecting emotional flow and interestingness. <span class="journal">Information Processing &amp; Management</span>, Vol.56, No.5, pp.1865-1879, 2019.</li>
 </ol>
+
 <h3>International Conference (refereed)</h3>
-<ol>
+<h4 class="year">2026</h4>
+<ol start="1">
 <li>Yuzheng Xu, Tosho Hirasawa, Tadashi Kozuno, and Yoshitaka Ushiku. Am I More Pointwise or Pairwise? Revealing Position Bias in Rubric-Based LLM-as-a-Judge. Findings of the Conference on Empirical Methods in Natural Language Processing (<span class="conf">EMNLP</span> Findings), 2026. (to appear)</li>
 <li>Tomoya Takahashi, Yusaku Nakajima, Cristian C. Beltran-Hernandez, Yuki Kuroda, Kanta Ono, Kazutoshi Tanaka, Masashi Hamaya, and Yoshitaka Ushiku. SCU-Hand with Integrated Single-Sheet Valve: A Funnel-Shaped Robotic Hand for Milligram-Scale Powder Handling. IEEE International Conference on Robotics and Automation (<span class="conf">ICRA</span>), 2026.</li>
 <li>Mimo Shirasaka, Cristian C. Beltran-Hernandez, Masashi Hamaya, and Yoshitaka Ushiku. Robust and Resilient Soft Robotic Object Insertion with Compliance-Enabled Contact Formation and Failure Recovery. IEEE International Conference on Robotics and Automation (<span class="conf">ICRA</span>), 2026.</li>
 <li>Shun Inadumi, Shohei Tanaka, Tosho Hirasawa, Atsushi Hashimoto, Koichiro Yoshino, and Yoshitaka Ushiku. SciPostGen: Bridging the Gap Between Scientific Papers and Poster Layouts. IEEE/CVF Conference on Computer Vision and Pattern Recognition, Findings Track (<span class="conf">CVPR</span> Findings), 2026.</li>
 <li>Shohei Tanaka, Atsushi Hashimoto, and Yoshitaka Ushiku. SciPostLayoutTree: A Dataset for Structural Analysis of Scientific Posters. IEEE/CVF Conference on Computer Vision and Pattern Recognition, Findings Track (<span class="conf">CVPR</span> Findings), 2026.</li>
+</ol>
+<h4 class="year">2025</h4>
+<ol start="6">
 <li>Kuniaki Saito, Donghyun Kim, Kwanyong Park, Atsushi Hashimoto, and Yoshitaka Ushiku. CaptionSmiths: Flexibly Controlling Language Pattern in Image Captioning. IEEE/CVF International Conference on Computer Vision (<span class="conf">ICCV</span>), 2025.</li>
 <li>Risa Shinoda, Nakamasa Inoue, Hirokatsu Kataoka, Masaki Onishi, and Yoshitaka Ushiku. AgroBench: Vision-Language Model Benchmark in Agriculture. IEEE/CVF International Conference on Computer Vision (<span class="conf">ICCV</span>), 2025.</li>
 <li>Ryogo Niwa, Shigeo Yoshida, Yuki Koyama, and Yoshitaka Ushiku. Cooperative Design Optimization through Natural Language Interaction. ACM Symposium on User Interface Software and Technology (<span class="conf">UIST</span>), 2025.</li>
@@ -218,6 +312,9 @@ He received ACM Multimedia Grand Challenge Special Prize in 2011, ACM Multimedia
 <li>Tomoya Takahashi, Cristian C. Beltran-Hernandez, Yuki Kuroda, Kazutoshi Tanaka, Masashi Hamaya, and Yoshitaka Ushiku. SCU-Hand: Soft Conical Universal Robotic Hand for Scooping Granular Media from Containers of Various Sizes. IEEE International Conference on Robotics and Automation (<span class="conf">ICRA</span>), 2025.</li>
 <li>Yusei Ito, Tatsunori Taniai, Ryo Igarashi, Yoshitaka Ushiku, and Kanta Ono. Rethinking the role of frames for SE(3)-invariant crystal structure modeling. International Conference on Learning Representations (<span class="conf">ICLR</span>), 2025.</li>
 <li>Takehiko Ohkawa, Takuma Yagi, Taichi Nishimura, Ryosuke Furuta, Atsushi Hashimoto, Yoshitaka Ushiku, and Yoichi Sato. Exo2EgoDVC: Dense Video Captioning of Egocentric Procedural Activities Using Web Instructional Videos. IEEE/CVF Winter Conference on Applications of Computer Vision (<span class="conf">WACV</span>), 2025.</li>
+</ol>
+<h4 class="year">2024</h4>
+<ol start="14">
 <li>Rintaro Yanagi, Atsushi Hashimoto, Naoya Chiba, Shusaku Sone, Jiaxin Ma, and Yoshitaka Ushiku. Learning 3D Point Cloud Registration as a Single Optimization Problem. Asian Conference on Computer Vision (<span class="conf">ACCV</span>), 2024.</li>
 <li>Atsushi Hashimoto, Koki Maeda, Tosho Hirasawa, Jun Harashima, Leszek Rybicki, Yusuke Fukasawa, and Yoshitaka Ushiku. COM Kitchens: An Unedited Overhead-view Procedural Videos Dataset a Vision-Language Benchmark. European Conference on Computer Vision (<span class="conf">ECCV</span>), 2024.</li>
 <li>Keisuke Shirai, Cristian C Beltran-Hernandez, Masashi Hamaya, Atsushi Hashimoto, Shohei Tanaka, Kento Kawaharazuka, Kazutoshi Tanaka, Yoshitaka Ushiku, and Shinsuke Mori. Vision-language interpreter for robot task planning. IEEE International Conference on Robotics and Automation (<span class="conf">ICRA</span>), 2024.</li>
@@ -225,21 +322,39 @@ He received ACM Multimedia Grand Challenge Special Prize in 2011, ACM Multimedia
 <li>Tatsunori Taniai, Ryo Igarashi, Yuta Suzuki, Naoya Chiba, Kotaro Saito, Yoshitaka Ushiku, and Kanta Ono. Crystalformer: Infinitely Connected Attention for Periodic Structure Encoding. International Conference on Learning Representations (<span class="conf">ICLR</span>), 2024.</li>
 <li>Mahiro Ukai, Shuhei Kurita, Atsushi Hashimoto, Yoshitaka Ushiku, and Nakamasa Inoue. AdaCoder: Adaptive Prompt Compression for Programmatic Visual Question Answering. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), 2024.</li>
 <li>Tomohiro Hashimoto, Ayaka Maruo, Shoichiro Sekiguchi, Yoshitaka Ushiku, and Genya Shimbo. Unsupervised Domain Adaptation for Human and Animal Chest X-Ray Bone Suppression. IEEE International Symposium on Biomedical Imaging (<span class="conf">ISBI</span>), 2024.</li>
+</ol>
+<h4 class="year">2023</h4>
+<ol start="21">
 <li>Yusaku Nakajima, Masashi Hamaya, Kazutoshi Tanaka, Takafumi Hawai, Felix von Drigalski, Yasuo Takeichi, Yoshitaka Ushiku, and Kanta Ono. Robotic Powder Grinding with Audio-Visual Feedback for Laboratory Automation in Materials Science. IEEE/RSJ International Conference on Intelligent Robots and Systems (<span class="conf">IROS</span>), 2023.</li>
+</ol>
+<h4 class="year">2022</h4>
+<ol start="22">
 <li>Yusaku Nakajima, Masashi Hamaya, Yuta Suzuki, Takafumi Hawai, Felix von Drigalski, Kazutoshi Tanaka, Yoshitaka Ushiku, and Kanta Ono. Robotic Powder Grinding with a Soft Jig for Laboratory Automation in Material Science. IEEE/RSJ International Conference on Intelligent Robots and Systems (<span class="conf">IROS</span>), 2022.</li>
 <li>Keisuke Shirai, Atsushi Hashimoto, Taichi Nishimura, Hirotaka Kameko, Shuhei Kurita, Yoshitaka Ushiku, and Shinsuke Mori. Visual Recipe Flow: A Dataset for Learning Visual State Changes of Objects with Recipe Flows. International Conference on Computational Linguistics (<span class="conf">COLING</span>), 2022.</li>
 <li>Atsushi Hashimoto, Taichi Nishimura, Yoshitaka Ushiku, Hirotaka Kameko, and Shinsuke Mori. Cross-modal Representation Learning for Understanding Manufacturing Procedure. International Conference on Human-Computer Interaction (<span class="conf">HCII</span>), 2022.</li>
+</ol>
+<h4 class="year">2021</h4>
+<ol start="25">
 <li>Taichi Nishimura, Atsushi Hashimoto, Yoshitaka Ushiku, Hirotaka Kameko, and Shinsuke Mori. State-aware Video Procedural Captioning. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), 2021.</li>
-<li>Mutsuki Nakahara, Daisuke Hisano, Mai Nishimura, Yoshitaka Ushiku, Kazuki Maruta, and Yu Nakayama. Retransmission Edge Computing System Conducting Adaptive Image Compression Based on Image Recognition Accuracy. IEEE Vehicular Technology Conference (<span class="conf">VTC-Fall</span>), 2021. </li>
+<li>Mutsuki Nakahara, Daisuke Hisano, Mai Nishimura, Yoshitaka Ushiku, Kazuki Maruta, and Yu Nakayama. Retransmission Edge Computing System Conducting Adaptive Image Compression Based on Image Recognition Accuracy. IEEE Vehicular Technology Conference (<span class="conf">VTC-Fall</span>), 2021.</li>
 <li>Qing Yu, Atsushi Hashimoto, and Yoshitaka Ushiku. Divergence Optimization for Noisy Universal Domain Adaptation. The IEEE Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2021.</li>
 <li>Ukyo Honda, Yoshitaka Ushiku, Atsushi Hashimoto, Taro Watanabe, and Yuji Matsumoto. Removing Word-Level Spurious Alignment between Images and Pseudo-Captions in Unsupervised Image Captioning. The Conference of the European Chapter of the Association for Computational Linguistics (<span class="conf">EACL</span>), 2021.</li>
+</ol>
+<h4 class="year">2020</h4>
+<ol start="29">
 <li>Taichi Nishimura, Suzushi Tomori, Hayato Hashimoto, Atsushi Hashimoto, Yoko Yamakata, Jun Harashima, Yoshitaka Ushiku, and Shinsuke Mori. Visual Grounding Annotation of Recipe Flow Graph. Language Resources and Evaluation Conference (<span class="conf">LREC</span>), 2020.</li>
+</ol>
+<h4 class="year">2019</h4>
+<ol start="30">
 <li>Takuhiro Kaneko, Yoshitaka Ushiku, and Tatsuya Harada. Class-distinct and class-mutual image generation with GANs. British Machine Vision Conference (<span class="conf">BMVC</span>), 2019.</li>
-<li>Mikihiro Tanaka, Takayuki Itamochi, Kenichi Narioka, Ikuro Sato, Yoshitaka Ushiku, and Tatsuya Harada. Generating Easy-to-Understand Referring Expressions for Target Identifications. The IEEE International Conference on Computer Vision (<span class="conf">ICCV</span>),	2019.
+<li>Mikihiro Tanaka, Takayuki Itamochi, Kenichi Narioka, Ikuro Sato, Yoshitaka Ushiku, and Tatsuya Harada. Generating Easy-to-Understand Referring Expressions for Target Identifications. The IEEE International Conference on Computer Vision (<span class="conf">ICCV</span>),	2019.</li>
 <li>Takuhiro Kaneko, Yoshitaka Ushiku, and Tatsuya Harada. Label-noise robust generative adversarial networks. The IEEE Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2019.</li>
 <li>Kuniaki Saito, Yoshitaka Ushiku, Tatsuya Harada, and Kate Saenko. Strong-weak distribution alignment for adaptive object detection. The IEEE Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2019</li>
 <li>Yang Li, Yoshitaka Ushiku, and Tatsuya Harada. Pose Graph Optimization for Unsupervised Monocular Visual Odometry. International Conference on Robotics and Automation (<span class="conf">ICRA</span>), 2019.</li>
 <li>Akane Iseki, Yusuke Mukuta, Yoshitaka Ushiku, and Tatsuya Harada. Estimating the causal effect from partially observed time series. The AAAI Conference on Artificial Intelligence (<span class="conf">AAAI</span>), 2019.</li>
+</ol>
+<h4 class="year">2018</h4>
+<ol start="36">
 <li>Kohei Uehara, Antonio Tejero-de-Pablos, Yoshitaka Ushiku, Tatsuya Harada. Visual Question Generation for Class Acquisition of Unknown Objects. The 15th European Conference on Computer Vision (<span class="conf">ECCV</span>), 2018.</li>
 <li>Kuniaki Saito, Shohei Yamamoto, Yoshitaka Ushiku, Tatsuya Harada. Open Set Domain Adaptation by Backpropagation. The 15th European Conference on Computer Vision (<span class="conf">ECCV</span>), 2018.</li>
 <li>Andrew Shin, Yoshitaka Ushiku, Tatsuya Harada. Customized Image Narrative Generation via Interactive Visual Question Generation and Answering. The 31th IEEE Computer Society Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), 2018. (spotlight presentation)</li>
@@ -251,94 +366,176 @@ He received ACM Multimedia Grand Challenge Special Prize in 2011, ACM Multimedia
 <li>Yuji Tokozume, Yoshitaka Ushiku, Tatsuya Harada. Learning from Between-class Examples for Deep Sound Recognition. The 6th International Conference on Learning Representations (<span class="conf">ICLR</span>), 2018.</li>
 <li>Katsunori Ohnishi, Shohei Yamamoto, Yoshitaka Ushiku, Tatsuya Harada. Hierarchical Video Generation from Orthogonal Information: Optical Flow and Texture. AAAI Conference on Artificial Intelligence (<span class="conf">AAAI</span>), 2018. (oral presentation)</li>
 <li>Yusuke Mukuta, Yoshitaka Ushiku, Tatsuya Harada. Alternating Circulant Random Features for Semigroup Kernels. AAAI Conference on Artificial Intelligence (<span class="conf">AAAI</span>), 2018.</li>
+</ol>
+<h4 class="year">2017</h4>
+<ol start="47">
 <li>Masatoshi Hidaka, Yuichiro Kikura, Yoshitaka Ushiku, Tatsuya Harada. WebDNN: Fastest DNN Execution Framework on Web Browser. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), Open Source Software Competition, pp.1213-1216, 2017.</li>
 <li>Masataka Yamaguchi, Kuniaki Saito, Yoshitaka Ushiku, Tatsuya Harada. Spatio-temporal Person Retrieval via Natural Language Queries. IEEE International Conference on Computer Vision (<span class="conf">ICCV</span>), 2017.</li>
 <li>Qishen Ha, Kohei Watanabe, Takumi Karasawa, Yoshitaka Ushiku, Tatsuya Harada. MFNet: Towards Real-Time Semantic Segmentation for Autonomous Vehicles with Multi-Spectral Scenes. IEEE/RSJ International Conference on Intelligent Robots and Systems (<span class="conf">IROS</span>), 2017.</li>
 <li>Kuniaki Saito, Yoshitaka Ushiku, and Tatsuya Harada. Asymmetric Tri-training for Unsupervised Domain Adaptation. International Conference on Machine Learning (<span class="conf">ICML</span>), pp.2988-2997, 2017.</li>
 <li>Kuniaki Saito, Andrew Shin, Yoshitaka Ushiku, and Tatsuya Harada. DualNet: Domain-Invariant Network for Visual Question Answering. IEEE International Conference on Multimedia and Expo (<span class="conf">ICME</span>), pp.829-834, 2017. (oral presentation)</li>
+</ol>
+<h4 class="year">2016</h4>
+<ol start="52">
 <li>Andrew Shin, Yoshitaka Ushiku, and Tatsuya Harada. Image Captioning with Sentiment Terms via Weakly-Supervised Sentiment Dataset. British Machine Vision Conference (<span class="conf">BMVC</span>), pp.53.1-53.12, 2016.</li>
+</ol>
+<h4 class="year">2015</h4>
+<ol start="53">
 <li>Yoshitaka Ushiku, Masataka Yamaguchi, Yusuke Mukuta, and Tatsuya Harada. Common subspace for model and similarity: Phrase learning for caption generation from images. IEEE International Conference on Computer Vision (<span class="conf">ICCV</span>), pp.2668-2676, 2015. (acceptance rate: 30.9%)</li>
+</ol>
+<h4 class="year">2014</h4>
+<ol start="54">
 <li>Yoshitaka Ushiku, Masatoshi Hidaka, and Tatsuya Harada. Three guidelines of online learning for large-scale visual recognition. IEEE Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), pp.3574-3581, 2014. (acceptance rate: 29.9%)</li>
 <li>Asako Kanezaki, Shogo Inaba, Yoshitaka Ushiku, Yukihiko Yamashita, Hiroaki Muraoka, Yasuo Kuniyoshi, and Tatsuya Harada. Hard negative classes for multiple object detection. IEEE International Conference on Robotics and Automation (<span class="conf">ICRA</span>), pp.3066-3073, 2014.</li>
+</ol>
+<h4 class="year">2012</h4>
+<ol start="56">
 <li>Yoshitaka Ushiku, Tatsuya Harada, and Yasuo Kuniyoshi. Efficient Image Annotation for Automatic Sentence Generation. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), pp.549-558, 2012. (full paper, acceptance rate: 20.2%)</li>
+</ol>
+<h4 class="year">2011</h4>
+<ol start="57">
 <li>Yoshitaka Ushiku, Tatsuya Harada, and Yasuo Kuniyoshi. Understanding Images with Natural Sentences. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), Multimedia Grand Challenge, pp.679-682, 2011. (<span class="mention">Special Prize on the Best Application of a Theoretical Framework</span>) [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2011/ACMMM2011_MGC_ushiku.pdf">pdf</a>]</li>
 <li>Yoshitaka Ushiku, Tatsuya Harada, and Yasuo Kuniyoshi. Automatic Sentence Generation from Images. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), pp.1533-1536, 2011. (short, acceptance rate: usually 30%) [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2011/ACMMM2011_ushiku.pdf">pdf</a>]</li>
 <li>Tatsuya Harada, Yoshitaka Ushiku, Yuya Yamashita, and Yasuo Kuniyoshi. Discriminative Spatial Pyramid. IEEE Conference on Computer Vision and Pattern Recognition (<span class="conf">CVPR</span>), pp.1617-1624, 2011. (acceptance rate: 26.4%) [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2011/CVPR2011_harada.pdf">pdf</a>]</li>
+</ol>
+<h4 class="year">2010</h4>
+<ol start="60">
 <li>Yoshitaka Ushiku, Tatsuya Harada, and Yasuo Kuniyoshi. Improvement of Image Similarity Measures for Image Browsing and Retrieval Via Latent Space Learning between Images and Long Texts. IEEE International Conference on Image Processing (<span class="conf">ICIP</span>), pp.2365-2368, 2010. [<a href="http://www.isi.imi.i.u-tokyo.ac.jp/publication/2010/ICIP2010_ushiku.pdf">pdf</a>]</li>
 </ol>
+
 <h3>International Conference (unrefereed, demo or workshop)</h3>
-<ol>
+<h4 class="year">2025</h4>
+<ol start="1">
 <li>Yosuke Yamagishi, Kuniaki Saito, Atsushi Hashimoto, and Yoshitaka Ushiku. PMC-Vid: A Large-Scale Biomedical Video Captioning Dataset. IEEE/CVF International Conference on Computer Vision Workshops (<span class="conf">ICCV</span>, Workshop), 2025.</li>
 <li>Yuzheng Xu, Shigeo Yoshida, Atsushi Hashimoto, and Yoshitaka Ushiku. VisDev: A Stroke Deviation Visualization System Using Point-Set Registration for Handwriting Training. Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (<span class="conf">CHI</span> EA), 2025.</li>
 <li>Risa Shinoda, Kuniaki Saito, Shohei Tanaka, Tosho Hirasawa, and Yoshitaka Ushiku. SBS Figures: Pre-training Figure QA from Stage-by-Stage Synthesized Images. AAAI Conference on Artificial Intelligence Workshop on Document Understanding and Intelligence (<span class="conf">AAAI</span>, Workshop), 2025.</li>
+</ol>
+<h4 class="year">2024</h4>
+<ol start="4">
 <li>Kazuya Nishimura, Kuniaki Saito, Tosho Hirasawa, and Yoshitaka Ushiku. Toward Structured Related Work Generation with Novelty Statements. Workshop on Scholarly Document Processing (<span class="conf">SDP</span>, Workshop), 2024.</li>
+</ol>
+<h4 class="year">2023</h4>
+<ol start="5">
 <li>Rintaro Yanagi, Atsushi Hashimoto, Naoya Chiba, and Yoshitaka Ushiku. Reference-based dense pose estimation via Partial 3D Point Cloud Matching. ACM International Conference on Multimedia (<span class="conf">ACMMM</span>) Demo Paper Track, 2023.</li>
+</ol>
+<h4 class="year">2022</h4>
+<ol start="6">
 <li>Jiaxin Ma, Yoshitaka Ushiku, and Miori Sagara. The Effect of Improving Annotation Quality on Object Detection Datasets: A Preliminary Study. IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (<span class="conf">CVPR</span>, Workshop), 2022.</li>
+</ol>
+<h4 class="year">2021</h4>
+<ol start="7">
 <li>Taichi Nishimura, Kojiro Sakoda, Atsushi Hashimoto, Yoshitaka Ushiku, Natsuko Tanaka, Fumihito Ono, Hirotaka Kameko, and Shinsuke Mori. Egocentric Biochemical Video-and-Language Dataset. IEEE/CVF International Conference on Computer Vision Workshops (<span class="conf">ICCV</span>, Workshop), 2021.</li>
+</ol>
+<h4 class="year">2018</h4>
+<ol start="8">
 <li>Kohei Watanabe, Kuniaki Saito, Yoshitaka Ushiku, and Tatsuya Harada. Multichannel Semantic Segmentation with Unsupervised Domain Adaptation. European Conference on Computer Vision Workshops (<span class="conf">ECCV</span>, Workshop), 2018.</li>
 <li>Toshihiko Matsuura, Kuniaki Saito, Yoshitaka Ushiku, and Tatsuya Harada. Generalized Bayesian Canonical Correlation Analysis with Missing Modalities. European Conference on Computer Vision Workshops (<span class="conf">ECCV</span>, Workshop), 2018.</li>
+</ol>
+<h4 class="year">2017</h4>
+<ol start="10">
 <li>Kuniaki Saito, Yusuke Mukuta, Yoshitaka Ushiku, Tatsuya Harada. Deep Modality Invariant Adversarial Network for Shared Representation Learning. The 16th International Conference on Computer Vision Workshop on Transferring and Adapting Source Knowledge in Computer Vision (<span class="conf">ICCV</span>, Workshop), 2017.</li>
 <li>Yusuke Mukuta, Yoshitaka Ushiku, Tatsuya Harada. Spatial-Temporal Weighted Pyramid using Spatial Orthogonal Pooling. The 16th International Conference on Computer Vision Workshop on Compact and Efficient Feature Representation and Learning in Computer Vision (<span class="conf">ICCV</span>, Workshop), 2017.</li>
 <li>Takumi Karasawa, Kohei Watanabe, Qishen Ha, Antonio Tejero-De-Pablos, Yoshitaka Ushiku, Tatsuya Harada. Multispectral Object Detection for Autonomous Vehicles. The 25th Annual ACM International Conference on Multimedia (<span class="conf">ACMMM</span>), 2017, (workshop).</li>
+</ol>
+<h4 class="year">2012</h4>
+<ol start="13">
 <li>Yoshitaka Ushiku, Hiroshi Muraoka, Sho Inaba, Teppei Fujisawa, Koki Yasumoto, Naoyuki Gunji, Takayuki Higuchi, Yuko Hara, Tatsuya Harada, and Yasuo Kuniyoshi. ISI at ImageCLEF 2012: Scalable System for Image Annotation. the 3rd Conference and Labs of the Evaluation Forum (<span class="conf">CLEF</span> 2012), pp.1-12, 2012.</li>
 </ol>
+
 <h3>Technical Report</h3>
-<ol>
+<h4 class="year">2026</h4>
+<ol start="1">
 <li>Kuniaki Saito and Yoshitaka Ushiku. The Devil is in the Spectrum Bias: Spectrum-Balanced Feature Matching for Robust Representation Distillation. arXiv, 2609.34106, 2026.</li>
 <li>Michiko Yoshitake, Yuta Suzuki, Ryo Igarashi, Yoshitaka Ushiku, and Keisuke Nagato. MaterialFigBENCH: benchmark dataset with figures for evaluating college-level materials science problem-solving abilities of multimodal large language models. arXiv, 2603.11414, 2026.</li>
 <li>Kiyotada Mori, Shohei Tanaka, Tosho Hirasawa, Tadashi Kozuno, Koichiro Yoshino, and Yoshitaka Ushiku. WarrantScore: Modeling Warrants between Claims and Evidence for Substantiation Evaluation in Peer Reviews. arXiv, 2601.17377, 2026.</li>
+</ol>
+<h4 class="year">2025</h4>
+<ol start="4">
 <li>Kuniaki Saito, Risa Shinoda, Shohei Tanaka, Tosho Hirasawa, Fumio Okura, and Yoshitaka Ushiku. HalDec-Bench: Benchmarking Hallucination Detector in Image Captioning. arXiv, 2511.20515, 2025.</li>
+</ol>
+<h4 class="year">2024</h4>
+<ol start="5">
 <li>Akihiro Fujii, Yoshitaka Ushiku, Koji Shimizu, Anh Khoa Augustin Lu, and Satoshi Watanabe. Adaptable Method for Crystal Design across Diverse Constraints and Objectives with Pretrained Property Predictors. arXiv, 2410.08562, 2024.</li>
 <li>Michiko Yoshitake, Yuta Suzuki, Ryo Igarashi, Yoshitaka Ushiku, and Keisuke Nagato. MaterialBENCH: Evaluating College-Level Materials Science Problem-Solving Abilities of Large Language Models. arXiv, 2409.03161, 2024.</li>
 <li>Tong Zheng, Shusaku Sone, Yoshitaka Ushiku, Yuki Oba, and Jiaxin Ma. TNF: Tri-branch Neural Fusion for Multimodal Medical Data Classification. arXiv, 2403.01802, 2024.</li>
+</ol>
+<h4 class="year">2023</h4>
+<ol start="8">
 <li>Shusaku Sone, Jiaxin Ma, Atsushi Hashimoto, Naoya Chiba, and Yoshitaka Ushiku. WeaveNet for Approximating Two-sided Matching Problems. arXiv, 2310.12515, 2023.</li>
 <li>Shiqi Yang, Atsushi Hashimoto, and Yoshitaka Ushiku. A Critical Look at the Current Usage of Foundation Model for Dense Recognition Task. arXiv, 2307.02862, 2023.</li>
 <li>Qing Yu, Atsushi Hashimoto, and Yoshitaka Ushiku. Noisy Universal Domain Adaptation via Divergence Optimization for Visual Recognition. arXiv, 2304.10333, 2023.</li>
+</ol>
+<h4 class="year">2018</h4>
+<ol start="11">
 <li>Shoji Yamamoto, Antonio Tejero-de-Pablos, Yoshitaka Ushiku, and Tatsuya Harada. Conditional Video Generation Using Action-Appearance Captions. arXiv, 1812.01261, 2018.</li>
+</ol>
+<h4 class="year">2017</h4>
+<ol start="12">
 <li>Andrew Shin, Leopold Crestel, Hiroharu Kato, Kuniaki Saito, Katsunori Ohnishi, Masataka Yamaguchi, Masahiro Nakawaki, Yoshitaka Ushiku, and Tatsuya Harada. Melody Generation for Pop Music via Word Representation of Musical Properties. arXiv, 1710.11549, 2017.</li>
+</ol>
+<h4 class="year">2016</h4>
+<ol start="13">
 <li>Andrew Shin, Yoshitaka Ushiku, and Tatsuya Harada. The Color of the Cat is Gray: 1 Million Full-Sentences Visual Question Answering (FSVQA). arXiv, 1609.06657, 2016.</li>
 </ol>
 
 <h3>Domestic Journal (refereed, In Japanese)</h3>
-<p>
-Go to <a href="index_ja.html">japanese page</a> for domestic papers.
-</p>
+<p class="pointer">Go to <a href="index_ja.html">japanese page</a> for domestic papers.</p>
 <h3>Domestic Conference (refereed, In Japanese)</h3>
-<p>
-Go to <a href="index_ja.html">japanese page</a> for domestic papers.
-</p>
+<p class="pointer">Go to <a href="index_ja.html">japanese page</a> for domestic papers.</p>
 <h3>Domestic Conference (unrefereed, In Japanese)</h3>
-<p>
-Go to <a href="index_ja.html">japanese page</a> for domestic papers.
-</p>
+<p class="pointer">Go to <a href="index_ja.html">japanese page</a> for domestic papers.</p>
+</section>
 
+<section id="books">
 <h2>Books</h2>
-<ol>
+<h4 class="year">2020</h4>
+<ol start="1">
 <li>Yoshitaka Ushiku. Long Short-Term Memory. In: Ikeuchi K. (eds) Computer Vision. Springer, 2020.</li>
 <li>Kuniaki Saito, Shohei Yamamoto, Yoshitaka Ushiku, and Tatsuya Harada. Adversarial Learning Approach for Open Set Domain Adaptation. In: Venkateswara H., Panchanathan S. (eds) Domain Adaptation in Computer Vision with Deep Learning. Springer, pp.175-193, 2020.</li>
 </ol>
-<p>
-Go to <a href="index_ja.html">japanese page</a> for domestic books.
-</p>
-  
+
+<p class="pointer">Go to <a href="index_ja.html">japanese page</a> for domestic books.</p>
+</section>
+
+<section id="talks">
 <h2>Invited Talks</h2>
-<ol>
+<h4 class="year">2026</h4>
+<ol start="1">
 <li>Yoshitaka Ushiku. Embodied AI for Science--Toward the Creation of Knowledge Through Generative AI and Autonomous Robots. 2026 MRS Spring Meeting, Symposium MT01 (invited paper), 2026/05/01.</li>
 <li>Yoshitaka Ushiku. Embodied AI for Science. The 8th R-CCS International Symposium, Osaka, Japan, 2026/01/28.</li>
+</ol>
+<h4 class="year">2023</h4>
+<ol start="3">
 <li>Yoshitaka Ushiku. Invitation to Vision and Language. IEICE English Webinar (Distinguished Lecturer Program), online, Japan, 2023/06/30.</li>
+</ol>
+<h4 class="year">2022</h4>
+<ol start="4">
 <li>Yoshitaka Ushiku. Towards a symbiosis between AI and humans: The State-of-the-art. Director General of Intellectual Property, online, Indonesia, 2022/01/13.</li>
+</ol>
+<h4 class="year">2021</h4>
+<ol start="5">
 <li>Yoshitaka Ushiku. Challenges of Integrating Vision and Language. International Display Workshops, online, Japan, 2021/12/01.</li>
 <li>Yoshitaka Ushiku. Towards a symbiosis between AI and humans: The State-of-the-art. Intellectual Property Office of Vietnam, online, Vietnam, 2021/11/17.</li>
 <li>Yoshitaka Ushiku. Multimodal Understanding: Vision and Language, and its Beyond. International Workshop on Frontiers of Computer Vision, Daegu, Korea, 2021/02/22.</li>
+</ol>
+<h4 class="year">2019</h4>
+<ol start="8">
 <li>Yoshitaka Ushiku. Deep Learning for Natural Language Processing and Computer Vision. Tutorial on Asian Conference on Machine Learning, Nagoya, Japan, 2019/11/17.</li>
+</ol>
+<h4 class="year">2017</h4>
+<ol start="9">
 <li>Yoshitaka Ushiku. Frontiers of Vision and Language: Bridging Images and Texts by Deep Learning. Workshop of Machine Learning under International Conference on Document Analysis and Recognition, Kyoto, Japan, 2017/11/11.</li>
 <li>Yoshitaka Ushiku. Recognize, Describe, and Generate: Introduction of Recent Work at MIL. GPU Technology Conference, San Jose, CA, 2017/05/11.</li>
+</ol>
+<h4 class="year">2012</h4>
+<ol start="11">
 <li>Yoshitaka Ushiku, Tatsuya Harada, and Yasuo Kuniyoshi. Efficient Image Annotation for Automatic Sentence Generation. Greater Tokyo Area Multimedia/Vision Workshop, Tokyo, Japan, 2012/08/30.</li>
 </ol>
-<p>
-Go to <a href="index_ja.html">japanese page</a> for domestic talks.
-</p>
 
+<p class="pointer">Go to <a href="index_ja.html">japanese page</a> for domestic talks.</p>
+</section>
+
+<section id="awards">
 <h2>Awards and Competitions</h2>
 <ol>
 <li>2023. <span class="award">Nice Step Researcher</span>. National Institute of Science and Technology Policy.</li>
@@ -351,9 +548,31 @@ Go to <a href="index_ja.html">japanese page</a> for domestic talks.
 <li>2011. <span class="award">Third place</span> in the classification task, <span class="award">second place</span> in the detection task. Large Scale Visual Recognition Challenge 2011 (ILSVRC2011).</li>
 <li>2010. <span class="award">Third place</span>. Large Scale Visual Recognition Challenge 2010 (ILSVRC2010).</li>
 </ol>
-<p>
-Go to <a href="index_ja.html">japanese page</a> for domestic awards.
-</p>
+<p class="pointer">Go to <a href="index_ja.html">japanese page</a> for domestic awards.</p>
+</section>
 
+<section id="media">
+<h2>Media</h2>
+<ol>
+<li><span class="date">2025/04/01.</span> Could an AI Win the Nobel Prize? Maybe By 2050, If This Project Is Successful. <a href="https://www.technologynetworks.com/informatics/articles/could-an-ai-win-the-nobel-prize-maybe-by-2050-if-this-project-is-successful-397964">https://www.technologynetworks.com/informatics/articles/could-an-ai-win-the-nobel-prize-maybe-by-2050-if-this-project-is-successful-397964</a>. Technology Networks.</li>
+</ol>
+</section>
+
+<section id="slides">
+<h2>Talk Slides</h2>
+<h3>Keynotes</h3>
+<div class="decks">
+<figure class="deck">
+<div class="embed ratio-slideshare"><iframe src="https://www.slideshare.net/slideshow/embed_code/key/thoD2I4GyhT4he" title="Frontiers of Vision and Language: Bridging Images and Texts by Deep Learning" loading="lazy" allowfullscreen></iframe></div>
+<figcaption><strong><a href="//www.slideshare.net/YoshitakaUshiku/frontiers-of-vision-and-language-bridging-images-and-texts-by-deep-learning-81870137" title="Frontiers of Vision and Language: Bridging Images and Texts by Deep Learning">Frontiers of Vision and Language: Bridging Images and Texts by Deep Learning</a></strong> from <strong><a href="https://www.slideshare.net/YoshitakaUshiku">Yoshitaka Ushiku</a></strong></figcaption>
+</figure>
+</div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p><a href="#">↑ Top</a></p>
+</footer>
 </body>
 </html>

@@ -1,0 +1,400 @@
+section_title:
+  en: Invited Talks
+  ja: 基調講演・招待講演・講師
+en_pointer: Go to <a href="index_ja.html">japanese page</a> for domestic talks.
+items:
+- lang: ja
+  date: '2026-10-29'
+  tag: 講演
+  text_ja: 牛久祥孝. AI for Science、発見の先で問われること. 第29回情報論的学習理論ワークショップ (IBIS2026) 企画セッション「AI for Science」, オンライン, 日本, 2026/10/29.
+- lang: ja
+  date: '2026-10-16'
+  tag: 講演
+  text_ja: 牛久祥孝. フィジカルAIに関するレビュー. 透明酸化物光・電子材料研究会 第18回研究会, 東京大学 本郷キャンパス, 日本, 2026/10/16.
+- lang: ja
+  date: '2026-09-17'
+  tag: モデレーター
+  text_ja: 牛久祥孝. パネル討論「AI時代の研究開発」. AI for Science 2026 公開シンポジウム（JST-CRDS・文部科学省）, 東京, 日本, 2026/09/17.
+- lang: ja
+  date: '2026-09-17'
+  tag: 講演
+  text_ja: 牛久祥孝. AI for Scienceの未来に向けて. AI for Science 2026 公開シンポジウム（JST-CRDS・文部科学省）, 東京, 日本, 2026/09/17.
+- lang: ja
+  date: '2026-09-12'
+  tag: 基調講演
+  text_ja: 牛久祥孝. CoInnovator：AIが人間の創造性を加速する未来を目指して. ソフトウェアエンジニアリングシンポジウム2026 (SES2026), 慶應義塾大学 日吉キャンパス, 日本, 2026/09/12.
+- lang: ja
+  date: '2026-07-19'
+  tag: パネル
+  text_ja: 牛久祥孝. 人間とロボットの境界が溶ける社会で、人は幸せ？. HRWC 2026 (Human Robot World Challenge 2026), 徳島, 日本, 2026/07/19.
+- lang: ja
+  date: '2026-07-19'
+  tag: 講演
+  text_ja: 牛久祥孝. AIロボット科学者の話 ～ ロボットも含めてAIエージェントにする. HRWC 2026 (Human Robot World Challenge 2026), 徳島, 日本, 2026/07/19.
+- lang: ja
+  date: '2026-06-10'
+  tag: 講演
+  text_ja: 牛久祥孝. AIロボット駆動科学. 人工知能学会全国大会 企画セッション「AI for Scienceの新たな地平」, 高崎, 日本, 2026/06/10.
+- lang: ja
+  date: '2026-06-05'
+  tag: 基調講演
+  text_ja: 牛久祥孝. 米国の脳×日本の神経系 －フィジカルAI時代の開発力と国産化の展望－. センシング技術応用セミナー2026, 大阪, 日本, 2026/06/05.
+- lang: both
+  date: '2026-05-01'
+  tag: 招待講演
+  text_en: Yoshitaka Ushiku. Embodied AI for Science--Toward the Creation of Knowledge Through Generative AI and Autonomous Robots. 2026 MRS Spring Meeting, Symposium MT01 (invited paper), 2026/05/01.
+  text_ja: Yoshitaka Ushiku. Embodied AI for Science--Toward the Creation of Knowledge Through Generative AI and Autonomous Robots. 2026 MRS Spring Meeting, Symposium MT01, 2026/05/01.
+- lang: ja
+  date: '2026-03-16'
+  tag: 招待講演
+  text_ja: 牛久祥孝. フィジカルAI for Science. 応用物理学会春季学術講演会 シンポジウム「人間×AI×ロボティクスが拓く自律材料研究のフロンティア」, 日本, 2026/03/16.
+- lang: ja
+  date: '2026-03-10'
+  tag: 講演
+  text_ja: 牛久祥孝. 日本企業の開発力と国産化の展望. 日本経済研究センター 未来社会とテクノロジー研究会, 日本, 2026/03/10.
+- lang: ja
+  date: '2026-02-19'
+  tag: 講演
+  text_ja: 牛久祥孝. 技術とビジネスの「共通言語」をAIで創る ～無形資産を「探す・作る・活かす」ためのAIパートナー活用論～. マーケットワン・ジャパン 知財マーケティングセミナー, 東京, 日本, 2026/02/19.
+- lang: both
+  date: '2026-01-28'
+  tag: 招待講演
+  text_en: Yoshitaka Ushiku. Embodied AI for Science. The 8th R-CCS International Symposium, Osaka, Japan, 2026/01/28.
+  text_ja: Yoshitaka Ushiku. Embodied AI for Science. The 8th R-CCS International Symposium, 大阪, 日本, 2026/01/28.
+- lang: ja
+  date: '2026-01-19'
+  tag: 講演
+  text_ja: 牛久祥孝. Embodied AI for Science. 統計数理研究所 シンポジウム「AI4S 2026 ～機械学習・統計数理が切り拓くAI for Scienceの新展開～」, 一橋講堂, 日本, 2026/01/19.
+- lang: ja
+  date: '2025-11-14'
+  tag: モデレーター
+  text_ja: 牛久祥孝. パネルディスカッション. AIロボット駆動科学研究会 vol.4, 東京大学 本郷キャンパス, 日本, 2025/11/14.
+- lang: ja
+  date: '2025-10-25'
+  tag: 講演
+  text_ja: 牛久祥孝. Embodied AI for Science. 第106回 Machine Learning 15minutes! Hybrid, 東京, 日本, 2025/10/25.
+- lang: ja
+  date: '2025-10-02'
+  tag: 講演
+  text_ja: 牛久祥孝. 人と融和して知の創造・越境をする AI ロボット. 情報処理学会 連続セミナー2025 第7回「AIロボット駆動科学」, オンライン, 日本, 2025/10/02.
+- lang: ja
+  date: '2025-09-30'
+  tag: モデレーター
+  text_ja: '牛久祥孝. AIが拓く次世代マテリアル開発の新潮流 〜 インフォマティクスと自動実験による材料開発の革新 〜. DEEPCORE KERNEL AI-Driven Science Talks #3, 東京, 日本, 2025/09/30.'
+- lang: ja
+  date: '2025-09-19'
+  tag: モデレーター
+  text_ja: '牛久祥孝. AIが駆動するロボティクスの進化 〜 新たな産業を切り拓くテクノロジーの最前線 〜. DEEPCORE KERNEL AI-Driven Science Talks #2, 東京, 日本, 2025/09/19.'
+- lang: ja
+  date: '2025-09-03'
+  tag: パネル
+  text_ja: 牛久祥孝. 日本のマテリアル研究現場のあり方／日本の計測機器の役割. MEEP公開シンポジウム（JASIS2025）, 幕張メッセ, 日本, 2025/09/03.
+- lang: ja
+  date: '2025-07-25'
+  tag: 講演
+  text_ja: '牛久祥孝. Vision and LanguageからのEmbodied AIとAI for Science. SUMO.ai #01 マルチモーダルAI技術勉強会, 東京, 日本, 2025/07/25.'
+- lang: ja
+  date: '2025-07-03'
+  tag: モデレーター
+  text_ja: 牛久祥孝. 日本発、次世代ヒューマノイド/AIロボットの挑戦 〜グローバル競争を勝ち抜く戦略〜. IVS2025, 京都, 日本, 2025/07/03.
+- lang: ja
+  date: '2025-04-17'
+  tag: 講演
+  text_ja: '牛久祥孝. Frontiers of Vision and Language: Bridging Images and Texts by Deep Learning. 第129回日本眼科学会総会 シンポジウム「領域横断的なAI活用の先端研究」, 東京, 日本, 2025/04/17.'
+- lang: ja
+  date: '2025-04-09'
+  tag: 講演
+  text_ja: 牛久祥孝. 科学×ロボット×生成(仮). GPU UNITE 新年会 2025, 東京, 日本, 2025/04/09.
+- lang: ja
+  date: '2025-03-28'
+  tag: 講演
+  text_ja: 牛久祥孝. 人と融和して知の創造・越境をするAIロボット. 日本電子材料技術協会 セミナー「半導体・製造・ロボティックス」, 東京, 日本, 2025/03/28.
+- lang: ja
+  date: '2025-02-22'
+  tag: 講演
+  text_ja: 牛久祥孝. AIロボット駆動科学のスピンアウト. 第98回 Machine Learning 15minutes! Broadcast, オンライン, 日本, 2025/02/22.
+- lang: ja
+  date: '2024-12-11'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 人間とAIのクリエイティブな融和. HCGシンポジウム2024, 金沢, 日本, 2024/12/11.
+- lang: ja
+  date: '2024-10-05'
+  tag: パネル
+  text_ja: 牛久祥孝. 生命科学の未来を予想する――データベースはもう要らなくなる...ってコト?!. トーゴーの日シンポジウム2024「AI＋ロボティクス＋データベースが変える生命科学」, 東京, 日本, 2024/10/05.
+- lang: ja
+  date: '2024-09-09'
+  tag: 講演
+  text_ja: 牛久祥孝. Vision &amp; LanguageとAIロボット駆動科学. 土木学会 応用力学委員会 第3回応用数理・AIセミナー, 日本, 2024/09/09.
+- lang: ja
+  date: '2024-07-23'
+  tag: 講演
+  text_ja: 牛久祥孝. 視覚と言葉を繋ぐAIのこれまでとこれから. 科学技術・学術政策研究所 講演会「近未来への招待状～ナイスステップな研究者2023からのメッセージ～」第3回, オンライン, 日本, 2024/07/23.
+- lang: ja
+  date: '2024-07-09'
+  tag: 講演
+  text_ja: 牛久祥孝. 生成AIとAIロボット駆動科学. 東北大学 第2回 医学AIセミナー 特別レクチャー, 仙台, 日本, 2024/07/09.
+- lang: ja
+  date: '2024-07-03'
+  tag: 講演
+  text_ja: 牛久祥孝. ビジョン＆ランゲージ. 第92回人工知能セミナー「マルチモーダル情報処理の最新動向」, 東京, 日本, 2024/07/03.
+- lang: ja
+  date: '2024-06-29'
+  tag: 講演
+  text_ja: 牛久祥孝. AIロボット駆動科学のご紹介. 第90回 Machine Learning 15minutes! Hybrid, 東京, 日本, 2024/06/29.
+- lang: ja
+  date: '2024-05-30'
+  tag: パネル
+  text_ja: 牛久祥孝. 次世代AIモデルの研究開発へ. 2024年度人工知能学会全国大会 企画セッションKS-17, 浜松, 日本, 2024/05/30.
+- lang: ja
+  date: '2023-11-25'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 基盤モデルからAIサイエンティストへ. 人工知能学会 合同研究会2023 合同企画, 慶應義塾大学 矢上キャンパス, 日本, 2023/11/25.
+- lang: ja
+  date: '2023-11-24'
+  tag: 講演
+  text_ja: 牛久祥孝. 進化するAI・ロボティクス、最新LLMのインパクトをトップ研究者が解説. NIKKEI Tech Foresight（NIKKEI LIVE）, オンライン, 日本, 2023/11/24.
+- lang: ja
+  date: '2023-11-02'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 科学研究する生成AIをつくる. GPU UNITE 2023 Day3：生成AI Day, オンライン, 日本, 2023/11/02.
+- lang: ja
+  date: '2023-09-11'
+  tag: 講演
+  text_ja: 牛久祥孝. 人と融和して知の創造・越境をするAIロボット. 第41回日本ロボット学会学術講演会 オープンフォーラム OF6, 仙台, 日本, 2023/09/11.
+- lang: both
+  date: '2023-06-30'
+  tag: 講演
+  text: Yoshitaka Ushiku. Invitation to Vision and Language. IEICE English Webinar (Distinguished Lecturer Program), online, Japan, 2023/06/30.
+- lang: ja
+  date: '2022-12-09'
+  tag: 基調講演
+  text_ja: 牛久祥孝. Ridge-iにおける環境と社会活動のモニタリング. ビジョン技術の実利用ワークショップ (ViEW2022) OS4「SDGs達成へ向けての画像技術活用」, オンライン, 日本, 2022/12/09.
+- lang: ja
+  date: '2022-11-26'
+  tag: 講演
+  text_ja: 牛久祥孝. AIがノーベル賞を取る日. 第72回 Machine Learning 15minutes! Broadcast, オンライン, 日本, 2022/11/26.
+- lang: ja
+  date: '2022-08-05'
+  tag: 講演
+  text_ja: 牛久祥孝. AIとDX. GPU UNITE 2022 Day1：GPU &amp; AIセッション, オンライン, 日本, 2022/08/05.
+- lang: ja
+  date: '2022-06-08'
+  tag: 講師
+  text_ja: 牛久祥孝. Transformerの最前線〜 畳込みニューラルネットワークの先へ 〜. 第28回画像センシングシンポジウム (SSII2022) チュートリアル TS1, 横浜, 日本, 2022/06/08.
+- lang: ja
+  date: '2022-02-24'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 人工知能と建築. 建築学会 デザイン科学数理知能小委員会・研究集会, オンライン, 日本, 2022/02/24
+- lang: ja
+  date: '2022-02-16'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 次のAIとDXの実現可能性について~具体的なアクションプラン・社会実装例の解説~. 株式会社POL WEBセミナー, オンライン, 日本, 2022/02/16
+- lang: ja
+  date: '2022-02-09'
+  tag: 招待講演
+  text_ja: "牛久祥孝. Vision and Languageとその先へ.\t統計・機械学習若手シンポジウム, オンライン, 日本, 2022/02/09"
+- lang: ja
+  date: '2022-01-19'
+  tag: 招待講演
+  text_ja: 牛久祥孝. マテリアル探索を飛躍的に加速する機械学習基盤技術. 兵庫県立大学 兵庫県MI研究会, オンライン, 日本, 2022/01/19
+- lang: both
+  date: '2022-01-13'
+  tag: 講師
+  text_en: 'Yoshitaka Ushiku. Towards a symbiosis between AI and humans: The State-of-the-art. Director General of Intellectual Property, online, Indonesia, 2022/01/13.'
+  text_ja: 牛久祥孝. AIと人間の共生に向けて～世界最先端の状況～. JICA（インドネシア知的財産総局）, オンライン, インドネシア, 2022/01/13.
+- lang: both
+  date: '2021-12-01'
+  tag: 招待講演
+  text: Yoshitaka Ushiku. Challenges of Integrating Vision and Language. International Display Workshops, online, Japan, 2021/12/01.
+- lang: ja
+  date: '2021-11-24'
+  tag: 招待講演
+  text_ja: 牛久祥孝. OSXのビジョン＆ランゲージが目指す人と機械の融和. コンピュータ産業研究会, オンライン, 日本, 2021/11/24.
+- lang: both
+  date: '2021-11-17'
+  tag: 講師
+  text_en: 'Yoshitaka Ushiku. Towards a symbiosis between AI and humans: The State-of-the-art. Intellectual Property Office of Vietnam, online, Vietnam, 2021/11/17.'
+  text_ja: 牛久祥孝. AIと人間の共生に向けて～世界最先端の状況～. JICA（ベトナム国家知的財産庁）, オンライン, ベトナム, 2021/11/17.
+- lang: ja
+  date: '2021-11-05'
+  tag: 招待講演
+  text_ja: 牛久祥孝. イメージングAIの「第7世代」と今後のアクションプラン. GPU 2021, オンライン, 日本, 2021/11/05.
+- lang: ja
+  date: '2021-10-28'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 建築情報学会にAIどうでSHOW. Archi Future 2021, オンライン, 日本, 2021/10/28.
+- lang: ja
+  date: '2021-09-22'
+  tag: 招待講演
+  text_ja: '牛久祥孝. 【xTalk #14】牛久祥孝×落合陽一×菅野裕介. JST CREST xDiversity, オンライン, 日本, 2021/09/22.'
+- lang: ja
+  date: '2021-09-16'
+  tag: 招待講演
+  text_ja: 牛久祥孝. Transformer. JEITA認識形入力方式標準化専門委員会, オンライン, 日本, 2021/09/16.
+- lang: ja
+  date: '2021-09-12'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 次のAIと医療のかかわりについて. 日本緑内障学会, オンライン, 日本, 2021/09/12.
+- lang: ja
+  date: '2021-08-24'
+  tag: 招待講演
+  text_ja: 牛久祥孝. マルチモーダル理解～Vision and Languageとその先へ. 愛媛大学DS研究セミナー, オンライン, 日本, 2021/08/24.
+- lang: ja
+  date: '2021-08-12'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 次のAIとDXの実現可能性について. 日本ディープラーニング協会 CDLE勉強会, オンライン, 日本, 2021/08/12.
+- lang: ja
+  date: '2021-07-24'
+  tag: 招待講演
+  text_ja: 牛久祥孝. FIREの話. MIRU 2021 若手プログラム, オンライン, 日本, 2021/07/24.
+- lang: ja
+  date: '2021-07-19'
+  tag: 招待講演
+  text_ja: 牛久祥孝. CVPR技術報告会. 日本ディープラーニング協会, オンライン, 日本, 2021/07/19.
+- lang: ja
+  date: '2021-07-14'
+  tag: 講義
+  text_ja: 牛久祥孝. 多様なデータを理解する：マルチモーダル機械学習の最前線. 埼玉工業大学講義（大山航先生）, オンライン, 日本, 2021/07/14.
+- lang: ja
+  date: '2021-03-19'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 企業研究者の「熱い想い」をお届けします. 情報処理学会全国大会, オンライン, 日本, 2021/03/19.
+- lang: ja
+  date: '2021-03-16'
+  tag: 招待講演
+  text_ja: 牛久祥孝. マルチモーダル機械学習とマテリアルへの応用可能性. 応用物理学会春季学術講演会, オンライン, 日本, 2021/03/16.
+- lang: ja
+  date: '2021-03-12'
+  tag: 招待講演
+  text_ja: 牛久祥孝. マルチモーダル理解～Vision and Languageとその先へ. 京都大学学術情報メディアセンターセミナー, 京都, 日本, 2021/03/12.
+- lang: both
+  date: '2021-02-22'
+  tag: 招待講演
+  text: 'Yoshitaka Ushiku. Multimodal Understanding: Vision and Language, and its Beyond. International Workshop on Frontiers of Computer Vision, Daegu, Korea, 2021/02/22.'
+- lang: ja
+  date: '2020-12-01'
+  tag: 招待講演
+  text_ja: 牛久祥孝. AIと人間の共生に向けて ～世界最先端の状況～. Hitachi Intellectual Assets Forum, オンライン, 日本, 2020/12/01.
+- lang: ja
+  date: '2020-01-17'
+  tag: 基調講演
+  text_ja: 牛久祥孝. 機械学習を『民主化』する取り組み. SB C&amp;Sセミナー「AI・ディープラーニング研究者が話を聞きたい研究者の話と開発基盤の最新動向」, 2020/1/17.
+- lang: ja
+  date: '2019-12-05'
+  tag: 基調講演
+  text_ja: 牛久祥孝. 深層学習によるビジョン＆ランゲ―ジの世界. ビジョン技術の実利用ワークショップ(ViEW), 2019/12/5.
+- lang: both
+  date: '2019-11-17'
+  tag: 招待講演
+  text: Yoshitaka Ushiku. Deep Learning for Natural Language Processing and Computer Vision. Tutorial on Asian Conference on Machine Learning, Nagoya, Japan, 2019/11/17.
+- lang: ja
+  date: '2019-09-26'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 画像・映像理解と自然言語への架け橋. 情報処理学会連続セミナー第3回, 2019/9/26.
+- lang: ja
+  date: '2019-09-03'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 多様なデータへのキャプションを自動で生成する技術の創出. 情報科学技術フォーラム(FIT), 2019/9/3.
+- lang: ja
+  date: '2019-06-12'
+  tag: 招待講演
+  text_ja: 牛久祥孝. ビジョン＆ランゲージ～「意図」をどのようにモデリングするか？ 画像センシングシンポジウム(SSII), 2019/6/12.
+- lang: ja
+  date: '2019-03-25'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 機械学習による生成技術とその応用展開. ITOC機械学習セミナーシリーズVol.3, 2019/3/25.
+- lang: ja
+  date: '2019-02-21'
+  tag: 講師
+  text_ja: 牛久祥孝. ～AI・IoT講座～ 人工知能（AI）基礎講座. 独立行政法人工業所有権情報・研修館, 2019/2/21および2019/3/11.
+- lang: ja
+  date: '2018-11-28'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 機械学習による生成技術とその応用展開. ISID エンジニアリングフォーラム, 2018/11/28.
+- lang: ja
+  date: '2018-11-21'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 視覚と対話の融合研究. 人工知能学会 言語・音声理解と対話処理研究会(SIG-SLUD), 2018/11/21.
+- lang: ja
+  date: '2018-08-28'
+  tag: 招待講演
+  text_ja: 牛久祥孝. Deep Learningによる視覚・言語融合の最前線. NLP若手の会(YANS), 2018/8/28.
+- lang: ja
+  date: '2018-08-27'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 敵対的学習による動画生成とドメイン適応. 人工知能学会 第75回人工知能セミナー, 2018/8/27.
+- lang: ja
+  date: '2018-07-13'
+  tag: 招待講演
+  text_ja: 牛久祥孝. Deep Learningによる視覚・言語融合の最前線. 精密工学会 画像応用技術専門委員会(IAIP), 2018/7/13.
+- lang: ja
+  date: '2018-03-15'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 視覚と言葉をつなげる技術. 情報処理学会 IPSJ-ONE, 2018/3/15.
+- lang: ja
+  date: '2018-03-02'
+  tag: 招待講演
+  text_ja: 牛久祥孝. Deep Learningによる視覚・言語融合の最前線. 情報処理学会 コンピュータビジョンとイメージメディア研究会(CVIM), 2018/3/2.
+- lang: ja
+  date: '2017-12-13'
+  tag: 招待講演
+  text_ja: 牛久祥孝. Deep Learningによる視覚・言語融合の最前線. 映像情報メディア学会 冬季大会, 2017/12/13.
+- lang: ja
+  date: '2017-11-22'
+  tag: 招待講演
+  text_ja: 牛久祥孝. Deep Learningによる視覚・言語融合の最前線. 画像符号化シンポジウム(PCSJ) / 映像メディア処理シンポジウム(IMPS), 2017/11/22.
+- lang: both
+  date: '2017-11-11'
+  tag: 基調講演
+  text_en: 'Yoshitaka Ushiku. Frontiers of Vision and Language: Bridging Images and Texts by Deep Learning. Workshop of Machine Learning under International Conference on Document Analysis and Recognition, Kyoto, Japan, 2017/11/11.'
+  text_ja: 'Yoshitaka Ushiku. Frontiers of Vision and Language: Bridging Images and Texts by Deep Learning. Workshop of Machine Learning under International Conference on Document Analysis and Recognition, 2017/11/11.'
+- lang: ja
+  date: '2017-08-10'
+  tag: 招待講演
+  text_ja: Kuniaki Saito, Yoshitaka Ushiku, and Tatsuya Harada. Asymmetric Tri-training for Unsupervised Domain Adaptation. International Conference on Machine Learning. 第20回画像の認識・理解シンポジウム, 2017/08/10.
+- lang: ja
+  date: '2017-06-30'
+  tag: 招待講演
+  text_ja: 牛久祥孝. Deep Learning による視覚×言語融合の最前線. ABEJA Technopreneur College, 2017/06/30.
+- lang: both
+  date: '2017-05-11'
+  tag: 招待講演
+  text_en: 'Yoshitaka Ushiku. Recognize, Describe, and Generate: Introduction of Recent Work at MIL. GPU Technology Conference, San Jose, CA, 2017/05/11.'
+  text_ja: 'Yoshitaka Ushiku. Recognize, Describe, and Generate: Introduction of Recent Work at MIL. GPU Technology Conference, 2017/05/11.'
+- lang: ja
+  date: '2017-03-22'
+  tag: 招待講演
+  text_ja: 牛久祥孝. Deep Learning による視覚×言語融合の最前線. 電子情報通信学会総合大会 企画講演セッション「もっと知りたい！ Deep Learning 〜基礎から活用ノウハウ，応用まで〜」, 2017/03/22.
+- lang: ja
+  date: '2017-03-12'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 視覚×言語の最前線. ステアラボ人工知能シンポジウム, 2017/03/12.
+- lang: ja
+  date: '2016-10-12'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 画像キャプションの自動生成. 第16回全脳アーキテクチャ勉強会～人工知能は意味をどう獲得するのか～＠リクルートテクノロジーズ, 2016/10/12.
+- lang: ja
+  date: '2016-08-02'
+  tag: 招待講演
+  text_ja: 'Yoshitaka Ushiku, Masataka Yamaguchi, Yusuke Mukuta, and Tatsuya Harada. Common subspace for model and similarity: Phrase learning for caption generation from images. 第19回画像の認識・理解シンポジウム, 2016/08/02.'
+- lang: ja
+  date: '2016-08-01'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 画像キャプションの自動生成. 第19回画像の認識・理解シンポジウム (チュートリアルセッション), 2016/08/01.
+- lang: ja
+  date: '2016-06-29'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 画像キャプションの自動生成. 第3回ステアラボ人工知能セミナー＠千葉工業大学 (スカイツリータウン), 2016/06/29.
+- lang: ja
+  date: '2016-06-21'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 画像キャプションの自動生成. 人工知能セミナー第7回 「自然言語処理のＡＩの最新動向」＠産総研, 2016/06/21.
+- lang: ja
+  date: '2016-01-13'
+  tag: 招待講演
+  text_ja: 牛久祥孝. 画像キャプションの自動生成. 確率場と深層学習に関する第1回CRESTシンポジウム＠早稲田大学, 2016/01/13.
+- lang: both
+  date: '2012-08-30'
+  tag: 招待講演
+  text_en: Yoshitaka Ushiku, Tatsuya Harada, and Yasuo Kuniyoshi. Efficient Image Annotation for Automatic Sentence Generation. Greater Tokyo Area Multimedia/Vision Workshop, Tokyo, Japan, 2012/08/30.
+  text_ja: Yoshitaka Ushiku, Tatsuya Harada, and Yasuo Kuniyoshi. Efficient Image Annotation for Automatic Sentence Generation. Greater Tokyo Area Multimedia/Vision Workshop, 2012/08/30.

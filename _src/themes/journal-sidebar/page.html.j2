@@ -1,0 +1,76 @@
+{% extends "base/page.html.j2" %}
+{# Variant "journal-sidebar": the look of B (journal) in the layout of C (sidebar).
+   One <aside> holds the toggle, the panel (header, then the section nav) and the
+   language nav. Header comes before both navs so the Contact links are still counted
+   under "Contact"; the language links sit in their own <nav>, which tools/check.py
+   ignores. The toggle is hidden until the script runs, so without JS the sidebar
+   (and on phones the section list) is simply shown.
+   Desktop: the toggle collapses the whole panel to a narrow rail; the state is kept
+   per viewer in localStorage. Phones (<= 768px): the panel is a top section and the
+   toggle shows/hides the section list (closed by default, not stored). #}
+{% set T = {"en": {"side": "Sidebar", "sec": "Sections", "lang": "Language", "nav": "Sections"},
+            "ja": {"side": "サイドバー", "sec": "目次", "lang": "言語", "nav": "目次"}}[lang] %}
+{% block body_attrs %} class="layout-journal-sidebar"{% endblock %}
+{% block nav %}
+<nav class="topnav" id="sections" aria-label="{{ T.nav }}">
+  <ul class="anchors" id="section-list">
+{% for id, label in L.nav %}
+    <li><a href="#{{ id }}">{{ label }}</a></li>
+{% endfor %}
+  </ul>
+</nav>
+{% endblock %}
+{% block chrome %}
+<aside class="sidebar">
+<button class="side-toggle" id="side-toggle" type="button" aria-expanded="true" aria-controls="side-panel" hidden>
+  <svg class="i-side" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><rect x="2.5" y="3.5" width="15" height="13" fill="none" stroke="currentColor"/><line x1="7.5" y1="3.5" x2="7.5" y2="16.5" stroke="currentColor"/></svg>
+  <svg class="i-chev" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true" focusable="false"><polyline points="5,8 10,13 15,8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+  <span class="side-toggle-label">{{ T.side }}</span>
+</button>
+<div class="side-panel" id="side-panel">
+{{ self.header() }}
+{{ self.nav() }}
+</div>
+<nav class="langnav" aria-label="{{ T.lang }}">
+  <p class="langswitch">
+{% if lang == "en" %}
+    <span aria-current="page">English</span> / <a href="index_ja.html" hreflang="ja">Japanese</a>
+{% else %}
+    <a href="index.html" hreflang="en">English</a> / <span aria-current="page">Japanese</span>
+{% endif %}
+  </p>
+</nav>
+</aside>
+<script>
+(function () {
+  var d = document.documentElement, b = document.getElementById("side-toggle");
+  var t = b.querySelector(".side-toggle-label"), mq = window.matchMedia("(max-width: 768px)");
+  var K = "yu-sidebar", closed = false, navOpen = false;
+  try { closed = localStorage.getItem(K) === "closed"; } catch (e) {}
+  function render() {
+    var phone = mq.matches;
+    d.setAttribute("data-side", closed ? "closed" : "open");
+    d.setAttribute("data-nav", navOpen ? "open" : "closed");
+    b.setAttribute("aria-expanded", String(phone ? navOpen : !closed));
+    b.setAttribute("aria-controls", phone ? "section-list" : "side-panel");
+    t.textContent = phone ? "{{ T.sec }}" : "{{ T.side }}";
+    b.title = phone ? "" : t.textContent;
+  }
+  b.addEventListener("click", function () {
+    if (mq.matches) { navOpen = !navOpen; }
+    else {
+      closed = !closed;
+      try { localStorage.setItem(K, closed ? "closed" : "open"); } catch (e) {}
+    }
+    render();
+  });
+  document.getElementById("section-list").addEventListener("click", function (e) {
+    if (mq.matches && e.target.closest("a")) { navOpen = false; render(); }
+  });
+  if (mq.addEventListener) { mq.addEventListener("change", render); } else { mq.addListener(render); }
+  d.classList.add("js");
+  b.hidden = false;
+  render();
+})();
+</script>
+{% endblock %}

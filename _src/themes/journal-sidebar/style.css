@@ -1,0 +1,255 @@
+/* Variant "journal-sidebar" - B (journal) typography in C (sidebar) layout.
+   Desktop: sticky left sidebar + journal-measure column, the pair centred with a
+   max total width. The toggle (shown only with JS) collapses the sidebar to a rail.
+   <= 768px: the sidebar becomes a compact top section; the toggle opens the section list.
+   System fonts only. */
+
+:root {
+  --bg: #fdfcf9;
+  --text: #1a1a1a;
+  --muted: #5f5f5f;
+  --line: #cfcac0;
+  --accent: #7a1f1f;          /* oxblood: used sparingly (mentions, focus) */
+  --link: #203f73;
+  --link-visited: #5a3a7a;
+  --chip: transparent;
+  --measure: 38rem;
+  --side-w: 15.5rem;
+  --rail-w: 3.25rem;
+  --gap: 3rem;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia,
+           "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "BIZ UDPMincho", "Noto Serif JP", serif;
+  --serif-ja: "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "BIZ UDPMincho", "Noto Serif JP", serif;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161514;
+    --text: #e4e0d8;
+    --muted: #a19b90;
+    --line: #3c3934;
+    --accent: #e08a7a;
+    --link: #9fb8e3;
+    --link-visited: #c4a8e0;
+    --chip: transparent;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 1rem; background: var(--bg); }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: var(--serif); font-size: 1.0625rem; line-height: 1.6;
+  overflow-wrap: anywhere; font-kerning: normal;
+}
+html[lang="ja"] body { font-size: 1rem; line-height: 1.8; }
+
+a { color: var(--link); text-decoration-thickness: 0.06em; text-underline-offset: 0.18em; }
+a:visited { color: var(--link-visited); }
+a:hover { text-decoration-thickness: 0.12em; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.skip { position: absolute; left: -999px; top: 0; }
+.skip:focus { left: 1rem; top: 0.5rem; z-index: 10; background: var(--bg); padding: 0.25rem 0.5rem; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- the toggle ---------- */
+.side-toggle {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font: inherit; font-size: 0.8125rem; font-variant: small-caps; letter-spacing: 0.08em;
+  color: var(--muted); background: transparent; border: 1px solid var(--line);
+  padding: 0.3rem; cursor: pointer; line-height: 1;
+}
+.side-toggle[hidden] { display: none; }
+.side-toggle:hover { color: var(--text); border-color: var(--muted); }
+.side-toggle svg { display: block; flex: none; }
+
+/* ---------- desktop: sidebar + column, centred as a pair ---------- */
+@media (min-width: 769px) {
+  body {
+    display: grid;
+    grid-template-columns: var(--side-w) minmax(0, var(--measure));
+    grid-template-areas: "side main" "side foot";
+    grid-template-rows: 1fr auto;
+    column-gap: var(--gap);
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 1.5rem;
+  }
+  .sidebar {
+    grid-area: side; position: sticky; top: 0; align-self: start;
+    height: 100vh; overflow-y: auto; overscroll-behavior: contain;
+    border-right: 1px solid var(--line);
+    padding: 1.25rem 1.5rem 1.5rem 0;
+    display: flex; flex-direction: column; gap: 1.25rem;
+  }
+  main { grid-area: main; min-width: 0; padding: 0 0 3rem; }
+  .foot { grid-area: foot; }
+
+  .side-toggle { align-self: flex-start; }
+  .side-toggle .i-chev, .side-toggle-label {
+    position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+  }
+  .side-toggle .i-chev { display: none; }
+  .side-panel { display: flex; flex-direction: column; gap: 1.25rem; }
+  .langnav { margin-top: auto; }
+
+  /* collapsed: the sidebar shrinks to a rail; the column keeps its measure and is
+     centred in the freed space (the rail is mirrored by an empty track on the right) */
+  html[data-side="closed"] body {
+    grid-template-columns: var(--rail-w) minmax(0, 1fr) var(--rail-w);
+    grid-template-areas: "side main ." "side foot .";
+    max-width: calc(var(--measure) + 2 * var(--rail-w) + 2 * var(--gap) + 3rem);
+    margin: 0 auto;
+  }
+  html[data-side="closed"] main,
+  html[data-side="closed"] .foot { width: 100%; max-width: var(--measure); justify-self: center; }
+  html[data-side="closed"] .sidebar { padding-right: 0.6rem; align-items: center; }
+  html[data-side="closed"] .side-panel > :not(.hero),
+  html[data-side="closed"] .hero > :not(.hero-text),
+  html[data-side="closed"] .hero-text > :not(h1) { display: none; }
+  html[data-side="closed"] .hero h1 {           /* kept for screen readers */
+    position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+  }
+  html[data-side="closed"] .langswitch { writing-mode: vertical-rl; }
+}
+
+/* ---------- title block in the sidebar ---------- */
+.hero { display: flex; flex-direction: column; gap: 0.9rem; }
+.photo {
+  width: 7.5rem; height: auto; aspect-ratio: 799 / 1200; object-fit: cover;
+  filter: grayscale(0.15); border: 1px solid var(--line); padding: 3px; background: var(--bg);
+}
+.hero h1 { margin: 0; font-size: 1.6rem; font-weight: 400; line-height: 1.15; letter-spacing: 0.02em; }
+html[lang="ja"] .hero h1 { letter-spacing: 0.12em; font-family: var(--serif-ja); }
+.headline { list-style: none; margin: 0.45rem 0 0.9rem; padding: 0; font-style: italic; color: var(--muted); font-size: 0.875rem; line-height: 1.45; }
+.headline li + li { margin-top: 0.3rem; }
+html[lang="ja"] .headline { font-style: normal; font-size: 0.8125rem; line-height: 1.6; }
+.contact { display: flex; flex-direction: column; align-items: flex-start; gap: 0.55rem; }
+.mail { height: auto; width: 100%; max-width: 13.5rem; background: var(--chip); padding: 0.1rem 0.3rem; }
+.social { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.social img { display: block; height: 1.45rem; width: auto; background: var(--chip); padding: 0.12rem; filter: grayscale(1); opacity: 0.85; }
+.social a:hover img, .social a:focus-visible img { filter: none; opacity: 1; }
+
+/* ---------- section nav ---------- */
+.topnav { border-top: 1px solid var(--line); padding-top: 0.75rem; }
+.anchors {
+  list-style: none; margin: 0; padding: 0;
+  font-size: 0.875rem; font-variant: small-caps; letter-spacing: 0.08em; line-height: 1.35;
+}
+html[lang="ja"] .anchors { letter-spacing: 0.12em; font-variant: normal; font-size: 0.8125rem; }
+.anchors a, .anchors a:visited { display: block; padding: 0.18rem 0; color: var(--muted); text-decoration: none; }
+.anchors a:hover { color: var(--text); text-decoration: underline; text-decoration-thickness: 0.06em; }
+.langswitch { margin: 0; font-size: 0.8125rem; white-space: nowrap; color: var(--muted); font-style: italic; }
+.langswitch [aria-current] { color: var(--text); font-style: normal; }
+
+/* ---------- body ---------- */
+section { padding-top: 0.75rem; }
+main > section:first-child h2 { margin-top: 1.75rem; }
+h2 {
+  font-size: 1.05rem; font-weight: 400;
+  font-variant: small-caps; letter-spacing: 0.14em; text-transform: lowercase;
+  margin: 2rem 0 0.9rem; display: flex; align-items: center; gap: 0.9rem;
+}
+html[lang="ja"] h2 { text-transform: none; letter-spacing: 0.3em; font-family: var(--serif-ja); }
+main h2::before, main h2::after { content: ""; flex: 1; border-top: 1px solid var(--line); }
+h3 {
+  font-size: 0.95rem; font-weight: 400; font-style: italic;
+  margin: 1.4rem 0 0.35rem; padding-bottom: 0.15rem; border-bottom: 1px solid var(--line);
+}
+html[lang="ja"] h3 { font-style: normal; font-weight: 600; }
+h4.year {
+  font-size: 0.8rem; font-weight: 400; color: var(--muted); font-variant-numeric: oldstyle-nums;
+  letter-spacing: 0.08em; margin: 0.8rem 0 0.1rem;
+}
+p { margin: 0.5rem 0; }
+#bio p { text-align: left; }
+
+/* dense, reference-list style */
+ol { padding-left: 2.6rem; margin: 0.1rem 0; }
+ol > li { margin: 0.12rem 0; padding-left: 0.15rem; font-size: 0.9375rem; line-height: 1.45; }
+html[lang="ja"] ol > li { line-height: 1.6; }
+ol > li::marker { color: var(--muted); font-size: 0.85em; font-variant-numeric: tabular-nums; content: "[" counter(list-item) "] "; }
+ul.plain { padding-left: 1.1rem; margin: 0.25rem 0; }
+ul.plain > li { margin: 0.1rem 0; }
+ul.plain > li::marker { content: "\2013  "; color: var(--muted); }
+
+dl.timeline { display: grid; grid-template-columns: max-content 1fr; column-gap: 1.1rem; row-gap: 0.15rem; margin: 0.4rem 0; font-size: 0.9375rem; }
+dl.timeline dt { color: var(--muted); font-variant-numeric: tabular-nums oldstyle-nums; white-space: nowrap; }
+dl.timeline dd { margin: 0; }
+dl.reviewer { font-size: 0.9375rem; }
+dl.reviewer dt { font-style: italic; margin-top: 0.4rem; }
+dl.reviewer dd { margin: 0.1rem 0 0.4rem; }
+
+.conf, .journal, .award { font-style: italic; font-weight: 400; }
+html[lang="ja"] .conf, html[lang="ja"] .journal, html[lang="ja"] .award { font-style: normal; font-weight: 600; }
+.mention { color: var(--accent); font-weight: 400; font-style: italic; }
+.mention a, .mention a:visited { color: inherit; }
+.tag { color: var(--muted); }
+.date { color: var(--muted); font-variant-numeric: tabular-nums; }
+.pointer { color: var(--muted); font-size: 0.9rem; font-style: italic; }
+
+.decks { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); }
+.deck { margin: 0; }
+.embed { position: relative; width: 100%; border: 1px solid var(--line); overflow: hidden; }
+.ratio-speakerdeck { aspect-ratio: 1.7834; }
+.ratio-slideshare { aspect-ratio: 595 / 485; }
+.embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.deck figcaption { font-size: 0.85rem; margin-top: 0.3rem; color: var(--muted); font-style: italic; }
+
+.foot { padding: 1rem; border-top: 1px solid var(--line); font-size: 0.85rem; text-align: center; font-variant: small-caps; }
+
+/* ---------- tablets and phones: compact top section ---------- */
+@media (max-width: 768px) {
+  body { font-size: 1rem; }
+  .sidebar {
+    display: grid; grid-template-columns: 1fr auto;
+    grid-template-areas: "hero hero" "toggle lang" "nav nav";
+    align-items: center; column-gap: 1rem;
+    padding: 1.25rem 1rem 0; border-bottom: 1px solid var(--line);
+  }
+  .side-panel { display: contents; }
+  .hero {
+    grid-area: hero; display: grid; grid-template-columns: 4.5rem 1fr;
+    column-gap: 1rem; align-items: start; padding-bottom: 0.9rem;
+  }
+  .photo { width: 100%; }
+  .hero h1 { font-size: 1.45rem; }
+  .headline { margin: 0.35rem 0 0; font-size: 0.8125rem; }
+  .contact { margin-top: 0.75rem; }
+  .mail { width: 100%; height: auto; max-width: 16rem; }
+  .side-toggle { grid-area: toggle; justify-self: start; margin: 0.5rem 0; padding: 0.3rem 0.55rem; }
+  .side-toggle .i-side { display: none; }
+  .side-toggle .i-chev { transition: transform 0.15s; }
+  .side-toggle[aria-expanded="true"] .i-chev { transform: rotate(180deg); }
+  .langnav { grid-area: lang; }
+  .topnav { grid-area: nav; border-top: 1px solid var(--line); padding: 0.5rem 0 0.75rem; }
+  .anchors { display: flex; flex-wrap: wrap; gap: 0.15rem 1rem; }
+  .anchors a, .anchors a:visited { padding: 0.25rem 0; }
+  html.js[data-nav="closed"] .topnav { display: none; }
+  /* without JS there is no toggle: the language switch takes the row alone */
+  html:not(.js) .langnav { grid-column: 1 / -1; justify-self: end; padding: 0.5rem 0; }
+
+  main { padding: 0 1rem 3rem; }
+  dl.timeline { grid-template-columns: 1fr; row-gap: 0; }
+  dl.timeline dt { margin-top: 0.5rem; font-size: 0.85rem; white-space: normal; }
+  #bio p { text-align: left; }
+}
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  .side-toggle .i-chev { transition: none; }
+}
+
+@media print {
+  .side-toggle, .topnav, .langnav, .skip, .foot, #slides { display: none !important; }
+  body { display: block; background: #fff; color: #000; }
+  .sidebar { position: static; height: auto; border: 0; padding: 0 0 1rem; }
+  html[data-side="closed"] .side-panel > *, html[data-side="closed"] .hero > *,
+  html[data-side="closed"] .hero-text > * { display: revert; }
+}
+
+/* 画像の背景をページに合わせる。暗い色の画面では、黒い字と灰色のアイコンを明るく返す */
+@media (prefers-color-scheme: dark) {
+  .mail { filter: invert(0.88); }
+  .social img { filter: grayscale(1) invert(0.8); }
+  .social a:hover img, .social a:focus-visible img { filter: invert(0.85) hue-rotate(180deg); }
+}
